@@ -1,0 +1,14 @@
+{
+  "extends": ["../.eslintrc", "plugin:es5/no-es2015"],
+  "env": {},
+  "parserOptions": {
+    "ecmaVersion": 5,
+    "ecmaFeatures": {
+      "globalReturn": true
+    }
+  },
+  "rules": {
+    "no-undef": "off",
+    "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
+  }
+}

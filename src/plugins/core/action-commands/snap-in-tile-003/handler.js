@@ -1,0 +1,20 @@
+/**
+ * @param {import('@dd/common/plugin/types').ActionCommandPayload} payload
+ * @returns {import('@pgmmv/agtk/constants/action-commands/command-behavior').AgtkCommandBehavior['CommandBehaviorNext']} Command behavior 'next'.
+ */
+module.exports = function handler(
+  /** @type {import('@dd/common/plugin/types').ActionCommandPayload} */
+  payload
+) {
+  var paramIds = require('./parameters').ids,
+    objectInstance = require('../../api/util/resolve-switch-variable-object')(
+      payload.param[paramIds.objectInstanceMode],
+      payload.instanceId
+    );
+
+  if (objectInstance) {
+    require('../../api/object-instance/snap-to-tile')(objectInstance, null, payload.param[paramIds.tileOriginY]);
+  }
+
+  return Agtk.constants.actionCommands.commandBehavior.CommandBehaviorNext;
+};
