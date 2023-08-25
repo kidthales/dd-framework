@@ -59,7 +59,7 @@
 
 ![Dank Developer Framework][product-screenshot]
 
-Pixel Game Maker MV (PGM) is a great 'no-code' tool for making 2d games. The ability to extend the tool with scripting & plugins is a powerful feature; however, it is challenging to manage & reuse code for larger scripts & plugins. This framework is a distillation of my PGM scripting journey; lessons learned from many experiments, prototypes, and debugging sessions.
+Pixel Game Maker MV (PGMMV) is a great 'no-code' tool for making 2d games. The ability to extend the tool with scripting & plugins is a powerful feature; however, it is challenging to manage & reuse code for larger scripts & plugins. This framework is a distillation of my PGM scripting journey; lessons learned from many experiments, prototypes, and debugging sessions.
 
 Some guiding principles:
 

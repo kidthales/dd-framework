@@ -83,12 +83,12 @@ module.exports = function (
       /** @type {import('type-fest').JsonObject|undefined} */
       data
     ) {
-      if (config.scriptApi) {
+      if (config.api) {
         if (!window[_ns]) {
           window[_ns] = {};
         }
 
-        window[_ns][identifier] = config.scriptApi;
+        window[_ns][identifier] = config.api;
       }
 
       if (internal.onInitialize) {

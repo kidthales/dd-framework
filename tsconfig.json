@@ -36,6 +36,8 @@
       "@pgmmv/agtk/*": ["./lib/pgmmv/agtk/*"],
       "@pgmmv/cc": ["./lib/pgmmv/cc"],
       "@pgmmv/cc/*": ["./lib/pgmmv/cc/*"],
+      "@pgmmv/jsb": ["./lib/pgmmv/jsb"],
+      "@pgmmv/jsb/*": ["./lib/pgmmv/jsb/*"],
       "@dd/common": ["./src/common"],
       "@dd/common/*": ["./src/common/*"],
       "@dd/core/api/font/types": ["./src/plugins/core/api/font/types"],
