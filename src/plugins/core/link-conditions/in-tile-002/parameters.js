@@ -27,22 +27,22 @@ var _paramHelper = require('@dd/common').paramHelper,
     /**
      * @constant
      */
-    tileRectX: 2,
+    tileXVariable: 2,
 
     /**
      * @constant
      */
-    tileRectY: 3,
+    tileXVariableSource: 102,
 
     /**
      * @constant
      */
-    tileRectWidth: 4,
+    tileYVariable: 3,
 
     /**
      * @constant
      */
-    tileRectHeight: 5
+    tileYVariableSource: 103
   };
 
 module.exports = {
@@ -60,13 +60,17 @@ module.exports = {
       _ids.objectInstanceModeUseSelf
     ),
     _paramHelper.br,
-    _paramHelper.number(_ids.tileRectX, 'PARAM_TILE_RECT_X', 0, { decimals: 0, minimumValue: 0 }),
+    _paramHelper.switchVariableObjectId(_ids.tileXVariableSource, 'PARAM_TILE_X_VARIABLE_SOURCE', [
+      'SelfObject',
+      'ParentObject'
+    ]),
+    _paramHelper.variableId(_ids.tileXVariable, 'PARAM_TILE_X_VARIABLE', _ids.tileXVariableSource, true),
     _paramHelper.br,
-    _paramHelper.number(_ids.tileRectY, 'PARAM_TILE_RECT_Y', 0, { decimals: 0, minimumValue: 0 }),
-    _paramHelper.br,
-    _paramHelper.number(_ids.tileRectWidth, 'PARAM_TILE_RECT_WIDTH', 0, { decimals: 0, minimumValue: 0 }),
-    _paramHelper.br,
-    _paramHelper.number(_ids.tileRectHeight, 'PARAM_TILE_RECT_HEIGHT', 0, { decimals: 0, minimumValue: 0 }),
+    _paramHelper.switchVariableObjectId(_ids.tileYVariableSource, 'PARAM_TILE_Y_VARIABLE_SOURCE', [
+      'SelfObject',
+      'ParentObject'
+    ]),
+    _paramHelper.variableId(_ids.tileYVariable, 'PARAM_TILE_Y_VARIABLE', _ids.tileYVariableSource, true),
     _paramHelper.hr
   ]
 };

@@ -1,7 +1,7 @@
 /**
  * @private
  */
-var _param = require('@dd/common').paramHelper,
+var _paramHelper = require('@dd/common').paramHelper,
   /**
    * @constant
    * @private
@@ -48,9 +48,9 @@ var _param = require('@dd/common').paramHelper,
 module.exports = {
   ids: _ids,
   entries: [
-    _param.hr,
-    _param.embedded(-1, 'PARAM_INPUTS_GROUP'),
-    _param.customId(
+    _paramHelper.hr,
+    _paramHelper.embedded(-1, 'PARAM_INPUTS_GROUP'),
+    _paramHelper.customId(
       _ids.objectInstanceMode,
       'PARAM_OBJECT_INSTANCE_MODE',
       [
@@ -59,14 +59,14 @@ module.exports = {
       ],
       _ids.objectInstanceModeUseSelf
     ),
-    _param.br,
-    _param.number(_ids.rectX, 'PARAM_RECT_X', 0, { decimals: 0 }),
-    _param.br,
-    _param.number(_ids.rectY, 'PARAM_RECT_Y', 0, { decimals: 0 }),
-    _param.br,
-    _param.number(_ids.rectWidth, 'PARAM_RECT_WIDTH', 0, { decimals: 0, minimumValue: 0 }),
-    _param.br,
-    _param.number(_ids.rectHeight, 'PARAM_RECT_HEIGHT', 0, { decimals: 0, minimumValue: 0 }),
-    _param.hr
+    _paramHelper.br,
+    _paramHelper.number(_ids.rectX, 'PARAM_RECT_X', 0, { decimals: 0 }),
+    _paramHelper.br,
+    _paramHelper.number(_ids.rectY, 'PARAM_RECT_Y', 0, { decimals: 0 }),
+    _paramHelper.br,
+    _paramHelper.number(_ids.rectWidth, 'PARAM_RECT_WIDTH', 0, { decimals: 0, minimumValue: 0 }),
+    _paramHelper.br,
+    _paramHelper.number(_ids.rectHeight, 'PARAM_RECT_HEIGHT', 0, { decimals: 0, minimumValue: 0 }),
+    _paramHelper.hr
   ]
 };

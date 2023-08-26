@@ -185,6 +185,13 @@ module.exports = {
     en: 'Test if object instance position is within rectangle. Rectangle x & y coordinates correspond to top left.'
   },
 
+  LC_IN_RECT_002_NAME: {
+    en: '[DD] [Core] In Rect Mk II'
+  },
+  LC_IN_RECT_002_DESCRIPTION: {
+    en: 'Test if object instance position is within rectangle. Rectangle x & y coordinates correspond to top left. Rectangle position & dimensions are read from variables.'
+  },
+
   LC_IN_TILE_001_NAME: {
     en: '[DD] [Core] In Tile Mk I'
   },
@@ -192,11 +199,25 @@ module.exports = {
     en: "Test if object instance position is within tile at specified coordinates. Tile coordinates (0,0) correspond to top left of current scene's tilemap."
   },
 
+  LC_IN_TILE_002_NAME: {
+    en: '[DD] [Core] In Tile Mk II'
+  },
+  LC_IN_TILE_002_DESCRIPTION: {
+    en: "Test if object instance position is within tile at specified coordinates. Tile coordinates (0,0) correspond to top left of current scene's tilemap. Tile coordinates are read from variables."
+  },
+
   LC_IN_TILE_RECT_001_NAME: {
     en: '[DD] [Core] In Tile Rect Mk I'
   },
   LC_IN_TILE_RECT_001_DESCRIPTION: {
     en: "Test if object instance position is within rectangle specified in tiles. Rectangle x & y coordinates correspond to top left & tile coordinates (0,0) correspond to top left of current scene's tilemap."
+  },
+
+  LC_IN_TILE_RECT_002_NAME: {
+    en: '[DD] [Core] In Tile Rect Mk II'
+  },
+  LC_IN_TILE_RECT_002_DESCRIPTION: {
+    en: "Test if object instance position is within rectangle specified in tiles. Rectangle x & y coordinates correspond to top left & tile coordinates (0,0) correspond to top left of current scene's tilemap. Rectangle position & dimensions are read from variables."
   },
 
   PARAM_LOG_LEVEL: {
@@ -226,11 +247,47 @@ module.exports = {
   PARAM_RECT_HEIGHT: {
     en: 'Rectangle Height:'
   },
+  PARAM_RECT_X_VARIABLE_SOURCE: {
+    en: 'Rectangle X\nVariable Source:'
+  },
+  PARAM_RECT_X_VARIABLE: {
+    en: 'Rectangle X\nVariable:'
+  },
+  PARAM_RECT_Y_VARIABLE_SOURCE: {
+    en: 'Rectangle Y\nVariable Source:'
+  },
+  PARAM_RECT_Y_VARIABLE: {
+    en: 'Rectangle Y\nVariable:'
+  },
+  PARAM_RECT_WIDTH_VARIABLE_SOURCE: {
+    en: 'Rectangle Width\nVariable Source:'
+  },
+  PARAM_RECT_WIDTH_VARIABLE: {
+    en: 'Rectangle Width\nVariable:'
+  },
+  PARAM_RECT_HEIGHT_VARIABLE_SOURCE: {
+    en: 'Rectangle Height\nVariable Source:'
+  },
+  PARAM_RECT_HEIGHT_VARIABLE: {
+    en: 'Rectangle Height\nVariable:'
+  },
   PARAM_TILE_X: {
     en: 'Tile X:'
   },
   PARAM_TILE_Y: {
     en: 'Tile Y:'
+  },
+  PARAM_TILE_X_VARIABLE_SOURCE: {
+    en: 'Tile X\nVariable Source:'
+  },
+  PARAM_TILE_X_VARIABLE: {
+    en: 'Tile X\nVariable:'
+  },
+  PARAM_TILE_Y_VARIABLE_SOURCE: {
+    en: 'Tile Y\nVariable Source:'
+  },
+  PARAM_TILE_Y_VARIABLE: {
+    en: 'Tile Y\nVariable:'
   },
   PARAM_TILE_RECT_X: {
     en: 'Tile Rectangle X:'
@@ -244,18 +301,6 @@ module.exports = {
   PARAM_TILE_RECT_HEIGHT: {
     en: 'Tile Rectangle Height:'
   },
-  /*PARAM_TILE_ORIGIN_X_VARIABLE_SOURCE: {
-    en: 'Tile Origin X Variable Source:'
-  },
-  PARAM_TILE_ORIGIN_X_VARIABLE: {
-    en: 'Tile Origin X Variable:'
-  },
-  PARAM_TILE_ORIGIN_Y_VARIABLE_SOURCE: {
-    en: 'Tile Origin Y Variable Source:'
-  },
-  PARAM_TILE_ORIGIN_Y_VARIABLE: {
-    en: 'Tile Origin Y Variable:'
-  },*/
 
   PARAM_INPUTS_GROUP: {
     en: 'Inputs\n‾‾‾‾‾‾'
