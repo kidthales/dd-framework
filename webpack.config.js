@@ -15,7 +15,8 @@ module.exports = {
   mode: isProd ? 'production' : 'development',
   devtool: false,
   entry: {
-    [`core-${version}`]: `${srcPath}/plugins/core/entry.js`
+    [`core-${version}`]: `${srcPath}/plugins/core/entry.js`,
+    [`data-${version}`]: `${srcPath}/plugins/data/entry.js`
   },
   output: {
     iife: true,

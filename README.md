@@ -102,7 +102,7 @@ To get a local copy up and running follow these simple example steps.
     ```
     Open a shell and navigate to our framework directory & install dependencies:
     ```
-    cd /path/to/my-workspace/dd-framework-main && npm install
+    cd path/to/my-workspace/dd-framework-main && npm install
     ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -138,6 +138,11 @@ The output files can then be imported into the PGMMV editor.
     -   [ ] Custom Plugin Example
     -   [ ] FAQ
 -   [ ] Port Plugins From https://github.com/kidthales/pgmmv-support
+    -   [x] Global Variable (as [DD Framework - Data Plugin](./src/plugins/data/))
+    -   [ ] Linear Movement
+    -   [ ] Object Filter
+    -   [ ] Scene Effect
+    -   [ ] Static Storage
 -   [ ] Message Plugin
 -   [ ] Multi-language Support
 
