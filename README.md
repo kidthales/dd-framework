@@ -89,11 +89,21 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-TODO
+1.  Ensure [Node.js](https://nodejs.org/en/download) is installed.
+2.  Any IDE you are comfortable with. This project comes with some [sample settings](./.vscode/sample.settings.json) for use with [VSCode](https://code.visualstudio.com/download).
 
 ### Installation
 
-TODO
+1.  [Download](https://github.com/kidthales/dd-framework/archive/refs/heads/main.zip) the Dank Developer framework and extract the folder to your workspace.
+2.  We should now have a directory structure similar to:
+    ```
+    my-workspace/
+     └──dd-framework-main/  * dank developer framework
+    ```
+    Open a shell and navigate to our framework directory & install dependencies:
+    ```
+    cd /path/to/my-workspace/dd-framework-main && npm install
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,15 +113,25 @@ TODO
 
 TODO
 
+### Build
+
+Bundle the framework plugins into single files & output to `dist/`:
+
+```
+npm run build
+```
+
+The output files can then be imported into the PGMMV editor.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 
 ## Roadmap
 
--   [ ] Add Changelog
+-   [ ] GitHub Workflows, Releases ~~Add Changelog~~
 -   [ ] Add Documentation
-    -   [ ] Getting Started
+    -   [x] Getting Started
     -   [ ] Usage
     -   [ ] Scripting API
     -   [ ] Custom Scripting Example
