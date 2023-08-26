@@ -63,11 +63,11 @@ Pixel Game Maker MV (PGMMV) is a great 'no-code' tool for making 2d games. The a
 
 Some guiding principles:
 
--   Writing a plugin for PGM should be fun.
+-   **Writing a plugin for PGM should be fun.**
     -   VSCode Intellisense support for the PGM script API & and a large part of the Cocos2d-x JS API.
     -   Use common conventions for structuring a plugin & keeping it maintainable as more features are added.
     -   Provide a common code base for making the 'boilerplate' tasks of creating a plugin smoother & more automated.
--   Don't Repeat Yourself (DRY).
+-   **Don't Repeat Yourself (DRY).**
     -   Action commands & link conditions use a common API, allowing custom scripts to access the same logic, directly.
     -   Plugins expose a common API for other plugins to consume.
     -   We make use of a code bundler, allowing us to compose our plugins & APIs from multiple files.
