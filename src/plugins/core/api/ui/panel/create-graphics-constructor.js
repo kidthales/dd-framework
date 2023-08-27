@@ -75,6 +75,8 @@ _classProperties.ctor = function (
   return true;
 };
 
+// TODO: _updateOpened & _updateClosed call to _drawRect...
+
 _classProperties._updateOpenCloseInterpolationState = function (dt, direction) {
   /** @type {import('./types').GraphicsPanel} */
   var self = this;
