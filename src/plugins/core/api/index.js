@@ -1,5 +1,5 @@
 /**
- * @module @dd/core/api
+ * @module dd/core
  */
 module.exports = {
   common: require('./common'),
@@ -15,5 +15,6 @@ module.exports = {
   string: require('./string'),
   text: require('./text'),
   time: require('./time'),
+  ui: require('./ui'),
   util: require('./util')
 };

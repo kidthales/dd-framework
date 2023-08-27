@@ -49,6 +49,7 @@
       "@dd/core/api/object-instance/types": ["./src/plugins/core/api/object-instance/types"],
       "@dd/core/api/text/types": ["./src/plugins/core/api/text/types"],
       "@dd/core/api/ui/types": ["./src/plugins/core/api/ui/types"],
+      "@dd/core/api/ui/panel/types": ["./src/plugins/core/api/ui/panel/types"],
       "@dd/core/api/util/types": ["./src/plugins/core/api/util/types"]
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
