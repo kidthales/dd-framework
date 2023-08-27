@@ -87,19 +87,11 @@ var _logApi = require('../../log'),
 
     _updateOpenCloseInterpolationState: function (dt, direction) {
       /** @type {import('./types').Panel} */
-      var self = this;
+      var self = this,
+        delta = 60 * dt * direction * self._config.openCloseDelta;
 
-      // TODO: time interpolation...
-      self._openCloseInterpolationState.x = cc.clampf(
-        self._openCloseInterpolationState.x + direction * self._config.openCloseDelta,
-        0,
-        1
-      );
-      self._openCloseInterpolationState.y = cc.clampf(
-        self._openCloseInterpolationState.y + direction * self._config.openCloseDelta,
-        0,
-        1
-      );
+      self._openCloseInterpolationState.x = cc.clampf(self._openCloseInterpolationState.x + delta, 0, 1);
+      self._openCloseInterpolationState.y = cc.clampf(self._openCloseInterpolationState.y + delta, 0, 1);
     },
 
     _postUpdateOpenCloseInterpolationState: function (direction) {

@@ -75,7 +75,19 @@ _classProperties.ctor = function (
   return true;
 };
 
-// TODO: _updateOpened & _updateClosed call to _drawRect...
+_classProperties._updateOpened = function (dt) {
+  /** @type {import('./types').GraphicsPanel} */
+  var self = this;
+  _commonClassProperties._updateOpened.call(self, dt);
+  _drawRect(self);
+};
+
+_classProperties._updateClosed = function (dt) {
+  /** @type {import('./types').GraphicsPanel} */
+  var self = this;
+  _commonClassProperties._updateClosed.call(self, dt);
+  _drawRect(self);
+};
 
 _classProperties._updateOpenCloseInterpolationState = function (dt, direction) {
   /** @type {import('./types').GraphicsPanel} */
