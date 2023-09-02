@@ -17,4 +17,5 @@ export interface OpenClose {
   isClosed: () => boolean;
   isClosing: () => boolean;
   _transitionOpenCloseState: (state: OpenCloseState) => void;
+  _logOpenCloseTransitionWarning: (from: OpenCloseState, to: OpenCloseState) => void;
 }

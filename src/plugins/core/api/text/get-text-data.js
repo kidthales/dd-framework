@@ -30,6 +30,7 @@ module.exports = function (
   }
 
   return {
+    textId: textId,
     message: message,
     font: font,
     letterSpacing: agtkText.letterSpacing,

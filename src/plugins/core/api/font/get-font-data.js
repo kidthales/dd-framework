@@ -40,7 +40,9 @@ module.exports = function (
     return;
   }
 
-  fontData = {};
+  fontData = {
+    fontId: fontId
+  };
 
   if (agtkFont.imageFontFlag) {
     agtkImage = Agtk.images.get(agtkFont.imageId);

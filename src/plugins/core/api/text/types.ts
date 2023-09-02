@@ -10,6 +10,11 @@ export interface TextData {
   /**
    *
    */
+  textId: number;
+
+  /**
+   *
+   */
   message: string;
 
   /**

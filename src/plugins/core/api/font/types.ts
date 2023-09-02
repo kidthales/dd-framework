@@ -7,6 +7,11 @@ interface BaseFontData {
   /**
    *
    */
+  fontId: number;
+
+  /**
+   *
+   */
   type: 'bitmap' | 'ttf';
 }
 

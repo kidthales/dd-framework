@@ -151,13 +151,7 @@ module.exports = {
               break;
 
             default:
-              _logApi.warn(
-                "OpenClose::_transitionOpenCloseState(): Invalid open/close state transition: '" +
-                  _stateConstants.closed +
-                  '->' +
-                  state +
-                  "'."
-              );
+              self._logOpenCloseTransitionWarning(_stateConstants.closed, state);
 
               break;
           }
@@ -179,13 +173,7 @@ module.exports = {
               break;
 
             default:
-              _logApi.warn(
-                "OpenClose::_transitionOpenCloseState(): Invalid open/close state transition: '" +
-                  _stateConstants.opening +
-                  '->' +
-                  state +
-                  "'."
-              );
+              self._logOpenCloseTransitionWarning(_stateConstants.opening, state);
 
               break;
           }
@@ -201,13 +189,7 @@ module.exports = {
               break;
 
             default:
-              _logApi.warn(
-                "OpenClose::_transitionOpenCloseState(): Invalid open/close state transition: '" +
-                  _stateConstants.opened +
-                  '->' +
-                  state +
-                  "'."
-              );
+              self._logOpenCloseTransitionWarning(_stateConstants.opened, state);
 
               break;
           }
@@ -229,13 +211,7 @@ module.exports = {
               break;
 
             default:
-              _logApi.warn(
-                "OpenClose::_transitionOpenCloseState(): Invalid open/close state transition: '" +
-                  _stateConstants.closing +
-                  '->' +
-                  state +
-                  "'."
-              );
+              self._logOpenCloseTransitionWarning(_stateConstants.closing, state);
 
               break;
           }
@@ -249,6 +225,17 @@ module.exports = {
 
           break;
       }
+    },
+
+    _logOpenCloseTransitionWarning: function (
+      /** @type {import("./types").OpenCloseState} */
+      from,
+      /** @type {import("./types").OpenCloseState} */
+      to
+    ) {
+      _logApi.warn(
+        "OpenClose::_transitionOpenCloseState(): Invalid open/close state transition: '" + from + '->' + to + "'."
+      );
     }
   }
 };

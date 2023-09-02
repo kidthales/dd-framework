@@ -3,6 +3,14 @@ import type { CCColor } from '@pgmmv/cc/color';
 import type { CCEventManager } from '@pgmmv/cc/event-manager';
 import type { CCLayer, CCLayerConstructor } from '@pgmmv/cc/layer';
 import type { CCSize } from '@pgmmv/cc/size';
+import type { PartialDeep } from 'type-fest';
+
+export enum PrinterState {
+  Home,
+  Printing,
+  End,
+  Clearing
+}
 
 export enum HorizontalTextAlignment {
   Left,
@@ -21,6 +29,18 @@ export interface TextAlignmentConfig {
   vertical: VerticalTextAlignment;
 }
 
+export interface MarginConfig {
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+}
+
+export interface LayoutConfig {
+  margin: MarginConfig;
+  align: TextAlignmentConfig;
+}
+
 export interface PageConfig {
   text: TextData;
   align?: Partial<TextAlignmentConfig>;
@@ -28,28 +48,6 @@ export interface PageConfig {
   clearSpeed?: number;
   color?: CCColor;
   opacity?: number;
-}
-
-export interface LayoutConfig {
-  size?: CCSize;
-  margin: { top: number; bottom: number; left: number; right: number };
-  align: TextAlignmentConfig;
-}
-
-export interface JobConfig {
-  pages: PageConfig[];
-  layout?: Partial<LayoutConfig>;
-  printSpeed?: number;
-  clearSpeed?: number;
-  color?: CCColor;
-  opacity?: number;
-}
-
-export enum PrinterState {
-  Home,
-  Printing,
-  End,
-  Clearing
 }
 
 export interface ComputedPageConfig {
@@ -62,10 +60,28 @@ export interface ComputedPageConfig {
   opacity?: number;
 }
 
+export interface JobConfig {
+  pages: PageConfig[];
+  layout?: PartialDeep<LayoutConfig>;
+  printSpeed?: number;
+  clearSpeed?: number;
+  color?: CCColor;
+  opacity?: number;
+}
+
+export interface ComputedJobConfig {
+  pages: PageConfig[];
+  layout: LayoutConfig;
+  printSpeed: number;
+  clearSpeed: number;
+  color?: CCColor;
+  opacity?: number;
+}
+
 export interface Printer extends CCLayer {
   eventManager: CCEventManager;
   _state: PrinterState;
-  _job?: JobConfig;
+  _job?: ComputedJobConfig;
   _currentPage?: ComputedPageConfig;
   _lineIndex: number;
   _letterIndex: number;

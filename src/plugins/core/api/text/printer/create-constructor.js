@@ -39,7 +39,13 @@ var _logApi = require('../../log'),
      * @constant
      */
     clearing: 3
-  };
+  },
+  /**
+   * @type {Record<string, import('@pgmmv/cc/size').CCSize|undefined>}
+   * @static
+   * @private
+   */
+  _pageSizeCache = {};
 
 /**
  *
@@ -75,18 +81,34 @@ module.exports = function () {
       job
     ) {
       /** @type {import('./types').Printer} */
-      var self = this;
+      var self = this,
+        /** @type {number[]} */
+        textIds = [],
+        /** @type {number[]} */
+        fontIds = [],
+        /** @type {string} */
+        key,
+        /** @type {import('@pgmmv/cc/size').CCSize} */
+        pageSize;
 
       self._cancel();
 
       self._job = {
-        pages: job.pages,
+        pages: job.pages.filter(function (config) {
+          if (!config.text.font) {
+            return false;
+          }
+
+          textIds.push(config.text.textId);
+          fontIds.push(config.text.font.fontId);
+
+          return true;
+        }),
         layout: (function (
           /** @type {Partial<import('./types').LayoutConfig>} */
           layout
         ) {
           return {
-            size: layout.size ? cc.size(layout.size) : undefined,
             margin: layout.margin
               ? {
                   top: layout.margin.top || 0,
@@ -112,50 +134,48 @@ module.exports = function () {
         opacity: job.opacity !== undefined ? job.opacity : undefined
       };
 
-      if (!self._job.layout.size) {
-        // Auto-size page if not set; expensive.
-        self._job.layout.size = job.pages
-          .map(
-            function (
-              /** @type {import('./types').PageConfig} */
-              config
-            ) {
-              return _createTextSprites(config.text);
-            }
-          )
-          .reduce(
-            function (
-              /** @type {import('@pgmmv/cc/size').CCSize} */
-              size,
-              /** @type {import('@dd/core/api/text/types').TextSprites} */
-              textSprites
-            ) {
-              if (textSprites.width > size.width) {
-                size.width = textSprites.width;
+      key = textIds.sort().join(',') + '#' + fontIds.sort.join(',');
+
+      // Auto-size page.
+      if (_pageSizeCache[key]) {
+        pageSize = cc.size(_pageSizeCache[key]);
+      } else {
+        pageSize = cc.size(
+          (_pageSizeCache[key] = self._job.pages
+            .map(
+              function (
+                /** @type {import('./types').PageConfig} */
+                config
+              ) {
+                return _createTextSprites(config.text);
               }
+            )
+            .reduce(
+              function (
+                /** @type {import('@pgmmv/cc/size').CCSize} */
+                size,
+                /** @type {import('@dd/core/api/text/types').TextSprites} */
+                textSprites
+              ) {
+                if (textSprites.width > size.width) {
+                  size.width = textSprites.width;
+                }
 
-              if (textSprites.height > size.height) {
-                size.height = textSprites.height;
-              }
+                if (textSprites.height > size.height) {
+                  size.height = textSprites.height;
+                }
 
-              return size;
-            },
-            cc.size(0, 0)
-          );
-
-        self._job.layout.size.width += self._job.layout.margin.left + self._job.layout.margin.right;
-        self._job.layout.size.height += self._job.layout.margin.top + self._job.layout.margin.bottom;
-
-        _logApi.warn(
-          'Printer::setJob(): No page size set; computed size (with margin): ' +
-            self._job.layout.size.width +
-            'x' +
-            self._job.layout.size.height +
-            '.\nSet this explicitly to improve performance.'
+                return size;
+              },
+              cc.size(0, 0)
+            ))
         );
       }
 
-      self.setContentSize(self._job.layout.size);
+      pageSize.width += self._job.layout.margin.left + self._job.layout.margin.right;
+      pageSize.height += self._job.layout.margin.top + self._job.layout.margin.bottom;
+
+      self.setContentSize(pageSize);
     },
 
     print: function (
@@ -193,7 +213,6 @@ module.exports = function () {
         index: pageIndex,
         text: _createTextSprites(pageConfig.text, true),
         layout: {
-          size: cc.size(self._job.layout.size),
           margin: {
             top: self._job.layout.margin.top,
             bottom: self._job.layout.margin.bottom,
