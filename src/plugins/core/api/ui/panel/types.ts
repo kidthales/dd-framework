@@ -1,10 +1,10 @@
 import type { OpenClose } from '@dd/core/api/ui/types';
 import type { CCColor } from '@pgmmv/cc/color';
-import { CCDrawNode, CCDrawNodeConstructor } from '@pgmmv/cc/draw-node';
-import { CCNode } from '@pgmmv/cc/node';
+import type { CCDrawNode, CCDrawNodeConstructor } from '@pgmmv/cc/draw-node';
+import type { CCNode } from '@pgmmv/cc/node';
 import type { CCPoint } from '@pgmmv/cc/point';
 import type { CCRect } from '@pgmmv/cc/rect';
-import { CCScale9Sprite, CCScale9SpriteConstructor } from '@pgmmv/cc/scale-9-sprite';
+import type { CCScale9Sprite, CCScale9SpriteConstructor } from '@pgmmv/cc/scale-9-sprite';
 import type { CCSize } from '@pgmmv/cc/size';
 import type { CCTexture2D } from '@pgmmv/cc/texture-2d';
 

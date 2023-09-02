@@ -59,7 +59,7 @@ var _logApi = require('../../log'),
         default:
           if (self._openCloseState !== -40037) {
             // Don't spam the runtime log.
-            require('../../log').error('Panel::update(): Invalid open/close state.');
+            _logApi.error('Panel::update(): Invalid open/close state: ' + self._openCloseState);
             self._openCloseState = -40037;
           }
 

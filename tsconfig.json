@@ -48,6 +48,7 @@
       "@dd/core/api/object/types": ["./src/plugins/core/api/object/types"],
       "@dd/core/api/object-instance/types": ["./src/plugins/core/api/object-instance/types"],
       "@dd/core/api/text/types": ["./src/plugins/core/api/text/types"],
+      "@dd/core/api/text/printer/types": ["./src/plugins/core/api/text/printer/types"],
       "@dd/core/api/ui/types": ["./src/plugins/core/api/ui/types"],
       "@dd/core/api/ui/panel/types": ["./src/plugins/core/api/ui/panel/types"],
       "@dd/core/api/util/types": ["./src/plugins/core/api/util/types"]

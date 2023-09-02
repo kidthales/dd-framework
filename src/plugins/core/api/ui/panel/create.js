@@ -13,7 +13,7 @@ module.exports = function (
 ) {
   switch (config.renderType) {
     case 'image':
-      return new (require('./create-image-constructor')())(config);
+      return new (require('./get-image-constructor')())(config);
 
     case 'graphics':
     default:

@@ -1,5 +1,5 @@
 /**
- * @module @dd/core/api/text/constants
+ * @module dd/core/text/constants
  * @internal
  */
 module.exports = {
