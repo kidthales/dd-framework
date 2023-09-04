@@ -136,7 +136,7 @@ module.exports = function () {
         opacity: job.opacity !== undefined ? job.opacity : undefined
       };
 
-      key = textIds.sort().join(',') + '#' + fontIds.sort.join(',');
+      key = textIds.sort().join(',') + '#' + fontIds.sort().join(',');
 
       // Auto-size page.
       if (_pageSizeCache[key]) {
