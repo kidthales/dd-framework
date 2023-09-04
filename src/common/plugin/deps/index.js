@@ -1,5 +1,5 @@
 /**
- * @module @dd/common/plugin/events
+ * @module dd/common/plugin/deps
  */
 module.exports = {
   setDependencies: require('./set-dependencies'),

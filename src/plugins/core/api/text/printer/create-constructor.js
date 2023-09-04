@@ -73,6 +73,7 @@ module.exports = function () {
 
       self.eventManager = new cc.EventManager();
 
+      self.setContentSize(0, 0);
       self._state = _stateConstants.home;
     },
 
@@ -91,6 +92,7 @@ module.exports = function () {
         /** @type {import('@pgmmv/cc/size').CCSize} */
         pageSize;
 
+      self.setContentSize(0, 0);
       self._cancel();
 
       self._job = {
@@ -295,6 +297,17 @@ module.exports = function () {
       /** @type {import('./types').Printer} */
       var self = this;
       self._transitionState(_stateConstants.clearing);
+    },
+
+    getMargin: function () {
+      /** @type {import('./types').Printer} */
+      var self = this;
+      return {
+        left: self._job ? self._job.layout.margin.left : 0,
+        right: self._job ? self._job.layout.margin.right : 0,
+        top: self._job ? self._job.layout.margin.top : 0,
+        bottom: self._job ? self._job.layout.margin.bottom : 0
+      };
     },
 
     getNumPages: function () {

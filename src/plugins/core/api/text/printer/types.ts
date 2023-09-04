@@ -91,6 +91,7 @@ export interface Printer extends CCLayer {
   setJob: (job: JobConfig) => void;
   print: (pageIndex: number) => void;
   clear: () => void;
+  getMargin: () => MarginConfig;
   getNumPages: () => number;
   getCurrentPageIndex: () => number;
   isHome: () => boolean;

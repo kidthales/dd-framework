@@ -1,5 +1,5 @@
 /**
- * @module @dd/common/plugin/deps/state
+ * @module dd/common/plugin/deps/state
  * @internal
  */
 module.exports = {
