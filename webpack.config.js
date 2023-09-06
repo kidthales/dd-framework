@@ -16,7 +16,8 @@ module.exports = {
   devtool: false,
   entry: {
     [`core-${version}`]: `${srcPath}/plugins/core/entry.js`,
-    [`data-${version}`]: `${srcPath}/plugins/data/entry.js`
+    [`data-${version}`]: `${srcPath}/plugins/data/entry.js`,
+    [`message-${version}`]: `${srcPath}/plugins/message/entry.js`
   },
   output: {
     iife: true,

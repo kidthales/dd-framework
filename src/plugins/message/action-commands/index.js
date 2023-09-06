@@ -1,2 +1,2 @@
 // Order must be maintained or existing projects will break (when they upgrade).
-module.exports = [];
+module.exports = [require('./print-messages-001')];
