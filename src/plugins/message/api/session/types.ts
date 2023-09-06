@@ -6,9 +6,10 @@ import type { CCNode } from '@pgmmv/cc/node';
 export interface Session {
   done?: boolean;
   printer: Printer;
-  indicator?: CCNode;
+  indicator: CCNode;
   printingListener?: CCEventListener;
   printingSfxTimeAccumulator: number;
+  printFinishListener: CCEventListener;
   clearFinishListener: CCEventListener;
   panel?: Panel;
   openFinishEventListener?: CCEventListener;
