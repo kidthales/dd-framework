@@ -1,5 +1,11 @@
 /**
- * @module @dd/core/api/string
+ * String module.
+ *
+ * @module dd/core/string
+ */
+
+/**
+ *
  */
 module.exports = {
   getByteLength: require('./get-byte-length'),

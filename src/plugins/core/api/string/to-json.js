@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/string/to-json
+ * To JSON module.
+ *
+ * @module dd/core/string/to-json
  */
 
 /**
@@ -202,14 +204,7 @@ var _repeatStr = require('./repeat'),
  * @param {boolean|undefined} stringifyFunctions Stringify functions?
  * @returns {string} A JSON encoded string.
  */
-module.exports = function (
-  /** @type {unknown} */
-  value,
-  /** @type {number|undefined} */
-  space,
-  /** @type {boolean|undefined} */
-  stringifyFunctions
-) {
+module.exports = function (value, space, stringifyFunctions) {
   var seen = [],
     indentSize = typeof space === 'number' && space >= 0 ? space : 2;
 
@@ -219,12 +214,7 @@ module.exports = function (
    * @param {number} indent
    * @returns
    */
-  function parse(
-    /** @type {unknown} */
-    obj,
-    /** @type {number} */
-    indent
-  ) {
+  function parse(obj, indent) {
     /** @type {string} */
     var passQuotes,
       /** @type {string} */

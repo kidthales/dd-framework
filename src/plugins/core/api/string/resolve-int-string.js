@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/string/resolve-int-string
+ * Resolve integer string module.
+ *
+ * @module dd/core/string/resolve-int-string
  */
 
 /**
@@ -9,12 +11,7 @@
  * @param {number} defValue
  * @returns {number}
  */
-module.exports = function (
-  /** @type {string} */
-  intStr,
-  /** @type {number} */
-  defValue
-) {
+module.exports = function (intStr, defValue) {
   var n = parseInt(intStr, 10);
   return isNaN(n) ? defValue : n;
 };

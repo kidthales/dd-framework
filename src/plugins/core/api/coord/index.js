@@ -1,5 +1,11 @@
 /**
- * @module @dd/core/api/coord
+ * Coordinate module.
+ *
+ * @module dd/core/coord
+ */
+
+/**
+ *
  */
 module.exports = {
   tilePositionToWorld: require('./tile-position-to-world'),

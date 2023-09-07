@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/time/poll-with-back-off
+ * Poll with back off module.
+ *
+ * @module dd/core/time/poll-with-back-off
  */
 
 /**
@@ -12,18 +14,7 @@
  * @param {number} retries Number of attempts (default is 3).
  * @returns {void}
  */
-module.exports = function (
-  /** @type {() => boolean} */
-  conditional,
-  /** @type {() => void} */
-  onProceed,
-  /** @type {(elapsed: number) => void} */
-  onTimeout,
-  /** @type {number} */
-  initialInterval,
-  /** @type {number|undefined} */
-  retries
-) {
+module.exports = function (conditional, onProceed, onTimeout, initialInterval, retries) {
   var startTime = +new Date(),
     elapsedTime = 0,
     numRetries = 0,

@@ -1,6 +1,12 @@
 /**
+ * Constants module.
+ *
  * @module dd/core/text/constants
  * @internal
+ */
+
+/**
+ * @constant
  */
 module.exports = {
   /**

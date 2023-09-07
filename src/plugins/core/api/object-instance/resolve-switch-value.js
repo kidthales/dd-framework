@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/object-instance/resolve-switch-value
+ * Resolve switch value module.
+ *
+ * @module dd/core/object-instance/resolve-switch-value
  */
 
 /**
@@ -10,14 +12,7 @@
  * @param {boolean|undefined} value
  * @returns {boolean|undefined}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectInstanceLike} */
-  objectInstanceLike,
-  /** @type {string|number} */
-  switchNameOrId,
-  /** @type {boolean|undefined} */
-  value
-) {
+module.exports = function (objectInstanceLike, switchNameOrId, value) {
   var swtch = require('./resolve-switch')(objectInstanceLike, switchNameOrId);
 
   if (!swtch) {

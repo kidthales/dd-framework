@@ -1,4 +1,6 @@
 /**
+ * Class properties module.
+ *
  * @module dd/core/ui/panel/class-properties
  */
 
@@ -166,4 +168,7 @@ classProperties.ctor = function (config) {
   return true;
 };
 
+/**
+ *
+ */
 module.exports = classProperties;

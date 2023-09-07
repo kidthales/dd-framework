@@ -1,4 +1,6 @@
 /**
+ * Get constructor module.
+ *
  * @module dd/core/text/printer/get-constructor
  */
 
@@ -9,7 +11,6 @@
 var _Printer;
 
 /**
- *
  * @returns {import("./types").PrinterConstructor}
  */
 module.exports = function () {

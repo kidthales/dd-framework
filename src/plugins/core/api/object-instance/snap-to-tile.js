@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/object-instance/snap-to-tile
+ * Snap to tile module.
+ *
+ * @module dd/core/object-instance/snap-to-tile
  */
 
 /**
@@ -11,18 +13,7 @@
  * @param {number|undefined} tilePositionY
  * @returns {void}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectInstanceLike} */
-  objectInstanceLike,
-  /** @type {number|null|undefined} */
-  tileOriginX,
-  /** @type {number|null|undefined} */
-  tileOriginY,
-  /** @type {number|undefined} */
-  tilePositionX,
-  /** @type {number|undefined} */
-  tilePositionY
-) {
+module.exports = function (objectInstanceLike, tileOriginX, tileOriginY, tilePositionX, tilePositionY) {
   var tileXToWorld = require('../coord/tile-x-to-world'),
     tileYToWorld = require('../coord/tile-y-to-world'),
     worldXToTile = require('../coord/world-x-to-tile'),

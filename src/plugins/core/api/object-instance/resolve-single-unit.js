@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/object-instance/resolve-single-unit
+ * Resolve single unit module.
+ *
+ * @module dd/core/object-instance/resolve-single-unit
  */
 
 /**
@@ -8,10 +10,7 @@
  * @param {import("./types").ObjectInstanceLike} objectInstanceLike
  * @returns {import("@pgmmv/agtk/object-instances/object-instance").AgtkObjectInstance|undefined}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectInstanceLike} */
-  objectInstanceLike
-) {
+module.exports = function (objectInstanceLike) {
   var singleUnitId = require('./resolve-variable-value')(
     objectInstanceLike,
     Agtk.constants.objects.variables.SingleInstanceIDId

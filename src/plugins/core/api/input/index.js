@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/input
+ * Input module.
+ *
+ * @module dd/core/input
  */
 
 /**
@@ -110,6 +112,9 @@ var _opControllerStates,
     }
   };
 
+/**
+ *
+ */
 var inputApi = (module.exports = {
   /**
    * @returns {void}
@@ -119,26 +124,18 @@ var inputApi = (module.exports = {
   },
 
   /**
-   *
    * @param {number[]} keys
    * @returns {void}
    */
-  setEdgeOperationKeys: function (
-    /** @type {number[]} */
-    keys
-  ) {
+  setEdgeOperationKeys: function (keys) {
     _edgeOperationKeys = keys;
   },
 
   /**
-   *
    * @param {number[]} keys
    * @returns {void}
    */
-  setEdgePcKeys: function (
-    /** @type {number[]} */
-    keys
-  ) {
+  setEdgePcKeys: function (keys) {
     _edgePcKeys = keys;
   },
 
@@ -188,17 +185,11 @@ var inputApi = (module.exports = {
   },
 
   /**
-   *
    * @param {number} operationKey
    * @param {number|undefined} controllerId
    * @returns {boolean}
    */
-  isOperationKeyPressed: function (
-    /** @type {number} */
-    operationKey,
-    /** @type {number|undefined} */
-    controllerId
-  ) {
+  isOperationKeyPressed: function (operationKey, controllerId) {
     var controllers = Agtk.controllers,
       getOperationKeyPressed = controllers.getOperationKeyPressed,
       /** @type {number} */
@@ -221,20 +212,12 @@ var inputApi = (module.exports = {
   },
 
   /**
-   *
    * @param {number} operationKey
    * @param {number|undefined} forgiveness
    * @param {number|undefined} controllerId
    * @returns {boolean}
    */
-  isOperationKeyJustPressed: function (
-    /** @type {number} */
-    operationKey,
-    /** @type {number|undefined} */
-    forgiveness,
-    /** @type {number|undefined} */
-    controllerId
-  ) {
+  isOperationKeyJustPressed: function (operationKey, forgiveness, controllerId) {
     /** @type {number} */
     var maxControllerId,
       /** @type {number} */
@@ -255,20 +238,12 @@ var inputApi = (module.exports = {
   },
 
   /**
-   *
    * @param {number} operationKey
    * @param {number|undefined} forgiveness
    * @param {number|undefined} controllerId
    * @returns {boolean}
    */
-  isOperationKeyJustReleased: function (
-    /** @type {number} */
-    operationKey,
-    /** @type {number|undefined} */
-    forgiveness,
-    /** @type {number|undefined} */
-    controllerId
-  ) {
+  isOperationKeyJustReleased: function (operationKey, forgiveness, controllerId) {
     if (controllerId) {
       return _isOperationKeyJustReleased(controllerId, operationKey, forgiveness);
     }
@@ -284,29 +259,19 @@ var inputApi = (module.exports = {
   },
 
   /**
-   *
    * @param {number} keyCode
    * @returns {boolean}
    */
-  isPcKeyPressed: function (
-    /** @type {number} */
-    keyCode
-  ) {
+  isPcKeyPressed: function (keyCode) {
     return !!Agtk.controllers.getKeyValue(0, keyCode);
   },
 
   /**
-   *
    * @param {number} keyCode
    * @param {number|undefined} forgiveness
    * @returns {boolean}
    */
-  isPcKeyJustPressed: function (
-    /** @type {number} */
-    key,
-    /** @type {number|undefined} */
-    forgiveness
-  ) {
+  isPcKeyJustPressed: function (key, forgiveness) {
     var frameCount = _pcControllerState.frameCounts[key];
     forgiveness = typeof forgiveness === 'number' && forgiveness >= 0 ? forgiveness : 0;
 
@@ -318,17 +283,11 @@ var inputApi = (module.exports = {
   },
 
   /**
-   *
    * @param {number} keyCode
    * @param {number|undefined} forgiveness
    * @returns
    */
-  isPcKeyJustReleased: function (
-    /** @type {number} */
-    key,
-    /** @type {number|undefined} */
-    forgiveness
-  ) {
+  isPcKeyJustReleased: function (key, forgiveness) {
     var frameCount = _pcControllerState.frameCounts[key];
     forgiveness = typeof forgiveness === 'number' && forgiveness >= 0 ? forgiveness : 0;
 

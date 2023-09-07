@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/log
+ * Log module.
+ *
+ * @module dd/core/log
  */
 
 /**
@@ -46,6 +48,7 @@ var _resolveLocaleKey = require('@dd/common').resolveLocaleKey,
   /**
    * @param {unknown} data
    * @returns {string}
+   * @private
    */
   _toString = function (
     /** @type {unknown} */
@@ -272,9 +275,6 @@ log.createLinkConditionLogger = function (payload, localeNameKey) {
 };
 
 /**
- * Core plugin script API for logging.
  *
- * @constant
- * @public
  */
 module.exports = log;

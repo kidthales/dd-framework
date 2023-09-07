@@ -1,5 +1,11 @@
 /**
- * @module @dd/core/api/common
+ * Common module.
+ *
+ * @module dd/core/common
+ */
+
+/**
+ *
  */
 module.exports = {
   resolveSwitch: require('./resolve-switch'),

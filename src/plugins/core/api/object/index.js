@@ -1,5 +1,11 @@
 /**
- * @module @dd/core/api/object
+ * Object module.
+ *
+ * @module dd/core/object
+ */
+
+/**
+ *
  */
 module.exports = {
   resolve: require('./resolve'),

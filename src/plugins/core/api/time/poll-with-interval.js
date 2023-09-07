@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/time/poll-with-interval
+ * Poll with interval module.
+ *
+ * @module dd/core/time/poll-with-interval
  */
 
 /**
@@ -7,25 +9,14 @@
  * timeout. Will call `onProceed` when condition is satisfied, `onTimeout` if
  * provided timeout is reached.
  *
- * @param conditional Condition callback.
- * @param onProceed Proceed callback.
- * @param onTimeout Timeout callback.
- * @param interval Interval in milliseconds.
- * @param timeout Timeout in milliseconds.
+ * @param {() => boolean} conditional Condition callback.
+ * @param {() => void} onProceed Proceed callback.
+ * @param {(elapsed: number) => void} onTimeout Timeout callback.
+ * @param {number} interval Interval in milliseconds.
+ * @param {number|undefined} timeout Timeout in milliseconds.
  * @returns {void}
  */
-module.exports = function (
-  /** @type {() => boolean} */
-  conditional,
-  /** @type {() => void} */
-  onProceed,
-  /** @type {(elapsed: number) => void} */
-  onTimeout,
-  /** @type {number} */
-  interval,
-  /** @type {number|undefined} */
-  timeout
-) {
+module.exports = function (conditional, onProceed, onTimeout, interval, timeout) {
   var startTime = +new Date(),
     elapsedTime = 0,
     // eslint-disable-next-line no-redeclare

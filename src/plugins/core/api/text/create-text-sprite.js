@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/text/create-text-sprite
+ * Create text sprite module.
+ *
+ * @module dd/core/text/create-text-sprite
  * @internal
  */
 
@@ -9,7 +11,6 @@
 var _defaultColor = [255, 255, 255];
 
 /**
- *
  * @param {string} letter
  * @param {import('../font/types').FontData} fontData
  * @param {[number, number, number]|undefined} color
@@ -17,20 +18,7 @@ var _defaultColor = [255, 255, 255];
  * @param {number|undefined} x
  * @param {boolean|undefined} shouldRetain
  */
-module.exports = function (
-  /** @type {string} */
-  letter,
-  /** @type {import('../font/types').FontData} */
-  fontData,
-  /** @type {[number, number, number]|undefined} */
-  color,
-  /** @type {number|undefined} */
-  size,
-  /** @type {number|undefined} */
-  x,
-  /** @type {boolean|undefined} */
-  shouldRetain
-) {
+module.exports = function (letter, fontData, color, size, x, shouldRetain) {
   var fontType = require('../font').type,
     /** @type {import('./types').TextSprite} */
     textSprite,

@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/lock
+ * Lock module.
+ *
+ * @module dd/core/lock
  */
 
 /**
@@ -8,16 +10,15 @@
  */
 var _vault = {};
 
+/**
+ *
+ */
 var lockApi = (module.exports = {
   /**
-   *
    * @param {string|number} key
    * @returns {(() => void)|undefined}
    */
-  acquireExclusiveLock: function (
-    /** @type {string|number} */
-    key
-  ) {
+  acquireExclusiveLock: function (key) {
     /** @type {import("./types").Locks} */
     var locks;
 
@@ -39,14 +40,10 @@ var lockApi = (module.exports = {
   },
 
   /**
-   *
    * @param {string|number} key
    * @returns {(() => void)|undefined}
    */
-  acquireSharedLock: function (
-    /** @type {string|number} */
-    key
-  ) {
+  acquireSharedLock: function (key) {
     /** @type {import("./types").Locks} */
     var locks;
 
@@ -68,17 +65,11 @@ var lockApi = (module.exports = {
   },
 
   /**
-   *
    * @param {string|number} key
    * @param {number|undefined} maxSharedLocks
    * @returns {boolean}
    */
-  createLocks: function (
-    /** @type {string|number} */
-    key,
-    /** @type {number|undefined} */
-    maxSharedLocks
-  ) {
+  createLocks: function (key, maxSharedLocks) {
     if (lockApi.hasLocks(key)) {
       return false;
     }
@@ -93,26 +84,18 @@ var lockApi = (module.exports = {
   },
 
   /**
-   *
    * @param {string|number} key
    * @returns {void}
    */
-  destroyLocks: function (
-    /** @type {string|number} */
-    key
-  ) {
+  destroyLocks: function (key) {
     delete _vault[key];
   },
 
   /**
-   *
    * @param {string|number} key
    * @returns {boolean}
    */
-  hasLocks: function (
-    /** @type {string|number} */
-    key
-  ) {
+  hasLocks: function (key) {
     return !!_vault[key];
   }
 });

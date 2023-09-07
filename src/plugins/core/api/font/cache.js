@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/font/cache
+ * Cache module.
+ *
+ * @module dd/core/font/cache
  * @internal
  */
 
@@ -9,31 +11,24 @@
  */
 var _cache = {};
 
+/**
+ *
+ */
 module.exports = {
   /**
-   *
    * @param {number} id
    * @returns {import("./types").FontData|undefined}
    */
-  get: function (
-    /** @type {number} */
-    id
-  ) {
+  get: function (id) {
     return _cache[id];
   },
 
   /**
-   *
    * @param {number} id
    * @param {import("./types").FontData|undefined} data
    * @returns {void}
    */
-  set: function (
-    /** @type {number} */
-    id,
-    /** @type {import("./types").FontData|undefined} */
-    data
-  ) {
+  set: function (id, data) {
     _cache[id] = data;
   }
 };

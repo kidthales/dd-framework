@@ -1,4 +1,6 @@
 /**
+ * Get image constructor module.
+ *
  * @module dd/core/ui/panel/get-image-constructor
  */
 
@@ -9,7 +11,6 @@
 var _Panel;
 
 /**
- *
  * @returns {import("./types").ImagePanelConstructor}
  */
 module.exports = function () {

@@ -1,4 +1,6 @@
 /**
+ * Create image constructor module.
+ *
  * @module dd/core/ui/panel/create-image-constructor
  */
 
@@ -80,7 +82,6 @@ _classProperties._updateOpenCloseInterpolationState = function (dt, direction) {
 };
 
 /**
- *
  * @returns {import("./types").ImagePanelConstructor}
  */
 module.exports = function () {

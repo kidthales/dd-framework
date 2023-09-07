@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/common/resolve-switch-value
+ * Resolve switch value module.
+ *
+ * @module dd/core/common/resolve-switch-value
  */
 
 /**
@@ -9,12 +11,7 @@
  * @param {boolean|undefined} value
  * @returns {boolean|undefined}
  */
-module.exports = function (
-  /** @type {string|number} */
-  nameOrId,
-  /** @type {boolean|undefined} */
-  value
-) {
+module.exports = function (nameOrId, value) {
   var swtch = require('./resolve-switch')(nameOrId);
 
   if (!swtch) {

@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/text/create-text-sprites
+ * Create text sprites module.
+ *
+ * @module dd/core/text/create-text-sprites
  */
 
 /**
@@ -8,17 +10,11 @@
 var _defaultColor = [255, 255, 255];
 
 /**
- *
  * @param {import('./types').TextData} textData
  * @param {boolean|undefined} shouldRetain
  * @returns {import('./types').TextSprites|undefined}
  */
-module.exports = function (
-  /** @type {import('./types').TextData} */
-  textData,
-  /** @type {boolean|undefined} */
-  shouldRetain
-) {
+module.exports = function (textData, shouldRetain) {
   var textConstants = require('./constants'),
     parseTextTag = require('./parse-text-tag'),
     createTextSprite = require('./create-text-sprite'),

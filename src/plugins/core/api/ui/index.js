@@ -1,5 +1,11 @@
 /**
+ * User interface module.
+ *
  * @module dd/core/ui
+ */
+
+/**
+ *
  */
 module.exports = {
   openClose: require('./open-close'),

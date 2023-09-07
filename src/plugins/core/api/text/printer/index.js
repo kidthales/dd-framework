@@ -1,5 +1,11 @@
 /**
+ * Printer module.
+ *
  * @module dd/core/text/printer
+ */
+
+/**
+ *
  */
 module.exports = {
   constants: require('./constants'),

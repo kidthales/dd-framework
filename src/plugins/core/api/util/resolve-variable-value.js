@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/util/resolve-variable-value
+ * Resolve variable value module.
+ *
+ * @module dd/core/util/resolve-variable-value
  */
 
 /**
@@ -10,14 +12,7 @@
  * @param {number|undefined} value
  * @returns {number|undefined}
  */
-module.exports = function (
-  /** @type {import("./types").SwitchVariableSource} */
-  source,
-  /** @type {string|number} */
-  nameOrId,
-  /** @type {number|undefined} */
-  value
-) {
+module.exports = function (source, nameOrId, value) {
   var variable = require('./resolve-variable')(source, nameOrId);
 
   if (!variable) {

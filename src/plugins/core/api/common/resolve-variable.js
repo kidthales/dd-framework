@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/common/resolve-variable
+ * Resolve variable module.
+ *
+ * @module dd/core/common/resolve-variable
  */
 
 /**
@@ -8,10 +10,7 @@
  * @param {string|number} nameOrId
  * @returns {import("@pgmmv/agtk/variables/variable").AgtkVariable|undefined}
  */
-module.exports = function (
-  /** @type {string|number} */
-  nameOrId
-) {
+module.exports = function (nameOrId) {
   /** @type {number|undefined} */
   var variableId;
 

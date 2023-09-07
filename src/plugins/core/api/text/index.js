@@ -1,5 +1,11 @@
 /**
+ * Text module.
+ *
  * @module dd/core/text
+ */
+
+/**
+ *
  */
 module.exports = {
   createTextSprites: require('./create-text-sprites'),

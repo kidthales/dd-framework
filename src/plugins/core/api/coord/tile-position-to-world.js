@@ -1,19 +1,15 @@
 /**
- * @module @dd/core/api/coord/tile-position-to-world
+ * Tile position to world module.
+ *
+ * @module dd/core/coord/tile-position-to-world
  */
 
 /**
- *
  * @param {number|import("@pgmmv/cc/point").CCPoint} tilePositionOrX
  * @param {number|undefined} tileY
  * @returns {import("@pgmmv/cc/point").CCPoint}
  */
-module.exports = function (
-  /** @type {number|import("@pgmmv/cc/point").CCPoint} */
-  tilePositionOrX,
-  /** @type {number|undefined} */
-  tileY
-) {
+module.exports = function (tilePositionOrX, tileY) {
   var isXNumber = typeof tilePositionOrX === 'number';
 
   return cc.p(

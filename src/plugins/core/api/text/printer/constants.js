@@ -1,5 +1,11 @@
 /**
+ * Constants module.
+ *
  * @module dd/core/text/printer/constants
+ */
+
+/**
+ * @constant
  */
 module.exports = {
   /**

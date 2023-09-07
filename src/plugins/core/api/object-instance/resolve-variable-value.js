@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/object-instance/resolve-variable-value
+ * Resolve variable value module.
+ *
+ * @module dd/core/object-instance/resolve-variable-value
  */
 
 /**
@@ -10,14 +12,7 @@
  * @param {number|undefined} value
  * @returns {number|undefined}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectInstanceLike} */
-  objectInstanceLike,
-  /** @type {string|number} */
-  variableNameOrId,
-  /** @type {number|undefined} */
-  value
-) {
+module.exports = function (objectInstanceLike, variableNameOrId, value) {
   var variable = require('./resolve-variable')(objectInstanceLike, variableNameOrId);
 
   if (!variable) {

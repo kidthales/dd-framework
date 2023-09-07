@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/font
+ * Font module.
+ *
+ * @module dd/core/font
  */
 
 /**
@@ -7,6 +9,9 @@
  */
 var _fontConstants = require('./constants');
 
+/**
+ *
+ */
 module.exports = {
   getFontData: require('./get-font-data'),
   type: {

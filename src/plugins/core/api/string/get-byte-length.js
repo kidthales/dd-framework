@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/time/get-byte-length
+ * Get byte length module.
+ *
+ * @module dd/core/string/get-byte-length
  */
 
 /**
@@ -8,10 +10,7 @@
  * @param {string} str String to calculate byte length with.
  * @returns {number} String byte length.
  */
-module.exports = function (
-  /** @type {string} */
-  str
-) {
+module.exports = function (str) {
   var s = str.length,
     /** @type {number} */
     i,

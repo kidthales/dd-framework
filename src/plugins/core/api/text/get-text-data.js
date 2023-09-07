@@ -1,16 +1,14 @@
 /**
- * @module @dd/core/api/text/get-text-data
+ * Get text data module.
+ *
+ * @module dd/core/text/get-text-data
  */
 
 /**
- *
  * @param {number} textId
  * @returns {import("./types").TextData|undefined}
  */
-module.exports = function (
-  /** @type {number} */
-  textId
-) {
+module.exports = function (textId) {
   var getLocaleCode = require('@dd/common').getLocaleCode,
     getFontData = require('../font/get-font-data'),
     agtkText = Agtk.texts.get(textId),

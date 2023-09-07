@@ -1,5 +1,11 @@
 /**
+ * Panel module.
+ *
  * @module dd/core/ui/panel
+ */
+
+/**
+ *
  */
 module.exports = {
   classProperties: require('./class-properties'),

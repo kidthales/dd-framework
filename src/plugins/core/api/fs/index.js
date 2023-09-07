@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/fs
+ * Filesystem module.
+ *
+ * @module dd/core/fs
  */
 
 /**
@@ -32,9 +34,9 @@ var _lockApi = require('../lock'),
    */
   _operationQueues = {},
   /**
-   *
    * @param {[Function, ...string[], import('./types').FileOperationCallback]} args
    * @returns {void}
+   * @private
    */
   _enqueueOperation = function (
     /** @type {[Function, ...string[], import('./types').FileOperationCallback]} */
@@ -68,9 +70,9 @@ var _lockApi = require('../lock'),
     }
   },
   /**
-   *
    * @param {string} path
    * @returns {[Function, ...string[], FileOperationCallback] | undefined}
+   * @private
    */
   _peekOperation = function (
     /** @type {string} */
@@ -83,9 +85,9 @@ var _lockApi = require('../lock'),
     return _operationQueues[path][0];
   },
   /**
-   *
    * @param {string} path
    * @returns {[Function, ...string[], FileOperationCallback] | undefined}
+   * @private
    */
   _dequeueOperation = function (
     /** @type {string} */
@@ -108,8 +110,8 @@ var _lockApi = require('../lock'),
     return args;
   },
   /**
-   *
    * @returns {false}
+   * @private
    */
   _pollOperationQueues = function () {
     var paths = Object.keys(_operationQueues),
@@ -169,6 +171,7 @@ var _lockApi = require('../lock'),
    * @param {import("./types").FileOperationCallback} callback
    * @param {() => void} releaseLock
    * @returns {void}
+   * @private
    */
   _createDirectory = function (
     /** @type {string} */
@@ -226,6 +229,7 @@ var _lockApi = require('../lock'),
    * @param {import("./types").FileOperationCallback} callback
    * @param {() => void} releaseLock
    * @returns {void}
+   * @private
    */
   _removeDirectory = function (
     /** @type {string} */
@@ -283,6 +287,7 @@ var _lockApi = require('../lock'),
    * @param {import("./types").FileOperationCallback} callback
    * @param {() => void} releaseLock
    * @returns {void}
+   * @private
    */
   _readFile = function (
     /** @type {string} */
@@ -311,6 +316,7 @@ var _lockApi = require('../lock'),
    * @param {import("./types").FileOperationCallback} callback
    * @param {() => void} releaseLock
    * @returns {void}
+   * @private
    */
   _readFileSize = function (
     /** @type {string} */
@@ -340,6 +346,7 @@ var _lockApi = require('../lock'),
    * @param {import("./types").FileOperationCallback} callback
    * @param {() => void} releaseLock
    * @returns {void}
+   * @private
    */
   _writeFile = function (
     /** @type {string} */
@@ -412,6 +419,7 @@ var _lockApi = require('../lock'),
    * @param {import("./types").FileOperationCallback} callback
    * @param {() => void} releaseLock
    * @returns {void}
+   * @private
    */
   _appendFile = function (
     /** @type {string} */
@@ -476,6 +484,7 @@ var _lockApi = require('../lock'),
    * @param {import("./types").FileOperationCallback} callback
    * @param {() => void} releaseLock
    * @returns {void}
+   * @private
    */
   _renameFile = function (
     /** @type {string} */
@@ -541,6 +550,7 @@ var _lockApi = require('../lock'),
    * @param {import("./types").FileOperationCallback} callback
    * @param {() => void} releaseLock
    * @returns {void}
+   * @private
    */
   _removeFile = function (
     /** @type {string} */
@@ -594,6 +604,9 @@ var _lockApi = require('../lock'),
     );
   };
 
+/**
+ *
+ */
 var fsApi = (module.exports = {
   /**
    * @constant
@@ -601,170 +614,102 @@ var fsApi = (module.exports = {
   errorCode: _fsConstants.errorCode,
 
   /**
-   *
    * @param {string} path
    * @returns {boolean}
    */
-  isAbsolutePath: function (
-    /** @type {string} */
-    path
-  ) {
+  isAbsolutePath: function (path) {
     return jsb.fileUtils.isAbsolutePath(path);
   },
 
   /**
-   *
    * @param {string} path
    * @returns {boolean}
    */
-  isDirectory: function (
-    /** @type {string} */
-    path
-  ) {
+  isDirectory: function (path) {
     return jsb.fileUtils.isDirectoryExist(path);
   },
 
   /**
-   *
    * @param {string} path
    * @returns {boolean}
    */
-  isFile: function (
-    /** @type {string} */
-    path
-  ) {
+  isFile: function (path) {
     return jsb.fileUtils.isFileExist(path);
   },
 
   /**
-   *
    * @param {string} path
    * @param {import("./types").FileOperationCallback} callback
    * @returns {void}
    */
-  createDirectory: function (
-    /** @type {string} */
-    path,
-    /** @type {import("./types").FileOperationCallback} */
-    callback
-  ) {
+  createDirectory: function (path, callback) {
     _enqueueOperation([_createDirectory, path, callback]);
   },
 
   /**
-   *
    * @param {string} path
    * @param {import("./types").FileOperationCallback} callback
    * @returns {void}
    */
-  removeDirectory: function (
-    /** @type {string} */
-    path,
-    /** @type {import("./types").FileOperationCallback} */
-    callback
-  ) {
+  removeDirectory: function (path, callback) {
     _enqueueOperation([_removeDirectory, path, callback]);
   },
 
   /**
-   *
    * @param {string} path
    * @param {import("./types").FileOperationCallback} callback
    * @returns {void}
    */
-  readFile: function (
-    /** @type {string} */
-    path,
-    /** @type {import("./types").FileOperationCallback} */
-    callback
-  ) {
+  readFile: function (path, callback) {
     _enqueueOperation([_readFile, path, callback]);
   },
 
   /**
-   *
    * @param {string} path
    * @param {import("./types").FileOperationCallback} callback
    * @returns {void}
    */
-  readFileSize: function (
-    /** @type {string} */
-    path,
-    /** @type {import("./types").FileOperationCallback} */
-    callback
-  ) {
+  readFileSize: function (path, callback) {
     _enqueueOperation([_readFileSize, path, callback]);
   },
 
   /**
-   *
    * @param {string} path
    * @param {string} data
    * @param {import("./types").FileOperationCallback} callback
    * @returns {void}
    */
-  writeFile: function (
-    /** @type {string} */
-    path,
-    /** @type {string} */
-    data,
-    /** @type {import("./types").FileOperationCallback} */
-    callback
-  ) {
+  writeFile: function (path, data, callback) {
     _enqueueOperation([_writeFile, path, data, callback]);
   },
 
   /**
-   *
    * @param {string} path
    * @param {string} data
    * @param {import("./types").FileOperationCallback} callback
    * @returns {void}
    */
-  appendFile: function (
-    /** @type {string} */
-    path,
-    /** @type {string} */
-    data,
-    /** @type {import("./types").FileOperationCallback} */
-    callback
-  ) {
+  appendFile: function (path, data, callback) {
     _enqueueOperation([_appendFile, path, data, callback]);
   },
 
   /**
-   *
    * @param {string} dirPath
    * @param {string} oldName
    * @param {string} newName
    * @param {import("./types").FileOperationCallback} callback
    * @returns {void}
    */
-  renameFile: function (
-    /** @type {string} */
-    dirPath,
-    /** @type {string} */
-    oldName,
-    /** @type {string} */
-    newName,
-    /** @type {import("./types").FileOperationCallback} */
-    callback
-  ) {
+  renameFile: function (dirPath, oldName, newName, callback) {
     _enqueueOperation([_renameFile, dirPath, oldName, newName, callback]);
   },
 
   /**
-   *
    * @param {string} path
    * @param {import("./types").FileOperationCallback} callback
    * @returns {void}
    */
-  removeFile: function (
-    /** @type {string} */
-    path,
-    /** @type {import("./types").FileOperationCallback} */
-    callback
-  ) {
+  removeFile: function (path, callback) {
     _enqueueOperation([_removeFile, path, callback]);
   }
 });

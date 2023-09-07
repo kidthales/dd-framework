@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/object-instance/resolve-scale
+ * Resolve scale module.
+ *
+ * @module dd/core/object-instance/resolve-scale
  */
 
 /**
@@ -10,14 +12,7 @@
  * @param {number|undefined} y
  * @returns {import("@pgmmv/cc/point").CCPoint|undefined}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectInstanceLike} */
-  objectInstanceLike,
-  /** @type {number|undefined} */
-  x,
-  /** @type {number|undefined} */
-  y
-) {
+module.exports = function (objectInstanceLike, x, y) {
   var resolveVariableValue = require('./resolve-variable-value');
 
   x = resolveVariableValue(objectInstanceLike, Agtk.constants.objects.variables.ScalingXId, x);

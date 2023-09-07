@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/object/resolve-viewport
+ * Resolve viewport module.
+ *
+ * @module dd/core/object/resolve-viewport
  */
 
 /**
@@ -9,12 +11,7 @@
  * @param {string|number} viewportNameOrId
  * @returns {import("@pgmmv/agtk/objects/object/viewports/viewport").AgtkViewport|undefined}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectLike} */
-  objectLike,
-  /** @type {string|number} */
-  viewportNameOrId
-) {
+module.exports = function (objectLike, viewportNameOrId) {
   var object = require('./resolve')(objectLike),
     /** @type {number|undefined} */
     viewportId;

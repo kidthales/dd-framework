@@ -1,5 +1,11 @@
 /**
+ * Core plugin api module.
+ *
  * @module dd/core
+ */
+
+/**
+ *
  */
 module.exports = {
   common: require('./common'),

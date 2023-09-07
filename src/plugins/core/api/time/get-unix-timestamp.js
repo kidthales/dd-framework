@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/time/get-unix-timestamp
+ * Get unix timestamp module.
+ *
+ * @module dd/core/time/get-unix-timestamp
  */
 
 /**

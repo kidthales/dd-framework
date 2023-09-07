@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/object/resolve-switch
+ * Resolve switch module.
+ *
+ * @module dd/core/object/resolve-switch
  */
 
 /**
@@ -9,12 +11,7 @@
  * @param {string|number} switchNameOrId
  * @returns {import("@pgmmv/agtk/objects/object/switches/switch").AgtkSwitch|undefined}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectLike} */
-  objectLike,
-  /** @type {string|number} */
-  switchNameOrId
-) {
+module.exports = function (objectLike, switchNameOrId) {
   var object = require('./resolve')(objectLike),
     /** @type {number|undefined} */
     switchId;

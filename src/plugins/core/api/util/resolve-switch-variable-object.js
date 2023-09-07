@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/util/resolve-switch-variable-object
+ * Resolve switch/variable object module.
+ *
+ * @module dd/core/util/resolve-switch-variable-object
  */
 
 /**
@@ -12,12 +14,7 @@
  * @param {number} instanceId ID of object instance from which to determine self or parent object instance.
  * @returns {import("@pgmmv/agtk/constants/switch-variable-objects").AgtkSwitchVariableObjects['ProjectCommon']|import("@pgmmv/agtk/object-instances/object-instance").AgtkObjectInstance|undefined}
  */
-module.exports = function (
-  /** @type {import("@pgmmv/agtk/constants/switch-variable-objects").SwitchVariableObjectsValue} */
-  switchVariableObject,
-  /** @type {number} */
-  instanceId
-) {
+module.exports = function (switchVariableObject, instanceId) {
   switch (switchVariableObject) {
     case Agtk.constants.switchVariableObjects.ProjectCommon:
       return switchVariableObject;

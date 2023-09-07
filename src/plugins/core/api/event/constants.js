@@ -1,5 +1,11 @@
 /**
- * @module @dd/core/api/event/constants
+ * Constants module.
+ *
+ * @module dd/core/event/constants
+ */
+
+/**
+ * @constant
  */
 module.exports = {
   /**

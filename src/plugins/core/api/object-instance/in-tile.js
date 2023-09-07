@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/object-instance/in-tile
+ * In tile module.
+ *
+ * @module dd/core/object-instance/in-tile
  */
 
 /**
@@ -9,14 +11,7 @@
  * @param {number} tileY
  * @returns {boolean}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectInstanceLike} */
-  objectInstanceLike,
-  /** @type {number} */
-  tileX,
-  /** @type {number} */
-  tileY
-) {
+module.exports = function (objectInstanceLike, tileX, tileY) {
   return require('./in-rect')(
     objectInstanceLike,
     cc.rect(

@@ -1,5 +1,11 @@
 /**
- * @module @dd/core/api/fs/constants
+ * Constants module.
+ *
+ * @module dd/core/fs/constants
+ */
+
+/**
+ * @constant
  */
 module.exports = {
   /**

@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/object/resolve-bullet
+ * Resolve bullet module.
+ *
+ * @module dd/core/object/resolve-bullet
  */
 
 /**
@@ -9,12 +11,7 @@
  * @param {string|number} bulletNameOrId
  * @returns {import("@pgmmv/agtk/objects/object/bullets/bullet").AgtkBullet|undefined}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectLike} */
-  objectLike,
-  /** @type {string|number} */
-  bulletNameOrId
-) {
+module.exports = function (objectLike, bulletNameOrId) {
   var object = require('./resolve')(objectLike),
     /** @type {number|undefined} */
     bulletId;

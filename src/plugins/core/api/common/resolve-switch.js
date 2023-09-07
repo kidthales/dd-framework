@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/common/resolve-switch
+ * Resolve switch module.
+ *
+ * @module dd/core/common/resolve-switch
  */
 
 /**
@@ -8,10 +10,7 @@
  * @param {string|number} nameOrId
  * @returns {import("@pgmmv/agtk/switches/switch").AgtkSwitch|undefined}
  */
-module.exports = function (
-  /** @type {string|number} */
-  nameOrId
-) {
+module.exports = function (nameOrId) {
   /** @type {number|undefined} */
   var switchId;
 

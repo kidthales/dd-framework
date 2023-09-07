@@ -1,4 +1,6 @@
 /**
+ * Get graphics constructor module.
+ *
  * @module dd/core/ui/panel/get-graphics-constructor
  */
 
@@ -9,7 +11,6 @@
 var _Panel;
 
 /**
- *
  * @returns {import("./types").GraphicsPanelConstructor}
  */
 module.exports = function () {

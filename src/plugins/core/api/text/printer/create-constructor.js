@@ -1,4 +1,6 @@
 /**
+ * Create constructor module.
+ *
  * @module dd/core/text/printer/create-constructor
  */
 
@@ -48,7 +50,6 @@ var _logApi = require('../../log'),
   _pageSizeCache = {};
 
 /**
- *
  * @returns {import("./types").PrinterConstructor}
  */
 module.exports = function () {

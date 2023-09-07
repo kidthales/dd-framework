@@ -1,19 +1,15 @@
 /**
- * @module @dd/core/api/object-instance/in-tile-rect
+ * In tile rectangle module.
+ *
+ * @module dd/core/object-instance/in-tile-rect
  */
 
 /**
- *
  * @param {import("./types").ObjectInstanceLike} objectInstanceLike
  * @param {import("@pgmmv/cc/rect").CCRect} tileRect
  * @returns {boolean}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectInstanceLike} */
-  objectInstanceLike,
-  /** @type {import("@pgmmv/cc/rect").CCRect} */
-  tileRect
-) {
+module.exports = function (objectInstanceLike, tileRect) {
   return require('./in-rect')(
     objectInstanceLike,
     cc.rect(

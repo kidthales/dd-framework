@@ -1,5 +1,11 @@
 /**
- * @module @dd/core/api/time
+ * Time module.
+ *
+ * @module dd/core/time
+ */
+
+/**
+ *
  */
 module.exports = {
   getUnixTimestamp: require('./get-unix-timestamp'),

@@ -1,4 +1,6 @@
 /**
+ * Create graphics constructor module.
+ *
  * @module dd/core/ui/panel/create-graphics-constructor
  */
 
@@ -106,7 +108,6 @@ _classProperties._updateOpenCloseInterpolationState = function (dt, direction) {
 };
 
 /**
- *
  * @returns {import("./types").GraphicsPanelConstructor}
  */
 module.exports = function () {

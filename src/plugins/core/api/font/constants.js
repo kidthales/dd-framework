@@ -1,7 +1,12 @@
 /**
- * @module @dd/core/api/font/constants
+ * Constants module.
+ *
+ * @module dd/core/font/constants
  */
 
+/**
+ * @constant
+ */
 module.exports = {
   /**
    * @type {'bitmap'}

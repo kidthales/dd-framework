@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/string/pad-end
+ * Pad end module.
+ *
+ * @module dd/core/string/pad-end
  */
 
 /**
@@ -10,14 +12,7 @@
  * @param {string|undefined} padString
  * @returns {string}
  */
-module.exports = function (
-  /** @type {string} */
-  str,
-  /** @type {number} */
-  targetLength,
-  /** @type {string|undefined} */
-  padString
-) {
+module.exports = function (str, targetLength, padString) {
   var currentLength = str.length,
     /** @type {number} */
     padLength,

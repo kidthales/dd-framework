@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/string/repeat
+ * Repeat module.
+ *
+ * @module dd/core/string/repeat
  */
 
 /**
@@ -9,12 +11,7 @@
  * @param {number} count
  * @returns {string}
  */
-module.exports = function (
-  /** @type {string} */
-  str,
-  /** @type {number} */
-  count
-) {
+module.exports = function (str, count) {
   var s = '',
     /** @type {number} */
     i;

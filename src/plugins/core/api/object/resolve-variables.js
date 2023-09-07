@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/object/resolve-variables
+ * Resolve variables module.
+ *
+ * @module dd/core/object/resolve-variables
  */
 
 /**
@@ -8,10 +10,7 @@
  * @param {import("./types").ObjectLike} objectLike
  * @returns {import("@pgmmv/agtk/objects/object/variables/variable").AgtkVariable[]|undefined}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectLike} */
-  objectLike
-) {
+module.exports = function (objectLike) {
   var object = require('./resolve')(objectLike);
 
   if (object) {

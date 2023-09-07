@@ -1,4 +1,6 @@
 /**
+ * Open/close module.
+ *
  * @module dd/core/ui/open-close
  */
 
@@ -69,6 +71,9 @@ var _logApi = require('../log'),
     closeFinish: 'close-finish'
   };
 
+/**
+ *
+ */
 module.exports = {
   /**
    * @constant
@@ -227,12 +232,7 @@ module.exports = {
       }
     },
 
-    _logOpenCloseTransitionWarning: function (
-      /** @type {import("./types").OpenCloseState} */
-      from,
-      /** @type {import("./types").OpenCloseState} */
-      to
-    ) {
+    _logOpenCloseTransitionWarning: function (from, to) {
       _logApi.warn(
         "OpenClose::_transitionOpenCloseState(): Invalid open/close state transition: '" + from + '->' + to + "'."
       );

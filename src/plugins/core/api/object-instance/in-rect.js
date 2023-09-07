@@ -1,19 +1,15 @@
 /**
- * @module @dd/core/api/object-instance/in-rect
+ * In rectangle module.
+ *
+ * @module dd/core/object-instance/in-rect
  */
 
 /**
- *
  * @param {import("./types").ObjectInstanceLike} objectInstanceLike
  * @param {import("@pgmmv/cc/rect").CCRect} rect
  * @returns {boolean}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectInstanceLike} */
-  objectInstanceLike,
-  /** @type {import("@pgmmv/cc/rect").CCRect} */
-  rect
-) {
+module.exports = function (objectInstanceLike, rect) {
   var position = require('./resolve-position')(objectInstanceLike);
 
   if (!position) {

@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/util/resolve-switch
+ * Resolve switch module.
+ *
+ * @module dd/core/util/resolve-switch
  */
 
 /**
@@ -9,12 +11,7 @@
  * @param {string|number} nameOrId
  * @returns {import("@pgmmv/agtk/switches/switch").AgtkSwitch|import("@pgmmv/agtk/object-instances/object-instance/switches/switch").AgtkSwitch|undefined}
  */
-module.exports = function (
-  /** @type {import("./types").SwitchVariableSource} */
-  source,
-  /** @type {string|number} */
-  nameOrId
-) {
+module.exports = function (source, nameOrId) {
   return source === Agtk.constants.switchVariableObjects.ProjectCommon
     ? require('../common/resolve-switch')(nameOrId)
     : require('../object-instance/resolve-switch')(source, nameOrId);

@@ -1,5 +1,11 @@
 /**
- * @module @dd/core/api/object-instance
+ * Object instance module.
+ *
+ * @module dd/core/object-instance
+ */
+
+/**
+ *
  */
 module.exports = {
   inRect: require('./in-rect'),

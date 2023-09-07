@@ -1,5 +1,7 @@
 /**
- * @module @dd/core/api/object/resolve
+ * Resolve module.
+ *
+ * @module dd/core/object/resolve
  */
 
 /**
@@ -8,10 +10,7 @@
  * @param {import("./types").ObjectLike} objectLike
  * @returns {import("@pgmmv/agtk/objects/object").AgtkObject|undefined}
  */
-module.exports = function (
-  /** @type {import("./types").ObjectLike} */
-  objectLike
-) {
+module.exports = function (objectLike) {
   /** @type {number|undefined} */
   var id;
 

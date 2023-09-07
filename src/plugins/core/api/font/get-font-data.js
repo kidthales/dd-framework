@@ -1,16 +1,14 @@
 /**
- * @module @dd/core/api/font/get-font-data
+ * Get font data module.
+ *
+ * @module dd/core/font/get-font-data
  */
 
 /**
- *
  * @param {number} fontId
  * @returns {import("./types").FontData|undefined}
  */
-module.exports = function (
-  /** @type {number} */
-  fontId
-) {
+module.exports = function (fontId) {
   var cache = require('./cache'),
     fontConstants = require('./constants'),
     /** @type {import("./types").FontData|undefined} */
