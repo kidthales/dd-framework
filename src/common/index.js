@@ -1,6 +1,7 @@
 /**
  * Common module.
- * @module @dd/common
+ *
+ * @module dd/common
  */
 
 /**
@@ -13,6 +14,9 @@ var _pluginApi = require('./plugin');
  */
 var _localeApi = require('./locale');
 
+/**
+ *
+ */
 module.exports = {
   createPlugin: _pluginApi.create,
   paramHelper: _pluginApi.params,

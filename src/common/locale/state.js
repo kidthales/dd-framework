@@ -1,6 +1,12 @@
 /**
- * @module @dd/common/locale/state
+ * State module.
+ *
+ * @module dd/common/locale/state
  * @internal
+ */
+
+/**
+ *
  */
 module.exports = {
   /**

@@ -1,5 +1,7 @@
 /**
- * @module @dd/common/plugin/data
+ * Data module.
+ *
+ * @module dd/common/plugin/data
  */
 
 /**
@@ -8,6 +10,9 @@
  */
 var _data;
 
+/**
+ *
+ */
 module.exports = {
   /**
    * @returns {import("type-fest").JsonObject|undefined}

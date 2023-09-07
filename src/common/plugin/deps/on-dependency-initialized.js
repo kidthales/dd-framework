@@ -1,17 +1,14 @@
 /**
- * @module @dd/common/plugin/deps/on-dependency-initialized
+ * On dependency initialized module.
+ *
+ * @module dd/common/plugin/deps/on-dependency-initialized
  */
 
 /**
- * Update missing dependencies state.
- *
  * @param {string} identifier
  * @returns {void}
  */
-module.exports = function (
-  /** @type {string} */
-  identifier
-) {
+module.exports = function (identifier) {
   var missing = require('./state').missing,
     /** @type {number|undefined} */
     index;

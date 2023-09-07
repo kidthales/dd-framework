@@ -1,5 +1,7 @@
 /**
- * @module @dd/common/plugin
+ * Plugin module.
+ *
+ * @module dd/common/plugin
  */
 module.exports = {
   create: require('./create'),

@@ -1,6 +1,12 @@
 /**
+ * State module.
+ *
  * @module dd/common/plugin/deps/state
  * @internal
+ */
+
+/**
+ *
  */
 module.exports = {
   /**

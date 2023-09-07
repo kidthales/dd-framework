@@ -1,5 +1,7 @@
 /**
- * @module @dd/common/locale/set-code
+ * Set code module.
+ *
+ * @module dd/common/locale/set-code
  */
 
 /**

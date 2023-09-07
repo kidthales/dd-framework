@@ -1,5 +1,11 @@
 /**
- * @module @dd/common/plugin/constants
+ * Constants module.
+ *
+ * @module dd/common/plugin/constants
+ */
+
+/**
+ * @constant
  */
 module.exports = {
   /**

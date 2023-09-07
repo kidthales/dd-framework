@@ -1,5 +1,7 @@
 /**
- * @module @dd/common/locale/resolve-key
+ * Resolve key module.
+ *
+ * @module dd/common/locale/resolve-key
  */
 
 /**

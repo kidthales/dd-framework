@@ -1,5 +1,7 @@
 /**
- * @module @dd/common/plugin/create
+ * Create module.
+ *
+ * @module dd/common/plugin/create
  */
 
 /**
@@ -8,14 +10,7 @@
  * @param {import('./types').Internal|undefined} internal
  * @returns {import("@pgmmv/agtk/plugins/plugin").AgtkPlugin<import("type-fest").JsonObject>}
  */
-module.exports = function (
-  /** @type {string} */
-  identifier,
-  /** @type {import('./types').Config} */
-  config,
-  /** @type {import('./types').Internal|undefined} */
-  internal
-) {
+module.exports = function (identifier, config, internal) {
   /**
    * @private
    */

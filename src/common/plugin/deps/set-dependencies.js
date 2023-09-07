@@ -1,17 +1,14 @@
 /**
- * @module @dd/common/plugin/deps/set-dependencies
+ * Set dependencies module.
+ *
+ * @module dd/common/plugin/deps/set-dependencies
  */
 
 /**
- * Set plugin dependencies.
- *
  * @param {string[]} dependencies
  * @returns {void}
  */
-module.exports = function (
-  /** @type {string[]} */
-  dependencies
-) {
+module.exports = function (dependencies) {
   var ns = require('../constants').frameworkNamespace,
     state = require('./state'),
     len = dependencies.length,

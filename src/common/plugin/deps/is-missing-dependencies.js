@@ -1,10 +1,10 @@
 /**
- * @module @dd/common/plugin/deps/is-missing-dependencies
+ * Is missing dependencies module.
+ *
+ * @module dd/common/plugin/deps/is-missing-dependencies
  */
 
 /**
- * Test if current state has missing dependencies.
- *
  * @returns {boolean}
  */
 module.exports = function () {

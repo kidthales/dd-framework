@@ -1,5 +1,7 @@
 /**
- * @module @dd/common/locale/get-code
+ * Get data module.
+ *
+ * @module dd/common/locale/get-data
  */
 
 /**

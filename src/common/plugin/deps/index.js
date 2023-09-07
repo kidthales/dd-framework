@@ -1,5 +1,11 @@
 /**
+ * Dependencies module.
+ *
  * @module dd/common/plugin/deps
+ */
+
+/**
+ *
  */
 module.exports = {
   setDependencies: require('./set-dependencies'),

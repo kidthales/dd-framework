@@ -1,5 +1,11 @@
 /**
- * @module @dd/common/locale
+ * Locale module.
+ *
+ * @module dd/common/locale
+ */
+
+/**
+ *
  */
 module.exports = {
   getCode: require('./get-code'),
