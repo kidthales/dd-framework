@@ -1,4 +1,12 @@
-// Order must be maintained or existing projects will break (when they upgrade).
+/**
+ * Link conditions module.
+ *
+ * @module
+ */
+
+/**
+ * Order must be maintained or existing projects will break (when they upgrade).
+ */
 module.exports = [
   require('./in-rect-001'),
   require('./in-rect-002'),

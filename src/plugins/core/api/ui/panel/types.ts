@@ -1,4 +1,4 @@
-import type { OpenClose } from '@dd/core/api/ui/types';
+import type { OpenClose } from '@dd/core/ui/types';
 import type { CCColor } from '@pgmmv/cc/color';
 import type { CCDrawNode, CCDrawNodeConstructor } from '@pgmmv/cc/draw-node';
 import type { CCNode } from '@pgmmv/cc/node';

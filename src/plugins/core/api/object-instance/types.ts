@@ -1,5 +1,5 @@
 import type { AgtkObjectInstance } from '@pgmmv/agtk/object-instances/object-instance';
-import type { ObjectLike } from '@dd/core/api/object/types';
+import type { ObjectLike } from '@dd/core/object/types';
 
 /**
  *

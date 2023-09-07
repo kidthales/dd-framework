@@ -1,4 +1,10 @@
 /**
+ * Parameters module.
+ *
+ * @module
+ */
+
+/**
  * @private
  */
 var _paramHelper = require('@dd/common').paramHelper,
@@ -65,6 +71,9 @@ var _paramHelper = require('@dd/common').paramHelper,
     tileRectHeightVariableSource: 105
   };
 
+/**
+ *
+ */
 module.exports = {
   ids: _ids,
   entries: [

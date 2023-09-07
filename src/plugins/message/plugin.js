@@ -1,3 +1,12 @@
+/**
+ * Plugin module.
+ *
+ * @module
+ */
+
+/**
+ *
+ */
 module.exports = require('@dd/common').createPlugin(
   'message',
   {

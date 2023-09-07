@@ -1,3 +1,12 @@
+/**
+ * Locale module.
+ *
+ * @module
+ */
+
+/**
+ *
+ */
 module.exports = {
   PLUGIN_NAME: {
     en: 'DD Framework - Core Plugin'

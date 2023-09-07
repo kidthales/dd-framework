@@ -1,4 +1,10 @@
 /**
+ * Parameters module.
+ *
+ * @module
+ */
+
+/**
  * @private
  */
 var _param = require('@dd/common').paramHelper,
@@ -35,6 +41,9 @@ var _param = require('@dd/common').paramHelper,
     tileOriginY: 3
   };
 
+/**
+ *
+ */
 module.exports = {
   ids: _ids,
   entries: [

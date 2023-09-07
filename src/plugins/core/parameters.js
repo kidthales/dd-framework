@@ -1,4 +1,10 @@
 /**
+ * Parameters module.
+ *
+ * @module
+ */
+
+/**
  * @private
  */
 var _paramHelper = require('@dd/common').paramHelper,
@@ -426,6 +432,9 @@ var _paramHelper = require('@dd/common').paramHelper,
     return params;
   };
 
+/**
+ *
+ */
 module.exports = {
   ids: _ids,
   entries: [

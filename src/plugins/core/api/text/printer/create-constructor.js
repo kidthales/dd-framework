@@ -157,7 +157,7 @@ module.exports = function () {
               function (
                 /** @type {import('@pgmmv/cc/size').CCSize} */
                 size,
-                /** @type {import('@dd/core/api/text/types').TextSprites} */
+                /** @type {import('@dd/core/text/types').TextSprites} */
                 textSprites
               ) {
                 if (textSprites.width > size.width) {
@@ -402,9 +402,9 @@ module.exports = function () {
         ix,
         /** @type {import('@pgmmv/cc/layer').CCLayer} */
         lineLayer,
-        /** @type {import('@dd/core/api/text/types').TextSpritesLine} */
+        /** @type {import('@dd/core/text/types').TextSpritesLine} */
         letters,
-        /** @type {import('@dd/core/api/text/types').TextSprite[]} */
+        /** @type {import('@dd/core/text/types').TextSprite[]} */
         printed = [];
 
       if (self._lineIndex >= self._currentPage.text.length) {

@@ -1,11 +1,14 @@
 /**
+ * Handler module.
+ *
+ * @module
+ */
+
+/**
  * @param {import('@dd/common/plugin/types').ActionCommandPayload} payload
  * @returns {import('@pgmmv/agtk/constants/action-commands/command-behavior').AgtkCommandBehavior['CommandBehaviorNext']|import('@pgmmv/agtk/constants/action-commands/command-behavior').AgtkCommandBehavior['CommandBehaviorBlock']} Command behavior 'next' or 'block'.
  */
-module.exports = function handler(
-  /** @type {import('@dd/common/plugin/types').ActionCommandPayload} */
-  payload
-) {
+module.exports = function handler(payload) {
   var sessionApi = require('../../api/session'),
     paramIds = require('./parameters').ids,
     /** @type {import('@pgmmv/agtk/object-instances/object-instance').AgtkObjectInstance|undefined} */
@@ -15,21 +18,21 @@ module.exports = function handler(
     ),
     /** @type {import('@pgmmv/agtk/switches/switch').AgtkSwitch|import('@pgmmv/agtk/object-instances/object-instance/switches/switch').AgtkSwitch|undefined} */
     okSwitch,
-    /** @type {import('@dd/message/api/session/types').Session} */
+    /** @type {import('@dd/message/session/types').Session} */
     session,
     /** @type {import('@pgmmv/agtk/switches/switch').AgtkSwitch|import('@pgmmv/agtk/object-instances/object-instance/switches/switch').AgtkSwitch|undefined} */
     cancelSwitch,
     /** @type {number} */
     dt,
-    /** @type {(number|{id: number; align?: Partial<import('@dd/core/api/text/printer/types').TextAlignmentConfig>; printSpeed?: number; clearSpeed?: number; color?: [number, number, number]; opacity?: number; })[]|undefined} */
+    /** @type {(number|{id: number; align?: Partial<import('@dd/core/text/printer/types').TextAlignmentConfig>; printSpeed?: number; clearSpeed?: number; color?: [number, number, number]; opacity?: number; })[]|undefined} */
     messages,
-    /** @type {import('@dd/core/api/font/types').FontData|undefined} */
+    /** @type {import('@dd/core/font/types').FontData|undefined} */
     fontData,
     /** @type {number[]|undefined} */
     letterHeights,
-    /** @type {import('@dd/core/api/text/printer/types').PageConfig[]|undefined} */
+    /** @type {import('@dd/core/text/printer/types').PageConfig[]|undefined} */
     pages,
-    /** @type {import('@dd/core/api/text/printer/types').JobConfig|undefined} */
+    /** @type {import('@dd/core/text/printer/types').JobConfig|undefined} */
     jobConfig,
     /** @type {number|undefined} */
     scaleX,
@@ -137,7 +140,7 @@ module.exports = function handler(
   pages = messages
     .map(function (value) {
       var text = dd.core.text.getTextData(typeof value === 'number' ? value : value.id),
-        /** @type {Partial<import('@dd/core/api/text/printer/types').TextAlignmentConfig>|undefined} */
+        /** @type {Partial<import('@dd/core/text/printer/types').TextAlignmentConfig>|undefined} */
         align,
         /** @type {number|undefined} */
         printSpeed,

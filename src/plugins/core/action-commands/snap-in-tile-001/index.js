@@ -1,3 +1,12 @@
+/**
+ * Snap in tile 001 module.
+ *
+ * @module
+ */
+
+/**
+ *
+ */
 module.exports = {
   name: 'AC_SNAP_IN_TILE_001_NAME',
   description: 'AC_SNAP_IN_TILE_001_DESCRIPTION',

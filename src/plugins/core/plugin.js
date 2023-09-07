@@ -1,4 +1,10 @@
 /**
+ * Plugin module.
+ *
+ * @module
+ */
+
+/**
  * @private
  */
 var _commonApi = require('@dd/common'),
@@ -382,4 +388,7 @@ plugin.update = function (delta) {
   cc.eventManager.dispatchCustomEvent(_eventApi.updateEventName, delta);
 };
 
+/**
+ *
+ */
 module.exports = plugin;

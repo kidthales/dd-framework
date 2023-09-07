@@ -1,11 +1,14 @@
 /**
+ * Handler module.
+ *
+ * @module
+ */
+
+/**
  * @param {import('@dd/common/plugin/types').ActionCommandPayload} payload
  * @returns {import('@pgmmv/agtk/constants/action-commands/command-behavior').AgtkCommandBehavior['CommandBehaviorNext']} Command behavior 'next'.
  */
-module.exports = function handler(
-  /** @type {import('@dd/common/plugin/types').ActionCommandPayload} */
-  payload
-) {
+module.exports = function handler(payload) {
   var paramIds = require('./parameters').ids;
 
   switch (payload.param[paramIds.logLevel]) {

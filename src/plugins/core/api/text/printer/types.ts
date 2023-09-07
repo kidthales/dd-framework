@@ -1,4 +1,4 @@
-import type { TextData, TextSprites } from '@dd/core/api/text/types';
+import type { TextData, TextSprites } from '@dd/core/text/types';
 import type { CCColor } from '@pgmmv/cc/color';
 import type { CCEventManager } from '@pgmmv/cc/event-manager';
 import type { CCLayer, CCLayerConstructor } from '@pgmmv/cc/layer';

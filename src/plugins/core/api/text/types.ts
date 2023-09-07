@@ -1,7 +1,7 @@
 import type { CCLabelTTF } from '@pgmmv/cc/label-ttf';
 import type { CCSprite } from '@pgmmv/cc/sprite';
 
-import type { FontData } from '@dd/core/api/font/types';
+import type { FontData } from '@dd/core/font/types';
 
 /**
  *
