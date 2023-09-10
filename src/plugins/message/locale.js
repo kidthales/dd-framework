@@ -145,6 +145,13 @@ module.exports = {
     en: 'CENTER'
   },
 
+  TRUE: {
+    en: 'TRUE'
+  },
+  FALSE: {
+    en: 'FALSE'
+  },
+
   SELF: {
     en: 'SELF'
   },
