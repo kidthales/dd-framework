@@ -27,6 +27,18 @@ module.exports = {
   AC_PRINT_MESSAGES_001_DESCRIPTION: {
     en: 'Print a series of messages to implicit HUD layer. Messages ues relative positioning. Provides OK/CANCEL/EXPEDITE functionality.'
   },
+  ERROR_AC_PRINT_MESSAGES_001_OBJECT_INSTANCE_MISSING: {
+    en: '[print-messages-001] Object instance missing.'
+  },
+  ERROR_AC_PRINT_MESSAGES_001_OK_SWITCH_MISSING: {
+    en: '[print-messages-001] OK switch missing.'
+  },
+  ERROR_AC_PRINT_MESSAGES_001_MESSAGES_INVALID: {
+    en: '[print-messages-001] Input messages invalid.'
+  },
+  ERROR_AC_PRINT_MESSAGES_001_PAGES_INVALID: {
+    en: '[print-messages-001] Processed messages invalid.'
+  },
 
   PARAM_INPUTS_GROUP: {
     en: 'Inputs\n‾‾‾‾‾‾'
