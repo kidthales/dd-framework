@@ -19,7 +19,7 @@ module.exports = function handler(payload) {
     okSwitch,
     /** @type {import('@dd/message/session/types').Session} */
     session,
-    /** @type {(number|{id: number; align?: Partial<import('@dd/core/text/printer/types').TextAlignmentConfig>; printSpeed?: number; clearSpeed?: number; color?: [number, number, number]; opacity?: number; })[]|undefined} */
+    /** @type {import('@dd/message/print-messages/types').MessageUnion[]|undefined} */
     messages,
     /** @type {import('@pgmmv/cc/node').CCNode} */
     hudLayer;
