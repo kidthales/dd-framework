@@ -284,7 +284,7 @@ module.exports = {
     _param.br,
     _param.number(_ids.clearSpeed, 'PARAM_CLEAR_SPEED', 0, { decimals: 3, minimumValue: 0 }),
     _param.br,
-    _param.json(_ids.messages, 'PARAM_MESSAGES', []),
+    _param.json(_ids.messages, 'PARAM_MESSAGES_REQ', []),
     _param.br,
     _param.fontId(_ids.overrideFont, 'PARAM_OVERRIDE_FONT'),
     _param.br,
@@ -375,9 +375,9 @@ module.exports = {
       minimumValue: 0
     }),
     _param.br,
-    _param.switchVariableObjectId(_ids.okSwitchSource, 'PARAM_OK_SWITCH_SOURCE', ['SelfObject', 'ParentObject']),
+    _param.switchVariableObjectId(_ids.okSwitchSource, 'PARAM_OK_SWITCH_SOURCE_REQ', ['SelfObject', 'ParentObject']),
     _param.br,
-    _param.switchId(_ids.okSwitch, 'PARAM_OK_SWITCH', _ids.okSwitchSource, true),
+    _param.switchId(_ids.okSwitch, 'PARAM_OK_SWITCH_REQ', _ids.okSwitchSource, true),
     _param.br,
     _param.switchVariableObjectId(_ids.cancelSwitchSource, 'PARAM_CANCEL_SWITCH_SOURCE', [
       'SelfObject',

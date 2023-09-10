@@ -5,7 +5,7 @@
  */
 
 /**
- *
+ * @constant
  */
 module.exports = {
   PLUGIN_NAME: {
@@ -229,6 +229,10 @@ module.exports = {
     en: "Test if object instance position is within rectangle specified in tiles. Rectangle x & y coordinates correspond to top left & tile coordinates (0,0) correspond to top left of current scene's tilemap. Rectangle position & dimensions are read from variables."
   },
 
+  PARAM_INPUTS_GROUP: {
+    en: 'Inputs\n‾‾‾‾‾‾'
+  },
+
   PARAM_LOG_LEVEL: {
     en: 'Log Level:'
   },
@@ -309,10 +313,6 @@ module.exports = {
   },
   PARAM_TILE_RECT_HEIGHT: {
     en: 'Tile Rectangle Height:'
-  },
-
-  PARAM_INPUTS_GROUP: {
-    en: 'Inputs\n‾‾‾‾‾‾'
   },
 
   OFF: {

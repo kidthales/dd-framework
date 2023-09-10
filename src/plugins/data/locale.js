@@ -5,7 +5,7 @@
  */
 
 /**
- *
+ * @constant
  */
 module.exports = {
   PLUGIN_NAME: {
