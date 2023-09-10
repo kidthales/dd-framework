@@ -16,7 +16,7 @@ module.exports = function (config) {
     indicatorTexture,
     /** @type {import("@pgmmv/cc/size").CCSize|undefined} */
     indicatorSize,
-    /** @type {import("@pgmmv/cc/node").CCNode|undefined} */
+    /** @type {import("@pgmmv/cc/sprite").CCSprite|import("@pgmmv/cc/draw-node").CCDrawNode|undefined} */
     indicator;
 
   if (config.imageId !== Agtk.constants.actionCommands.UnsetObject) {
@@ -38,7 +38,7 @@ module.exports = function (config) {
 
     indicator = new cc.DrawNode();
     indicator.setContentSize(indicatorSize);
-    indicator.drawPoly_(
+    indicator.drawPoly(
       [
         cc.p(0, -indicatorSize.height / 4),
         cc.p(-indicatorSize.width / 2, indicatorSize.height / 4),

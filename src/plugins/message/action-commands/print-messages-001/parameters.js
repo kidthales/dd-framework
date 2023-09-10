@@ -330,7 +330,7 @@ module.exports = {
       minimumValue: 0,
       maximumValue: 255
     }),
-    _param.number(_ids.opacity, 'PARAM_OPACITY', 1, { decimals: 2, minimumValue: 0, maximumValue: 1 }),
+    _param.number(_ids.opacity, 'PARAM_OPACITY', 255, { decimals: 0, minimumValue: 0, maximumValue: 255 }),
     _param.br,
     _param.number(_ids.scaleX, 'PARAM_SCALE_X_%', 100, { decimals: 0, minimumValue: 0 }),
     _param.number(_ids.scaleY, 'PARAM_SCALE_Y_%', 100, { decimals: 0, minimumValue: 0 }),
@@ -365,11 +365,14 @@ module.exports = {
     _param.imageId(_ids.indicatorImage, 'PARAM_INDICATOR_IMAGE'),
     _param.br,
     _param.number(_ids.indicatorImageFrameX, 'PARAM_INDICATOR_IMAGE_FRAME_X', 0, { decimals: 0, minimumValue: 0 }),
+    _param.br,
     _param.number(_ids.indicatorImageFrameY, 'PARAM_INDICATOR_IMAGE_FRAME_Y', 0, { decimals: 0, minimumValue: 0 }),
+    _param.br,
     _param.number(_ids.indicatorImageFrameWidth, 'PARAM_INDICATOR_IMAGE_FRAME_WIDTH', 0, {
       decimals: 0,
       minimumValue: 0
     }),
+    _param.br,
     _param.number(_ids.indicatorImageFrameHeight, 'PARAM_INDICATOR_IMAGE_FRAME_HEIGHT', 0, {
       decimals: 0,
       minimumValue: 0

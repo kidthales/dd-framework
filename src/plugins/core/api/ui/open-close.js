@@ -102,6 +102,7 @@ module.exports = {
     ctor: function () {
       /** @type {import("./types").OpenClose} */
       var self = this;
+      // TODO: Use a light-weight instanced alternative...
       self.eventManager = new cc.EventManager();
       return true;
     },

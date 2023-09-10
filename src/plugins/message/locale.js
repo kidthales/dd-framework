@@ -78,13 +78,13 @@ module.exports = {
     en: 'Margin Bottom:'
   },
   PARAM_COLOR_CHANNEL_RED: {
-    en: 'Color Channel\nRed:'
+    en: 'Color Channel Red:'
   },
   PARAM_COLOR_CHANNEL_GREEN: {
-    en: 'Color Channel\nGreen:'
+    en: 'Color Channel Green:'
   },
   PARAM_COLOR_CHANNEL_BLUE: {
-    en: 'Color Channel\nBlue:'
+    en: 'Color Channel Blue:'
   },
   PARAM_OPACITY: {
     en: 'Opacity:'

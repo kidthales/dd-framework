@@ -68,11 +68,21 @@ module.exports = function () {
 
     ctor: function () {
       /** @type {import('./types').Printer} */
-      var self = this;
+      var self = this,
+        /** @type {string|undefined} */
+        prop;
 
       self._super();
 
-      self.eventManager = new cc.EventManager();
+      // TODO: Use a light-weight instanced alternative...
+      self.eventManager = cc.eventManager;
+      /*self.eventManager = {};
+      for (prop in cc.eventManager) {
+        if (Object.prototype.hasOwnProperty.call(cc.eventManager, prop)) {
+          self.eventManager[prop] = cc.eventManager[prop];
+        }
+      }*/
+      //self.eventManager = new cc.EventManager();
 
       self.setContentSize(0, 0);
       self._state = _stateConstants.home;
@@ -141,38 +151,37 @@ module.exports = function () {
 
       // Auto-size page.
       if (_pageSizeCache[key]) {
-        pageSize = cc.size(_pageSizeCache[key]);
+        pageSize = cc.size(_pageSizeCache[key].width, _pageSizeCache[key].height);
       } else {
-        pageSize = cc.size(
-          (_pageSizeCache[key] = self._job.pages
-            .map(
-              function (
-                /** @type {import('./types').PageConfig} */
-                config
-              ) {
-                return _createTextSprites(config.text);
+        _pageSizeCache[key] = self._job.pages
+          .map(
+            function (
+              /** @type {import('./types').PageConfig} */
+              config
+            ) {
+              return _createTextSprites(config.text);
+            }
+          )
+          .reduce(
+            function (
+              /** @type {import('@pgmmv/cc/size').CCSize} */
+              size,
+              /** @type {import('@dd/core/text/types').TextSprites} */
+              textSprites
+            ) {
+              if (textSprites.width > size.width) {
+                size.width = textSprites.width;
               }
-            )
-            .reduce(
-              function (
-                /** @type {import('@pgmmv/cc/size').CCSize} */
-                size,
-                /** @type {import('@dd/core/text/types').TextSprites} */
-                textSprites
-              ) {
-                if (textSprites.width > size.width) {
-                  size.width = textSprites.width;
-                }
 
-                if (textSprites.height > size.height) {
-                  size.height = textSprites.height;
-                }
+              if (textSprites.height > size.height) {
+                size.height = textSprites.height;
+              }
 
-                return size;
-              },
-              cc.size(0, 0)
-            ))
-        );
+              return size;
+            },
+            cc.size(0, 0)
+          );
+        pageSize = cc.size(_pageSizeCache[key].width, _pageSizeCache[key].height);
       }
 
       pageSize.width += self._job.layout.margin.left + self._job.layout.margin.right;
@@ -288,7 +297,9 @@ module.exports = function () {
 
         lineLayer.y = pageTop - self._currentPage.layout.margin.top + self._currentPage.text[i].y;
 
-        self.addChild(lineLayer, undefined, i);
+        //self.addChild(lineLayer, undefined, i);
+        lineLayer.setTag(i);
+        self.addChild(lineLayer);
       }
 
       self._transitionState(_stateConstants.printing);
@@ -436,7 +447,9 @@ module.exports = function () {
         lineLayer = self.getChildByTag(self._lineIndex);
         letters = self._currentPage.text[self._lineIndex];
 
-        lineLayer.addChild(letters[self._letterIndex].sprite, undefined, self._letterIndex);
+        //lineLayer.addChild(letters[self._letterIndex].sprite, undefined, self._letterIndex);
+        letters[self._letterIndex].sprite.setTag(self._letterIndex);
+        lineLayer.addChild(letters[self._letterIndex].sprite);
         printed.push(letters[self._letterIndex].sprite);
 
         ++self._letterIndex;

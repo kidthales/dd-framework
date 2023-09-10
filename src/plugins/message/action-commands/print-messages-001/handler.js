@@ -29,7 +29,7 @@ module.exports = function handler(payload) {
     return Agtk.constants.actionCommands.commandBehavior.CommandBehaviorNext;
   }
 
-  okSwitch = dd.core.util.resolveVariableFromSwitchVariableObject(
+  okSwitch = dd.core.util.resolveSwitchFromSwitchVariableObject(
     payload.param[paramIds.okSwitchSource],
     payload.param[paramIds.okSwitch],
     objectInstance.id
@@ -44,7 +44,7 @@ module.exports = function handler(payload) {
     // Session exists.
     return require('../../api/print-messages/update-interactive-session')(objectInstance, {
       okSwitch: okSwitch,
-      cancelSwitch: dd.core.util.resolveVariableFromSwitchVariableObject(
+      cancelSwitch: dd.core.util.resolveSwitchFromSwitchVariableObject(
         payload.param[paramIds.cancelSwitchSource],
         payload.param[paramIds.cancelSwitch],
         objectInstance.id
@@ -99,14 +99,13 @@ module.exports = function handler(payload) {
             payload.param[paramIds.colorChannelBlue]
           )
         : undefined,
-    opacity: payload.param[paramIds.opacity] !== 1 ? payload.param[paramIds.opacity] : undefined,
+    opacity: payload.param[paramIds.opacity] !== 255 ? payload.param[paramIds.opacity] : undefined,
     horizontal: payload.param[paramIds.horizontalPosition],
     vertical: payload.param[paramIds.verticalPosition],
     offset: cc.p(payload.param[paramIds.offsetX], payload.param[paramIds.offsetY])
   });
 
   hudLayer = Agtk.sceneInstances.getCurrent().getMenuLayerById(Agtk.constants.systemLayers.HudLayerId);
-
   hudLayer.addChild(session.printer);
 
   if (session.indicator) {

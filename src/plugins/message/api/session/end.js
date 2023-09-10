@@ -20,11 +20,15 @@ module.exports = function (objectInstance) {
     delete session.printingListener;
   }
 
-  session.printer.eventManager.removeListener(session.printFinishListener);
-  delete session.printFinishListener;
+  if (session.printFinishListener) {
+    session.printer.eventManager.removeListener(session.printFinishListener);
+    delete session.printFinishListener;
+  }
 
-  session.printer.eventManager.removeListener(session.clearStartListener);
-  delete session.clearStartListener;
+  if (session.clearStartListener) {
+    session.printer.eventManager.removeListener(session.clearStartListener);
+    delete session.clearStartListener;
+  }
 
   session.printer.eventManager.removeListener(session.clearFinishListener);
   delete session.clearFinishListener;

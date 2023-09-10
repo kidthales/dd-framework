@@ -18,7 +18,7 @@ module.exports = function (objectInstance) {
     return Agtk.constants.actionCommands.commandBehavior.CommandBehaviorNext;
   }
 
-  dt = cc.director.getSecondsPerFrame();
+  dt = cc.director.getDeltaTime();
 
   if (session.printer.isPrinting()) {
     session.printingSfxTimeAccumulator += dt;
