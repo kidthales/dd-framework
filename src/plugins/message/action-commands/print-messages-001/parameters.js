@@ -194,52 +194,62 @@ var _param = require('@dd/common').paramHelper,
     /**
      * @constant
      */
-    indicatorImage: 22,
+    offsetX: 22,
 
     /**
      * @constant
      */
-    indicatorImageFrameX: 23,
+    offsetY: 23,
 
     /**
      * @constant
      */
-    indicatorImageFrameY: 24,
+    indicatorImage: 24,
 
     /**
      * @constant
      */
-    indicatorImageFrameWidth: 25,
+    indicatorImageFrameX: 25,
 
     /**
      * @constant
      */
-    indicatorImageFrameHeight: 26,
+    indicatorImageFrameY: 26,
 
     /**
      * @constant
      */
-    okSwitch: 27,
+    indicatorImageFrameWidth: 27,
 
     /**
      * @constant
      */
-    okSwitchSource: 127,
+    indicatorImageFrameHeight: 28,
 
     /**
      * @constant
      */
-    cancelSwitch: 28,
+    okSwitch: 29,
 
     /**
      * @constant
      */
-    cancelSwitchSource: 128,
+    okSwitchSource: 129,
 
     /**
      * @constant
      */
-    expedite: 29,
+    cancelSwitch: 30,
+
+    /**
+     * @constant
+     */
+    cancelSwitchSource: 130,
+
+    /**
+     * @constant
+     */
+    expedite: 31,
 
     /**
      * @constant
@@ -348,6 +358,9 @@ module.exports = {
       ],
       _ids.verticalPositionCenter
     ),
+    _param.br,
+    _param.number(_ids.offsetX, 'PARAM_OFFSET_X', 0, { decimals: 0 }),
+    _param.number(_ids.offsetY, 'PARAM_OFFSET_Y', 0, { decimals: 0 }),
     _param.br,
     _param.imageId(_ids.indicatorImage, 'PARAM_INDICATOR_IMAGE'),
     _param.br,

@@ -52,6 +52,7 @@
       "@dd/core/ui/types": ["./src/plugins/core/api/ui/types"],
       "@dd/core/ui/panel/types": ["./src/plugins/core/api/ui/panel/types"],
       "@dd/core/util/types": ["./src/plugins/core/api/util/types"],
+      "@dd/message/print-messages/types": ["./src/plugins/message/api/print-messages/types"],
       "@dd/message/session/types": ["./src/plugins/message/api/session/types"]
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */

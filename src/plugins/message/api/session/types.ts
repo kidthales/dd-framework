@@ -4,14 +4,15 @@ import type { CCEventListener } from '@pgmmv/cc/event-listener';
 import type { CCNode } from '@pgmmv/cc/node';
 
 export interface Session {
-  done?: boolean;
   printer: Printer;
-  indicator: CCNode;
-  printingListener?: CCEventListener;
   printingSfxTimeAccumulator: number;
   printFinishListener: CCEventListener;
+  clearStartListener: CCEventListener;
   clearFinishListener: CCEventListener;
+  printingListener?: CCEventListener;
+  indicator?: CCNode;
   panel?: Panel;
   openFinishEventListener?: CCEventListener;
   closeFinishEventListener?: CCEventListener;
+  done?: boolean;
 }

@@ -8,5 +8,6 @@
  *
  */
 module.exports = {
+  printMessages: require('./print-messages'),
   session: require('./session')
 };
