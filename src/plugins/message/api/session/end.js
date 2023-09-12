@@ -15,24 +15,7 @@ module.exports = function (objectInstance) {
     return;
   }
 
-  if (session.printingListener) {
-    session.printer.eventManager.removeListener(session.printingListener);
-    delete session.printingListener;
-  }
-
-  if (session.printFinishListener) {
-    session.printer.eventManager.removeListener(session.printFinishListener);
-    delete session.printFinishListener;
-  }
-
-  if (session.clearStartListener) {
-    session.printer.eventManager.removeListener(session.clearStartListener);
-    delete session.clearStartListener;
-  }
-
-  session.printer.eventManager.removeListener(session.clearFinishListener);
-  delete session.clearFinishListener;
-
+  session.printer.eventEmitter.removeAllListeners();
   session.printer.removeFromParent();
   delete session.printer;
 

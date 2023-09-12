@@ -102,10 +102,7 @@ var _logApi = require('../../log'),
 
       switch (direction) {
         case -1:
-          self.eventManager.dispatchCustomEvent(
-            _openCloseEventNameConstants.closing,
-            self._openCloseInterpolationState
-          );
+          self.eventEmitter.emit(_openCloseEventNameConstants.closing, self._openCloseInterpolationState);
 
           if (!self._openCloseInterpolationState.x || !self._openCloseInterpolationState.y) {
             self._transitionOpenCloseState(_openCloseStateConstants.closed);
@@ -114,10 +111,7 @@ var _logApi = require('../../log'),
           break;
 
         case 1:
-          self.eventManager.dispatchCustomEvent(
-            _openCloseEventNameConstants.opening,
-            self._openCloseInterpolationState
-          );
+          self.eventEmitter.emit(_openCloseEventNameConstants.opening, self._openCloseInterpolationState);
 
           if (self._openCloseInterpolationState.x === 1 && self._openCloseInterpolationState.y === 1) {
             self._transitionOpenCloseState(_openCloseStateConstants.opened);

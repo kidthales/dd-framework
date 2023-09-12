@@ -8,6 +8,7 @@
  *
  */
 module.exports = {
+  indicator: require('./indicator'),
   openClose: require('./open-close'),
   panel: require('./panel')
 };

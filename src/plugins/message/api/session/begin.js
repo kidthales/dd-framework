@@ -20,19 +20,16 @@ module.exports = function (objectInstance) {
     printingSfxTimeAccumulator: 0
   };
 
-  session.clearFinishListener = session.printer.eventManager.addCustomListener(
-    dd.core.text.printer.constants.eventName.clearFinish,
-    function () {
-      var ix = session.printer.getCurrentPageIndex() + 1;
+  session.printer.eventEmitter.on(dd.core.text.printer.constants.eventName.clearFinish, function () {
+    var ix = session.printer.getCurrentPageIndex() + 1;
 
-      if (ix === session.printer.getNumPages()) {
-        session.done = true;
-        return;
-      }
-
-      session.printer.print(ix);
+    if (ix === session.printer.getNumPages()) {
+      session.done = true;
+      return;
     }
-  );
+
+    session.printer.print(ix);
+  });
 
   return (require('./state')[require('./create-key')(objectInstance)] = session);
 };

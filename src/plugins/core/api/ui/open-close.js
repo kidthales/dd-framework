@@ -94,7 +94,7 @@ module.exports = {
    * @type {import("./types").OpenClose & { ctor: Function }}
    */
   classProperties: {
-    eventManager: undefined,
+    eventEmitter: undefined,
 
     _openCloseState: undefined,
     _openCloseInterpolationState: undefined,
@@ -102,8 +102,7 @@ module.exports = {
     ctor: function () {
       /** @type {import("./types").OpenClose} */
       var self = this;
-      // TODO: Use a light-weight instanced alternative...
-      self.eventManager = new cc.EventManager();
+      self.eventEmitter = require('../event/emitter/create')();
       return true;
     },
 
@@ -152,7 +151,7 @@ module.exports = {
           switch (state) {
             case _stateConstants.opening:
               self._openCloseState = state;
-              self.eventManager.dispatchCustomEvent(_eventNameConstants.openStart);
+              self.eventEmitter.emit(_eventNameConstants.openStart);
 
               break;
 
@@ -168,13 +167,13 @@ module.exports = {
           switch (state) {
             case _stateConstants.opened:
               self._openCloseState = state;
-              self.eventManager.dispatchCustomEvent(_eventNameConstants.openFinish);
+              self.eventEmitter.emit(_eventNameConstants.openFinish);
 
               break;
 
             case _stateConstants.closing:
               self._openCloseState = state;
-              self.eventManager.dispatchCustomEvent(_eventNameConstants.closeStart);
+              self.eventEmitter.emit(_eventNameConstants.closeStart);
 
               break;
 
@@ -190,7 +189,7 @@ module.exports = {
           switch (state) {
             case _stateConstants.closing:
               self._openCloseState = state;
-              self.eventManager.dispatchCustomEvent(_eventNameConstants.closeStart);
+              self.eventEmitter.emit(_eventNameConstants.closeStart);
 
               break;
 
@@ -206,13 +205,13 @@ module.exports = {
           switch (state) {
             case _stateConstants.closed:
               self._openCloseState = state;
-              self.eventManager.dispatchCustomEvent(_eventNameConstants.closeFinish);
+              self.eventEmitter.emit(_eventNameConstants.closeFinish);
 
               break;
 
             case _stateConstants.opening:
               self._openCloseState = state;
-              self.eventManager.dispatchCustomEvent(_eventNameConstants.openStart);
+              self.eventEmitter.emit(_eventNameConstants.openStart);
 
               break;
 

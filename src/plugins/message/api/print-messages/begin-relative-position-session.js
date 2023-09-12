@@ -5,7 +5,7 @@
  */
 
 /**
- * TODO: Assumes parent layer will have origin (0,0) [bottom left].
+ * Assumes parent layer will have origin (0,0) [bottom left].
  *
  * @param {import("@pgmmv/agtk/object-instances/object-instance").AgtkObjectInstance} objectInstance
  * @param {import("./types").PrintMessagesConfig & import("./types").RelativePosition} config
@@ -22,15 +22,14 @@ module.exports = function (objectInstance, config) {
 
   switch (config.horizontal) {
     case constantsApi.horizontalPosition.right:
-      session.printer.x = winSize.width / 2 - (scaleX * pageSize.width) / 2;
+      session.printer.x = winSize.width - (scaleX * pageSize.width) / 2;
       break;
     case constantsApi.horizontalPosition.center:
-      //session.printer.x = 0;
       session.printer.x = winSize.width / 2;
       break;
     case constantsApi.horizontalPosition.left:
     default:
-      session.printer.x = -winSize.width / 2 + (scaleX * pageSize.width) / 2;
+      session.printer.x = (scaleX * pageSize.width) / 2;
       break;
   }
 
@@ -38,15 +37,14 @@ module.exports = function (objectInstance, config) {
 
   switch (config.vertical) {
     case constantsApi.verticalPosition.bottom:
-      session.printer.y = -winSize.height / 2 + (scaleY * (pageSize.height + 1.5 * indicatorSize.height)) / 2; // TODO: make this ratio a constant...
+      session.printer.y = scaleY * (pageSize.height / 2) + indicatorSize.height;
       break;
     case constantsApi.verticalPosition.center:
-      //session.printer.y = (scaleY * 1.5 * indicatorSize.height) / 2;
-      session.printer.y = winSize.height / 2 + (scaleY * 1.5 * indicatorSize.height) / 2;
+      session.printer.y = winSize.height / 2 + (scaleY * indicatorSize.height) / 2;
       break;
     case constantsApi.verticalPosition.top:
     default:
-      session.printer.y = winSize.height / 2 - (scaleY * (pageSize.height + 1.5 * indicatorSize.height)) / 2; // TODO: make this ratio a constant...
+      session.printer.y = winSize.height - (scaleY * pageSize.height) / 2;
       break;
   }
 

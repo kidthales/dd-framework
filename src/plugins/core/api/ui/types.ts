@@ -1,4 +1,4 @@
-import type { CCEventManager } from '@pgmmv/cc/event-manager';
+import type { EventEmitter } from '@dd/core/event/emitter/types';
 
 export enum OpenCloseState {
   Closed,
@@ -8,7 +8,7 @@ export enum OpenCloseState {
 }
 
 export interface OpenClose {
-  eventManager: CCEventManager;
+  eventEmitter: EventEmitter;
   _openCloseState?: OpenCloseState;
   open: () => void;
   close: () => void;

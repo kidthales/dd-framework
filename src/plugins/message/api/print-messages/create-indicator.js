@@ -14,8 +14,6 @@ module.exports = function (config) {
   var indicatorImage,
     /** @type {import("@pgmmv/cc/texture-2d").CCTexture2D|undefined} */
     indicatorTexture,
-    /** @type {import("@pgmmv/cc/size").CCSize|undefined} */
-    indicatorSize,
     /** @type {import("@pgmmv/cc/sprite").CCSprite|import("@pgmmv/cc/draw-node").CCDrawNode|undefined} */
     indicator;
 
@@ -33,22 +31,5 @@ module.exports = function (config) {
     }
   }
 
-  if (!indicator) {
-    indicatorSize = cc.size(16, 16);
-
-    indicator = new cc.DrawNode();
-    indicator.setContentSize(indicatorSize);
-    indicator.drawPoly(
-      [
-        cc.p(0, -indicatorSize.height / 4),
-        cc.p(-indicatorSize.width / 2, indicatorSize.height / 4),
-        cc.p(indicatorSize.width / 2, indicatorSize.height / 4),
-        cc.p(0, -indicatorSize.height / 4)
-      ],
-      cc.color(255, 255, 255),
-      0
-    );
-  }
-
-  return indicator;
+  return indicator || dd.core.ui.indicator.create({ contentSize: cc.size(16, 16) });
 };

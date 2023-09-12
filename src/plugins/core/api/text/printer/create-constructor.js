@@ -55,7 +55,7 @@ var _logApi = require('../../log'),
 module.exports = function () {
   /** @type {import("./types").PrinterConstructor} */
   var Printer = cc.Layer.extend({
-    eventManager: undefined,
+    eventEmitter: undefined,
 
     _state: undefined,
     _job: undefined,
@@ -68,21 +68,11 @@ module.exports = function () {
 
     ctor: function () {
       /** @type {import('./types').Printer} */
-      var self = this,
-        /** @type {string|undefined} */
-        prop;
+      var self = this;
 
       self._super();
 
-      // TODO: Use a light-weight instanced alternative...
-      self.eventManager = cc.eventManager;
-      /*self.eventManager = {};
-      for (prop in cc.eventManager) {
-        if (Object.prototype.hasOwnProperty.call(cc.eventManager, prop)) {
-          self.eventManager[prop] = cc.eventManager[prop];
-        }
-      }*/
-      //self.eventManager = new cc.EventManager();
+      self.eventEmitter = require('../../event/emitter/create')();
 
       self.setContentSize(0, 0);
       self._state = _stateConstants.home;
@@ -432,6 +422,10 @@ module.exports = function () {
       letterDelta = Math.floor(self._letterAccumulator);
       self._letterAccumulator -= letterDelta;
 
+      if (self._letterAccumulator < 0) {
+        self._letterAccumulator = 0;
+      }
+
       clampedLetterDelta = cc.clampf(letterDelta, 0, self._currentPage.text.numLetters);
 
       for (ix = 0; ix < clampedLetterDelta; ++ix) {
@@ -456,7 +450,7 @@ module.exports = function () {
       }
 
       if (printed.length) {
-        self.eventManager.dispatchCustomEvent(_printerConstantsApi.eventName.printing, printed);
+        self.eventEmitter.emit(_printerConstantsApi.eventName.printing, printed);
       }
     },
 
@@ -468,13 +462,12 @@ module.exports = function () {
     ) {
       /** @type {import('./types').Printer} */
       var self = this,
-        allLinesEmpty = true,
+        /** @type {boolean} */
+        allLinesEmpty,
         /** @type {number} */
         clearDelta,
         /** @type {number} */
         i,
-        /** @type {number} */
-        j,
         /** @type {number} */
         k,
         /** @type {import('@pgmmv/cc/layer').CCLayer} */
@@ -496,22 +489,30 @@ module.exports = function () {
       clearDelta = Math.floor(self._clearAccumulator);
       self._clearAccumulator -= clearDelta;
 
+      if (self._clearAccumulator < 0) {
+        self._clearAccumulator = 0;
+      }
+
       for (k = 0; k < clearDelta; ++k) {
+        allLinesEmpty = true;
+
         for (i = 0; i < self.childrenCount; ++i) {
           lineLayer = self.getChildByTag(i);
 
           if (lineLayer && lineLayer.childrenCount) {
             allLinesEmpty = false;
 
-            for (j = 0; j < lineLayer.childrenCount; ++j) {
-              letter = lineLayer.getChildByTag(self._clearIndex - i);
+            letter = lineLayer.getChildByTag(self._clearIndex - i);
 
-              if (letter) {
-                letter.removeFromParent();
-                letter.release();
-              }
+            if (letter) {
+              letter.removeFromParent();
+              letter.release();
             }
           }
+        }
+
+        if (allLinesEmpty) {
+          break;
         }
 
         ++self._clearIndex;
@@ -520,7 +521,7 @@ module.exports = function () {
       if (allLinesEmpty) {
         self.removeAllChildren();
       } else {
-        self.eventManager.dispatchCustomEvent(_printerConstantsApi.eventName.clearing);
+        self.eventEmitter.emit(_printerConstantsApi.eventName.clearing);
       }
     },
 
@@ -536,7 +537,7 @@ module.exports = function () {
           switch (state) {
             case _stateConstants.printing:
               self._state = state;
-              self.eventManager.dispatchCustomEvent(_printerConstantsApi.eventName.printStart);
+              self.eventEmitter.emit(_printerConstantsApi.eventName.printStart);
 
               break;
 
@@ -552,7 +553,7 @@ module.exports = function () {
           switch (state) {
             case _stateConstants.end:
               self._state = state;
-              self.eventManager.dispatchCustomEvent(_printerConstantsApi.eventName.printFinish);
+              self.eventEmitter.emit(_printerConstantsApi.eventName.printFinish);
 
               break;
 
@@ -568,7 +569,7 @@ module.exports = function () {
           switch (state) {
             case _stateConstants.clearing:
               self._state = state;
-              self.eventManager.dispatchCustomEvent(_printerConstantsApi.eventName.clearStart);
+              self.eventEmitter.emit(_printerConstantsApi.eventName.clearStart);
 
               break;
 
@@ -584,7 +585,7 @@ module.exports = function () {
           switch (state) {
             case _stateConstants.home:
               self._state = state;
-              self.eventManager.dispatchCustomEvent(_printerConstantsApi.eventName.clearFinish);
+              self.eventEmitter.emit(_printerConstantsApi.eventName.clearFinish);
 
               break;
 
@@ -647,7 +648,7 @@ module.exports = function () {
       switch (_canceledState) {
         case _stateConstants.printing:
         case _stateConstants.clearing:
-          self.eventManager.dispatchCustomEvent(_printerConstantsApi.eventName.cancel);
+          self.eventEmitter.emit(_printerConstantsApi.eventName.cancel);
 
         // eslint-disable-next-line no-fallthrough
         case _stateConstants.end:

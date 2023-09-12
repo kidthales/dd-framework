@@ -1,8 +1,7 @@
+import type { EventEmitter } from '@dd/core/event/emitter/types';
 import type { TextData, TextSprites } from '@dd/core/text/types';
 import type { CCColor } from '@pgmmv/cc/color';
-import type { CCEventManager } from '@pgmmv/cc/event-manager';
 import type { CCLayer, CCLayerConstructor } from '@pgmmv/cc/layer';
-import type { CCSize } from '@pgmmv/cc/size';
 import type { PartialDeep } from 'type-fest';
 
 export enum PrinterState {
@@ -79,7 +78,7 @@ export interface ComputedJobConfig {
 }
 
 export interface Printer extends CCLayer {
-  eventManager: CCEventManager;
+  eventEmitter: EventEmitter;
   _state: PrinterState;
   _job?: ComputedJobConfig;
   _currentPage?: ComputedPageConfig;

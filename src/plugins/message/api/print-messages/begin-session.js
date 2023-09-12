@@ -28,15 +28,13 @@ module.exports = function (objectInstance, config) {
     opacity: config.opacity
   });
 
-  session.printingListener = session.printer.eventManager.addCustomListener(
+  session.printer.eventEmitter.on(
     dd.core.text.printer.constants.eventName.printing,
     function (
-      /** @type {import('@pgmmv/cc/event-custom').CCEventCustom} */
-      ev
+      /** @type {import("@pgmmv/cc/sprite").CCSprite|import("@pgmmv/cc/label-ttf").CCLabelTTF[]} */
+      letters
     ) {
       // TODO: initial letter easing...
-      /** @type {(import('@pgmmv/cc/sprite').CCSprite|import('@pgmmv/cc/label-ttf').CCLabelTTF)[]} */
-      var letters = ev.getUserData();
 
       if (config.printingSfxId !== Agtk.constants.actionCommands.UnsetObject) {
         if (session.printingSfxTimeAccumulator >= 0.25) {
@@ -47,35 +45,29 @@ module.exports = function (objectInstance, config) {
     }
   );
 
-  session.printFinishListener = session.printer.eventManager.addCustomListener(
-    dd.core.text.printer.constants.eventName.printFinish,
-    function () {
-      if (session.indicator && session.printer.getCurrentPageIndex() !== session.printer.getNumPages() - 1) {
-        session.indicator.y = Math.floor(
-          scaleY *
-            (session.printer.y +
-              session.printer.getChildByTag(session.printer._currentPage.text.length - 1).y -
-              session.indicator.getContentSize().height / 4) // TODO: make this ratio a constant...
-        );
+  session.printer.eventEmitter.on(dd.core.text.printer.constants.eventName.printFinish, function () {
+    if (session.indicator && session.printer.getCurrentPageIndex() !== session.printer.getNumPages() - 1) {
+      session.indicator.y = Math.floor(
+        scaleY *
+          (session.printer.y +
+            session.printer.getChildByTag(session.printer._currentPage.text.length - 1).y -
+            session.indicator.getContentSize().height / 2)
+      );
 
-        session.indicator.setColor(
-          session.printer._currentPage.color ? session.printer._currentPage.color : cc.color(255, 255, 255)
-        );
+      session.indicator.setColor(
+        session.printer._currentPage.color ? session.printer._currentPage.color : cc.color(255, 255, 255)
+      );
 
-        session.indicator.opacity =
-          session.printer._currentPage.opacity !== undefined ? session.printer._currentPage.opacity : 255;
-      }
+      session.indicator.opacity =
+        session.printer._currentPage.opacity !== undefined ? session.printer._currentPage.opacity : 255;
     }
-  );
+  });
 
-  session.clearStartListener = session.printer.eventManager.addCustomListener(
-    dd.core.text.printer.constants.eventName.clearStart,
-    function () {
-      if (session.indicator) {
-        session.indicator.opacity = 0;
-      }
+  session.printer.eventEmitter.on(dd.core.text.printer.constants.eventName.clearStart, function () {
+    if (session.indicator) {
+      session.indicator.opacity = 0;
     }
-  );
+  });
 
   if (config.indicator) {
     session.indicator = require('./create-indicator')({
