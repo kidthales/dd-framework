@@ -37,10 +37,10 @@ module.exports = function (objectInstance, config) {
 
   switch (config.vertical) {
     case constantsApi.verticalPosition.bottom:
-      session.printer.y = scaleY * (pageSize.height / 2) + indicatorSize.height;
+      session.printer.y = scaleY * (pageSize.height / 2 + indicatorSize.height);
       break;
     case constantsApi.verticalPosition.center:
-      session.printer.y = winSize.height / 2 + (scaleY * indicatorSize.height) / 2;
+      session.printer.y = (winSize.height + scaleY * indicatorSize.height) / 2;
       break;
     case constantsApi.verticalPosition.top:
     default:
@@ -52,7 +52,7 @@ module.exports = function (objectInstance, config) {
   session.printer.y -= config.offset && config.offset.y !== undefined ? config.offset.y : 0;
 
   if (session.indicator) {
-    session.indicator.setPosition(session.printer.getPosition());
+    session.indicator.setPosition(session.printer.x, session.printer.y);
   }
 
   return session;

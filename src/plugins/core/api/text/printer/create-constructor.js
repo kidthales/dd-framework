@@ -54,7 +54,7 @@ var _logApi = require('../../log'),
  */
 module.exports = function () {
   /** @type {import("./types").PrinterConstructor} */
-  var Printer = cc.Layer.extend({
+  var Printer = cc.LayerColor.extend({
     eventEmitter: undefined,
 
     _state: undefined,
@@ -74,7 +74,12 @@ module.exports = function () {
 
       self.eventEmitter = require('../../event/emitter/create')();
 
+      self.ignoreAnchorPointForPosition(false);
       self.setContentSize(0, 0);
+
+      // TODO: remove...
+      self.setColor(cc.color(0, 244, 0));
+
       self._state = _stateConstants.home;
     },
 
@@ -190,16 +195,10 @@ module.exports = function () {
         pageConfig,
         /** @type {import('@pgmmv/cc/size').CCSize} */
         pageSize,
-        /** @type {import('@pgmmv/cc/point').CCPoint} */
-        pageAnchor,
-        /** @type {number} */
-        pageLeft,
-        /** @type {number} */
-        pageRight,
-        /** @type {number} */
-        pageTop,
         /** @type {import('@pgmmv/cc/layer').CCLayer} */
-        lineLayer;
+        lineLayer,
+        /** @type {number} */
+        i;
 
       if (!self._job) {
         return;
@@ -249,15 +248,10 @@ module.exports = function () {
             : undefined
       };
 
-      // Computed line y assumes page origin of (0,1) & line origin of (0,0).
       pageSize = self.getContentSize();
-      pageAnchor = self.getAnchorPoint();
-      pageLeft = -pageAnchor.x * pageSize.width;
-      pageRight = (1 - pageAnchor.x) * pageSize.width;
-      pageTop = (1 - pageAnchor.y) * pageSize.height;
 
-      for (var i = 0; i < self._currentPage.text.length; ++i) {
-        lineLayer = new cc.Layer();
+      for (i = 0; i < self._currentPage.text.length; ++i) {
+        lineLayer = new cc.LayerColor();
 
         if (self._currentPage.color) {
           lineLayer.setCascadeColorEnabled(true);
@@ -274,20 +268,19 @@ module.exports = function () {
 
         switch (self._currentPage.layout.align.horizontal) {
           case _printerConstantsApi.horizontalTextAlignment.right:
-            lineLayer.x = pageRight - self._currentPage.layout.margin.right - self._currentPage.text[i].width;
+            lineLayer.x = pageSize.width - self._currentPage.layout.margin.right - self._currentPage.text[i].width;
             break;
           case _printerConstantsApi.horizontalTextAlignment.center:
-            lineLayer.x = pageLeft + (pageSize.width - self._currentPage.text[i].width) / 2;
+            lineLayer.x = (pageSize.width - self._currentPage.text[i].width) / 2;
             break;
           case _printerConstantsApi.horizontalTextAlignment.left:
           default:
-            lineLayer.x = pageLeft + self._currentPage.layout.margin.left;
+            lineLayer.x = self._currentPage.layout.margin.left;
             break;
         }
 
-        lineLayer.y = pageTop - self._currentPage.layout.margin.top + self._currentPage.text[i].y;
+        lineLayer.y = pageSize.height - self._currentPage.layout.margin.top + self._currentPage.text[i].y; // Text y is a negative offset.
 
-        //self.addChild(lineLayer, undefined, i);
         lineLayer.setTag(i);
         self.addChild(lineLayer);
       }
@@ -441,7 +434,8 @@ module.exports = function () {
         lineLayer = self.getChildByTag(self._lineIndex);
         letters = self._currentPage.text[self._lineIndex];
 
-        //lineLayer.addChild(letters[self._letterIndex].sprite, undefined, self._letterIndex);
+        // TODO: vertical text alignment...
+
         letters[self._letterIndex].sprite.setTag(self._letterIndex);
         lineLayer.addChild(letters[self._letterIndex].sprite);
         printed.push(letters[self._letterIndex].sprite);

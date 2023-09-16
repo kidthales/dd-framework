@@ -48,10 +48,8 @@ module.exports = function (objectInstance, config) {
   session.printer.eventEmitter.on(dd.core.text.printer.constants.eventName.printFinish, function () {
     if (session.indicator && session.printer.getCurrentPageIndex() !== session.printer.getNumPages() - 1) {
       session.indicator.y = Math.floor(
-        scaleY *
-          (session.printer.y +
-            session.printer.getChildByTag(session.printer._currentPage.text.length - 1).y -
-            session.indicator.getContentSize().height / 2)
+        session.printer.getChildByTag(session.printer._currentPage.text.length - 1).convertToWorldSpace().y -
+          scaleY * (session.indicator.getContentSize().height / 2)
       );
 
       session.indicator.setColor(
