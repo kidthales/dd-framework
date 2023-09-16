@@ -431,12 +431,23 @@ module.exports = function () {
         lineLayer = self.getChildByTag(self._lineIndex);
         letters = self._currentPage.text[self._lineIndex];
 
-        // TODO: vertical text alignment...
+        switch (self._currentPage.layout.align.vertical) {
+          case _printerConstantsApi.verticalTextAlignment.bottom:
+            letters[self._letterIndex].sprite.y = 0;
+            break;
+          case _printerConstantsApi.verticalTextAlignment.center:
+            letters[self._letterIndex].sprite.y = (lineLayer.height - letters[self._letterIndex].sprite.height) / 2;
+            break;
+          case _printerConstantsApi.verticalTextAlignment.top:
+          default:
+            letters[self._letterIndex].sprite.y = lineLayer.height - letters[self._letterIndex].sprite.height;
+            break;
+        }
 
         letters[self._letterIndex].sprite.setTag(self._letterIndex);
         lineLayer.addChild(letters[self._letterIndex].sprite);
-        printed.push(letters[self._letterIndex].sprite);
 
+        printed.push(letters[self._letterIndex].sprite);
         ++self._letterIndex;
       }
 
