@@ -54,7 +54,7 @@ var _logApi = require('../../log'),
  */
 module.exports = function () {
   /** @type {import("./types").PrinterConstructor} */
-  var Printer = cc.LayerColor.extend({
+  var Printer = cc.Layer.extend({
     eventEmitter: undefined,
 
     _state: undefined,
@@ -76,9 +76,6 @@ module.exports = function () {
 
       self.ignoreAnchorPointForPosition(false);
       self.setContentSize(0, 0);
-
-      // TODO: remove...
-      self.setColor(cc.color(0, 244, 0));
 
       self._state = _stateConstants.home;
     },
@@ -251,7 +248,7 @@ module.exports = function () {
       pageSize = self.getContentSize();
 
       for (i = 0; i < self._currentPage.text.length; ++i) {
-        lineLayer = new cc.LayerColor();
+        lineLayer = new cc.Layer();
 
         if (self._currentPage.color) {
           lineLayer.setCascadeColorEnabled(true);
