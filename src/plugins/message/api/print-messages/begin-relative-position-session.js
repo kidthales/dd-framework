@@ -51,6 +51,10 @@ module.exports = function (objectInstance, config) {
   // Convert PGM y-axis direction.
   session.printer.y -= config.offset && config.offset.y !== undefined ? config.offset.y : 0;
 
+  if (session.panel) {
+    session.panel.setPosition(session.printer.x, session.printer.y);
+  }
+
   if (session.indicator) {
     session.indicator.setPosition(session.printer.x, session.printer.y);
   }

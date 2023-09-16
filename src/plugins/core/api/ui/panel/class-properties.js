@@ -80,7 +80,7 @@ var _logApi = require('../../log'),
 
     _updateOpened: function () {},
 
-    _updateClosing: function () {
+    _updateClosing: function (dt) {
       /** @type {import('./types').Panel} */
       var self = this;
       self._updateOpenCloseInterpolationState(dt, -1);
@@ -90,10 +90,12 @@ var _logApi = require('../../log'),
     _updateOpenCloseInterpolationState: function (dt, direction) {
       /** @type {import('./types').Panel} */
       var self = this,
-        delta = 60 * dt * direction * self._config.openCloseDelta;
+        deltaBase = 60 * dt * direction,
+        deltaX = deltaBase * self._config.openCloseDelta.x,
+        deltaY = deltaBase * self._config.openCloseDelta.y;
 
-      self._openCloseInterpolationState.x = cc.clampf(self._openCloseInterpolationState.x + delta, 0, 1);
-      self._openCloseInterpolationState.y = cc.clampf(self._openCloseInterpolationState.y + delta, 0, 1);
+      self._openCloseInterpolationState.x = cc.clampf(self._openCloseInterpolationState.x + deltaX, 0, 1);
+      self._openCloseInterpolationState.y = cc.clampf(self._openCloseInterpolationState.y + deltaY, 0, 1);
     },
 
     _postUpdateOpenCloseInterpolationState: function (direction) {
@@ -148,7 +150,7 @@ classProperties.ctor = function (config) {
     renderType: config.renderType,
     size: config.size || cc.size(128, 128),
     openCloseDelta: config.openCloseDelta || cc.p(1, 1),
-    startClosed: config.startClosed || false
+    startClosed: config.startClosed !== undefined ? config.startClosed : false
   };
 
   if (self._config.startClosed) {

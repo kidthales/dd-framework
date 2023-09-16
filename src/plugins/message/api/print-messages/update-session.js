@@ -20,6 +20,10 @@ module.exports = function (objectInstance) {
 
   dt = cc.director.getDeltaTime();
 
+  if (session.panel) {
+    session.panel.update(dt);
+  }
+
   if (session.printer.isPrinting()) {
     session.printingSfxTimeAccumulator += dt;
   }

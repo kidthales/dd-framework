@@ -13,7 +13,9 @@
 module.exports = function (objectInstance, config) {
   var session = require('../session/begin')(objectInstance),
     scaleX = config.scale !== undefined && config.scale.x !== undefined ? config.scale.x : 1,
-    scaleY = config.scale !== undefined && config.scale.y !== undefined ? config.scale.y : 1;
+    scaleY = config.scale !== undefined && config.scale.y !== undefined ? config.scale.y : 1,
+    /** @type {import("@pgmmv/cc/size").CCSize|undefined} */
+    panelSize;
 
   session.printer.setScale(scaleX, scaleY);
 
@@ -27,6 +29,48 @@ module.exports = function (objectInstance, config) {
     color: config.color,
     opacity: config.opacity
   });
+
+  if (config.indicator) {
+    session.indicator = require('./create-indicator')({
+      imageId: config.indicator.imageId,
+      frame: cc.rect(
+        config.indicator.frame.x,
+        config.indicator.frame.y,
+        config.indicator.frame.width,
+        config.indicator.frame.height
+      )
+    });
+
+    session.indicator.setScale(scaleX, scaleY);
+
+    session.indicator.opacity = 0;
+  }
+
+  if (config.background) {
+    panelSize = cc.size(
+      scaleX * session.printer.width,
+      scaleY * (session.printer.height + (session.indicator ? session.indicator.getContentSize().height / 2 : 0))
+    );
+
+    switch (config.background.renderType) {
+      case 'graphics':
+        session.panel = dd.core.ui.panel.create({
+          renderType: 'graphics',
+          startClosed: true,
+          backgroundColor: config.background.backgroundColor,
+          borderColor: config.background.borderColor,
+          borderThickness: config.background.borderThickness,
+          openCloseDelta: cc.p(config.background.openCloseDelta, config.background.openCloseDelta),
+          size: panelSize
+        });
+        break;
+      case 'image':
+        // TODO
+        break;
+      default:
+        break;
+    }
+  }
 
   session.printer.eventEmitter.on(
     dd.core.text.printer.constants.eventName.printing,
@@ -67,20 +111,16 @@ module.exports = function (objectInstance, config) {
     }
   });
 
-  if (config.indicator) {
-    session.indicator = require('./create-indicator')({
-      imageId: config.indicator.imageId,
-      frame: cc.rect(
-        config.indicator.frame.x,
-        config.indicator.frame.y,
-        config.indicator.frame.width,
-        config.indicator.frame.height
-      )
+  if (session.panel) {
+    session.panel.eventEmitter.once(dd.core.ui.openClose.constants.eventName.openFinish, function () {
+      session.printer.print(0);
     });
 
-    session.indicator.setScale(scaleX, scaleY);
-
-    session.indicator.opacity = 0;
+    session.printer.eventEmitter.on(dd.core.text.printer.constants.eventName.clearFinish, function () {
+      if (session.printer.getCurrentPageIndex() === session.printer.getNumPages()) {
+        session.panel.close();
+      }
+    });
   }
 
   return session;

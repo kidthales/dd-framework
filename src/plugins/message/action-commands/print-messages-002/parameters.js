@@ -259,7 +259,52 @@ var _param = require('@dd/common').paramHelper,
     /**
      * @constant
      */
-    expediteTrue: 1
+    expediteTrue: 1,
+
+    /**
+     * @constant
+     */
+    openCloseDelta: 32,
+
+    /**
+     * @constant
+     */
+    backgroundColorChannelRed: 33,
+
+    /**
+     * @constant
+     */
+    backgroundColorChannelGreen: 34,
+
+    /**
+     * @constant
+     */
+    backgroundColorChannelBlue: 35,
+
+    /**
+     * @constant
+     */
+    backgroundOpacity: 36,
+
+    /**
+     * @constant
+     */
+    borderThickness: 37,
+
+    /**
+     * @constant
+     */
+    borderColorChannelRed: 38,
+
+    /**
+     * @constant
+     */
+    borderColorChannelGreen: 39,
+
+    /**
+     * @constant
+     */
+    borderColorChannelBlue: 40
   };
 
 /**
@@ -397,6 +442,56 @@ module.exports = {
       ],
       _ids.expediteTrue
     ),
+    _param.br,
+    _param.number(_ids.openCloseDelta, 'PARAM_OPEN_CLOSE_DELTA', 1, {
+      decimals: 2,
+      minimumValue: 0.01,
+      maximumValue: 1
+    }),
+    _param.br,
+    _param.number(_ids.backgroundColorChannelRed, 'PARAM_BACKGROUND_COLOR_CHANNEL_RED', 0, {
+      decimals: 0,
+      minimumValue: 0,
+      maximumValue: 255
+    }),
+    _param.br,
+    _param.number(_ids.backgroundColorChannelGreen, 'PARAM_BACKGROUND_COLOR_CHANNEL_GREEN', 0, {
+      decimals: 0,
+      minimumValue: 0,
+      maximumValue: 255
+    }),
+    _param.br,
+    _param.number(_ids.backgroundColorChannelBlue, 'PARAM_BACKGROUND_COLOR_CHANNEL_BLUE', 0, {
+      decimals: 0,
+      minimumValue: 0,
+      maximumValue: 255
+    }),
+    _param.br,
+    _param.number(_ids.backgroundOpacity, 'PARAM_BACKGROUND_OPACITY', 255, {
+      decimals: 0,
+      minimumValue: 0,
+      maximumValue: 255
+    }),
+    _param.br,
+    _param.number(_ids.borderThickness, 'PARAM_BORDER_THICKNESS', 4, { decimals: 0, minimumValue: 0 }),
+    _param.br,
+    _param.number(_ids.borderColorChannelRed, 'PARAM_BORDER_COLOR_CHANNEL_RED', 255, {
+      decimals: 0,
+      minimumValue: 0,
+      maximumValue: 255
+    }),
+    _param.br,
+    _param.number(_ids.borderColorChannelGreen, 'PARAM_BORDER_COLOR_CHANNEL_GREEN', 255, {
+      decimals: 0,
+      minimumValue: 0,
+      maximumValue: 255
+    }),
+    _param.br,
+    _param.number(_ids.borderColorChannelBlue, 'PARAM_BORDER_COLOR_CHANNEL_BLUE', 255, {
+      decimals: 0,
+      minimumValue: 0,
+      maximumValue: 255
+    }),
     _param.hr
   ]
 };

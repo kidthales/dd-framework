@@ -24,7 +24,16 @@ module.exports = function (objectInstance) {
     var ix = session.printer.getCurrentPageIndex() + 1;
 
     if (ix === session.printer.getNumPages()) {
-      session.done = true;
+      if (session.panel) {
+        session.panel.eventEmitter.once(dd.core.ui.openClose.constants.eventName.closeFinish, function () {
+          session.done = true;
+        });
+
+        session.panel.close();
+      } else {
+        session.done = true;
+      }
+
       return;
     }
 

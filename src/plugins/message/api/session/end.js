@@ -15,6 +15,12 @@ module.exports = function (objectInstance) {
     return;
   }
 
+  if (session.panel) {
+    session.panel.eventEmitter.removeAllListeners();
+    session.panel.removeFromParent();
+    delete session.panel;
+  }
+
   session.printer.eventEmitter.removeAllListeners();
   session.printer.removeFromParent();
   delete session.printer;

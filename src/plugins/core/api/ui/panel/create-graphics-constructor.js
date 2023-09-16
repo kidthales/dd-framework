@@ -24,11 +24,10 @@ var _commonClassProperties = require('./class-properties'),
     panel
   ) {
     var size = panel.getContentSize(),
-      anchor = panel.getAnchorPoint(),
-      left = -anchor.x * size.width,
-      right = (1 - anchor.x) * size.width,
-      top = (1 - anchor.y) * size.height,
-      bottom = -anchor.y * size.height;
+      left = -size.width / 2,
+      right = -left,
+      top = size.height / 2,
+      bottom = -top;
 
     panel.clear();
 
@@ -62,7 +61,7 @@ _classProperties.ctor = function (
   self._config.renderType = 'graphics';
   self._config.backgroundColor = config.backgroundColor || cc.color('#000000');
   self._config.borderColor = config.borderColor || cc.color('#ffffff');
-  self._config.borderThickness = config.borderThickness || 4;
+  self._config.borderThickness = config.borderThickness !== undefined ? config.borderThickness : 4;
 
   self._super();
 

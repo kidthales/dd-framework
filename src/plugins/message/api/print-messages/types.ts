@@ -1,5 +1,6 @@
 import type { FontData } from '@dd/core/font/types';
 import type { JobConfig, TextAlignmentConfig } from '@dd/core/text/printer/types';
+import type { BasePanelConfig, GraphicsPanelConfig, ImagePanelConfig } from '@dd/core/ui/panel/types';
 import type { AgtkSwitch as AgtkObjectInstanceSwitch } from '@pgmmv/agtk/object-instances/object-instance/switches/switch';
 import type { AgtkSwitch as AgtkCommonSwitch } from '@pgmmv/agtk/switches/switch';
 import type { CCPoint } from '@pgmmv/cc/point';
@@ -33,12 +34,22 @@ export interface CustomIndicator {
   frame: CCRect;
 }
 
+export type BaseBackgroundConfig = Omit<BasePanelConfig, 'size' | 'startClosed'> & { opacity: number };
+
+export type GraphicsBackgroundConfig = BaseBackgroundConfig & Omit<GraphicsPanelConfig, 'size' | 'startClosed'>;
+
+export type ImageBackgroundConfig = BaseBackgroundConfig &
+  Omit<ImagePanelConfig, 'size' | 'startClosed' | 'texture' | 'textureFrame'> & { imageId: number; imageFrame: CCRect };
+
+export type BackgroundConfigUnion = GraphicsBackgroundConfig | ImageBackgroundConfig;
+
 export interface PrintMessagesConfig extends Omit<JobConfig, 'pages'> {
   messages: MessageUnion[];
   overrideFont?: FontData;
   printingSfxId?: number;
   indicator?: CustomIndicator;
   scale?: CCPoint;
+  background?: BackgroundConfigUnion;
 }
 
 export interface RelativePosition {

@@ -40,8 +40,26 @@ module.exports = {
     en: '[print-messages-001] Processed messages invalid.'
   },
 
-  PARAM_INPUTS_GROUP: {
-    en: 'Inputs\n‾‾‾‾‾‾'
+  AC_PRINT_MESSAGES_002_NAME: {
+    en: '[DD] [Message] Print Messages Mk II'
+  },
+  AC_PRINT_MESSAGES_002_DESCRIPTION: {
+    en: 'Print a series of messages to implicit HUD layer, with graphical panel background. Messages ues relative positioning. Provides OK/CANCEL/EXPEDITE functionality.'
+  },
+  ERROR_AC_PRINT_MESSAGES_002_OBJECT_INSTANCE_MISSING: {
+    en: '[print-messages-002] Object instance missing.'
+  },
+  ERROR_AC_PRINT_MESSAGES_002_OK_SWITCH_MISSING: {
+    en: '[print-messages-002] OK switch missing.'
+  },
+  ERROR_AC_PRINT_MESSAGES_002_MESSAGES_INVALID: {
+    en: '[print-messages-002] Input messages invalid.'
+  },
+  ERROR_AC_PRINT_MESSAGES_002_PAGES_INVALID: {
+    en: '[print-messages-002] Processed messages invalid.'
+  },
+  ERROR_AC_PRINT_MESSAGES_002_BACKGROUND_INVALID: {
+    en: '[print-messages-002] Background invalid.'
   },
 
   PARAM_OBJECT_INSTANCE_MODE: {
@@ -139,6 +157,33 @@ module.exports = {
   },
   PARAM_EXPEDITE: {
     en: 'Enable Expedite:'
+  },
+  PARAM_OPEN_CLOSE_DELTA: {
+    en: 'Open/Close Delta:'
+  },
+  PARAM_BACKGROUND_COLOR_CHANNEL_RED: {
+    en: 'Background Color\nChannel Red:'
+  },
+  PARAM_BACKGROUND_COLOR_CHANNEL_GREEN: {
+    en: 'Background Color\nChannel Green:'
+  },
+  PARAM_BACKGROUND_COLOR_CHANNEL_BLUE: {
+    en: 'Background Color\nChannel Blue:'
+  },
+  PARAM_BACKGROUND_OPACITY: {
+    en: 'Background Opacity:'
+  },
+  PARAM_BORDER_THICKNESS: {
+    en: 'Border Thickness:'
+  },
+  PARAM_BORDER_COLOR_CHANNEL_RED: {
+    en: 'Border Color\nChannel Red:'
+  },
+  PARAM_BORDER_COLOR_CHANNEL_GREEN: {
+    en: 'Border Color\nChannel Green:'
+  },
+  PARAM_BORDER_COLOR_CHANNEL_BLUE: {
+    en: 'Border Color\nChannel Blue:'
   },
 
   LEFT: {
