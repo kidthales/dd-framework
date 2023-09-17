@@ -7,13 +7,13 @@
 
 /**
  * @param {import("./types").MessageUnion[]} messages
- * @returns {import("@dd/core/text/printer/types").PageConfig[]}
+ * @returns {import("@dd/core/ui/text/printer/types").PageConfig[]}
  */
 module.exports = function (messages) {
   return messages
     .map(function (value) {
-      var text = dd.core.text.getTextData(typeof value === 'number' ? value : value.id),
-        /** @type {Partial<import('@dd/core/text/printer/types').TextAlignmentConfig>|undefined} */
+      var text = dd.core.ui.text.getTextData(typeof value === 'number' ? value : value.id),
+        /** @type {Partial<import('@dd/core/ui/text/printer/types').TextAlignmentConfig>|undefined} */
         align,
         /** @type {number|undefined} */
         printSpeed,

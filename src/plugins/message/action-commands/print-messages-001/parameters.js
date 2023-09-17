@@ -56,19 +56,19 @@ var _param = require('@dd/common').paramHelper,
     horizontalTextAlign: 6,
 
     /**
-     * @see dd.core.text.printer.constants.horizontalTextAlignment.left
+     * @see dd.core.ui.text.printer.constants.horizontalTextAlignment.left
      * @constant
      */
     horizontalTextAlignLeft: 0,
 
     /**
-     * @see dd.core.text.printer.constants.horizontalTextAlignment.center
+     * @see dd.core.ui.text.printer.constants.horizontalTextAlignment.center
      * @constant
      */
     horizontalTextAlignCenter: 1,
 
     /**
-     * @see dd.core.text.printer.constants.horizontalTextAlignment.right
+     * @see dd.core.ui.text.printer.constants.horizontalTextAlignment.right
      * @constant
      */
     horizontalTextAlignRight: 2,
@@ -79,19 +79,19 @@ var _param = require('@dd/common').paramHelper,
     verticalTextAlign: 7,
 
     /**
-     * @see dd.core.text.printer.constants.verticalTextAlignment.top
+     * @see dd.core.ui.text.printer.constants.verticalTextAlignment.top
      * @constant
      */
     verticalTextAlignTop: 0,
 
     /**
-     * @see dd.core.text.printer.constants.verticalTextAlignment.center
+     * @see dd.core.ui.text.printer.constants.verticalTextAlignment.center
      * @constant
      */
     verticalTextAlignCenter: 1,
 
     /**
-     * @see dd.core.text.printer.constants.verticalTextAlignment.bottom
+     * @see dd.core.ui.text.printer.constants.verticalTextAlignment.bottom
      * @constant
      */
     verticalTextAlignBottom: 2,

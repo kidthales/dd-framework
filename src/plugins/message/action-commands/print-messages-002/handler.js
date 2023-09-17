@@ -63,7 +63,7 @@ module.exports = function handler(payload) {
   // New session.
   session = require('../../api/print-messages/begin-relative-position-session')(objectInstance, {
     messages: messages,
-    overrideFont: dd.core.font.getFontData(payload.param[paramIds.overrideFont]),
+    overrideFont: dd.core.ui.font.getFontData(payload.param[paramIds.overrideFont]),
     printingSfxId: payload.param[paramIds.printingSfx],
     indicator: {
       imageId: payload.param[paramIds.indicatorImage],

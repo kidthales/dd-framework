@@ -1,13 +1,13 @@
 /**
  * Create constructor module.
  *
- * @module dd/core/text/printer/create-constructor
+ * @module dd/core/ui/text/printer/create-constructor
  */
 
 /**
  * @private
  */
-var _logApi = require('../../log'),
+var _logApi = require('../../../log'),
   /**
    * @private
    */
@@ -72,7 +72,7 @@ module.exports = function () {
 
       self._super();
 
-      self.eventEmitter = require('../../event/emitter/create')();
+      self.eventEmitter = require('../../../event/emitter/create')();
 
       self.ignoreAnchorPointForPosition(false);
       self.setContentSize(0, 0);
@@ -158,7 +158,7 @@ module.exports = function () {
             function (
               /** @type {import('@pgmmv/cc/size').CCSize} */
               size,
-              /** @type {import('@dd/core/text/types').TextSprites} */
+              /** @type {import('@dd/core/ui/text/types').TextSprites} */
               textSprites
             ) {
               if (textSprites.width > size.width) {
@@ -393,9 +393,9 @@ module.exports = function () {
         ix,
         /** @type {import('@pgmmv/cc/layer').CCLayer} */
         lineLayer,
-        /** @type {import('@dd/core/text/types').TextSpritesLine} */
+        /** @type {import('@dd/core/ui/text/types').TextSpritesLine} */
         letters,
-        /** @type {import('@dd/core/text/types').TextSprite[]} */
+        /** @type {import('@dd/core/ui/text/types').TextSprite[]} */
         printed = [];
 
       if (self._lineIndex >= self._currentPage.text.length) {

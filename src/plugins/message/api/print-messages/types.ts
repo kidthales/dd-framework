@@ -1,5 +1,5 @@
-import type { FontData } from '@dd/core/font/types';
-import type { JobConfig, TextAlignmentConfig } from '@dd/core/text/printer/types';
+import type { FontData } from 'src/plugins/core/api/ui/font/types';
+import type { JobConfig, TextAlignmentConfig } from '@dd/core/ui/text/printer/types';
 import type { BasePanelConfig, GraphicsPanelConfig, ImagePanelConfig } from '@dd/core/ui/panel/types';
 import type { AgtkSwitch as AgtkObjectInstanceSwitch } from '@pgmmv/agtk/object-instances/object-instance/switches/switch';
 import type { AgtkSwitch as AgtkCommonSwitch } from '@pgmmv/agtk/switches/switch';

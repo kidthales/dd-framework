@@ -102,7 +102,7 @@ module.exports = function (objectInstance, config) {
   }
 
   session.printer.eventEmitter.on(
-    dd.core.text.printer.constants.eventName.printing,
+    dd.core.ui.text.printer.constants.eventName.printing,
     function (
       /** @type {import("@pgmmv/cc/sprite").CCSprite|import("@pgmmv/cc/label-ttf").CCLabelTTF[]} */
       letters
@@ -118,7 +118,7 @@ module.exports = function (objectInstance, config) {
     }
   );
 
-  session.printer.eventEmitter.on(dd.core.text.printer.constants.eventName.printFinish, function () {
+  session.printer.eventEmitter.on(dd.core.ui.text.printer.constants.eventName.printFinish, function () {
     if (session.indicator && session.printer.getCurrentPageIndex() !== session.printer.getNumPages() - 1) {
       session.indicator.y = Math.floor(
         session.printer.getChildByTag(session.printer._currentPage.text.length - 1).convertToWorldSpace().y -
@@ -134,7 +134,7 @@ module.exports = function (objectInstance, config) {
     }
   });
 
-  session.printer.eventEmitter.on(dd.core.text.printer.constants.eventName.clearStart, function () {
+  session.printer.eventEmitter.on(dd.core.ui.text.printer.constants.eventName.clearStart, function () {
     if (session.indicator) {
       session.indicator.opacity = 0;
     }
@@ -145,7 +145,7 @@ module.exports = function (objectInstance, config) {
       session.printer.print(0);
     });
 
-    session.printer.eventEmitter.on(dd.core.text.printer.constants.eventName.clearFinish, function () {
+    session.printer.eventEmitter.on(dd.core.ui.text.printer.constants.eventName.clearFinish, function () {
       if (session.printer.getCurrentPageIndex() === session.printer.getNumPages()) {
         session.panel.close();
       }

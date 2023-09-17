@@ -1,7 +1,7 @@
 /**
  * Create module.
  *
- * @module dd/core/text/printer/create
+ * @module dd/core/ui/text/printer/create
  */
 
 /**

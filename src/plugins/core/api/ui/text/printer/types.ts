@@ -1,5 +1,5 @@
 import type { EventEmitter } from '@dd/core/event/emitter/types';
-import type { TextData, TextSprites } from '@dd/core/text/types';
+import type { TextData, TextSprites } from '@dd/core/ui/text/types';
 import type { CCColor } from '@pgmmv/cc/color';
 import type { CCLayer, CCLayerConstructor } from '@pgmmv/cc/layer';
 import type { PartialDeep } from 'type-fest';

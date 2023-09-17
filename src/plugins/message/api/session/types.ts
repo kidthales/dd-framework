@@ -1,4 +1,4 @@
-import type { Printer } from '@dd/core/text/printer/types';
+import type { Printer } from '@dd/core/ui/text/printer/types';
 import type { Panel } from '@dd/core/ui/panel/types';
 import type { CCNode } from '@pgmmv/cc/node';
 

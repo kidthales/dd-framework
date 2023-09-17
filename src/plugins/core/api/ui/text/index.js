@@ -1,7 +1,7 @@
 /**
  * Text module.
  *
- * @module dd/core/text
+ * @module dd/core/ui/text
  */
 
 /**

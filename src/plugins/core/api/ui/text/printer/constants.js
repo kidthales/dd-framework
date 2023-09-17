@@ -1,7 +1,7 @@
 /**
  * Constants module.
  *
- * @module dd/core/text/printer/constants
+ * @module dd/core/ui/text/printer/constants
  */
 
 /**

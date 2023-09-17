@@ -1,7 +1,7 @@
 /**
  * Get constructor module.
  *
- * @module dd/core/text/printer/get-constructor
+ * @module dd/core/ui/text/printer/get-constructor
  */
 
 /**

@@ -1,5 +1,5 @@
 /**
- * Print messages 002 module.
+ * Print messages 003 module.
  *
  * @module
  */

@@ -1,7 +1,7 @@
 /**
  * Printer module.
  *
- * @module dd/core/text/printer
+ * @module dd/core/ui/text/printer
  */
 
 /**

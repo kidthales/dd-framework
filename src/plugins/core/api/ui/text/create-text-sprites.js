@@ -1,7 +1,7 @@
 /**
  * Create text sprites module.
  *
- * @module dd/core/text/create-text-sprites
+ * @module dd/core/ui/text/create-text-sprites
  */
 
 /**

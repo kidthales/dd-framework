@@ -1,7 +1,7 @@
 /**
  * Parse text tag module.
  *
- * @module dd/core/text/parse-text-tag
+ * @module dd/core/ui/text/parse-text-tag
  * @internal
  */
 
@@ -32,7 +32,7 @@ var _kTextTagStartIndexOffset = 3,
  * @returns {import('./types').ParsedTextTag|undefined}
  */
 module.exports = function (text, startIndex, context) {
-  var resolveIntString = require('../string/resolve-int-string'),
+  var resolveIntString = require('../../string/resolve-int-string'),
     textConstants = require('./constants'),
     candidateStartText = text.substring(startIndex, startIndex + _kTextTagStartIndexOffset),
     /** @type {number} */

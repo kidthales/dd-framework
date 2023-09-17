@@ -1,7 +1,7 @@
 /**
  * Get text data module.
  *
- * @module dd/core/text/get-text-data
+ * @module dd/core/ui/text/get-text-data
  */
 
 /**

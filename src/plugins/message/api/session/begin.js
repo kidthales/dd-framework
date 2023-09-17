@@ -16,11 +16,11 @@ module.exports = function (objectInstance) {
   }
 
   session = {
-    printer: dd.core.text.printer.create(),
+    printer: dd.core.ui.text.printer.create(),
     printingSfxTimeAccumulator: 0
   };
 
-  session.printer.eventEmitter.on(dd.core.text.printer.constants.eventName.clearFinish, function () {
+  session.printer.eventEmitter.on(dd.core.ui.text.printer.constants.eventName.clearFinish, function () {
     var ix = session.printer.getCurrentPageIndex() + 1;
 
     if (ix === session.printer.getNumPages()) {
