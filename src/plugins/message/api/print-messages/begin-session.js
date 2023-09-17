@@ -14,6 +14,10 @@ module.exports = function (objectInstance, config) {
   var session = require('../session/begin')(objectInstance),
     scaleX = config.scale !== undefined && config.scale.x !== undefined ? config.scale.x : 1,
     scaleY = config.scale !== undefined && config.scale.y !== undefined ? config.scale.y : 1,
+    /** @type {number} */
+    borderThicknessLeftRight = 0,
+    /** @type {number} */
+    borderThicknessTopBottom = 0,
     /** @type {import("@pgmmv/cc/size").CCSize|undefined} */
     panelSize;
 
@@ -47,28 +51,53 @@ module.exports = function (objectInstance, config) {
   }
 
   if (config.background) {
+    switch (config.background.renderType) {
+      case 'image':
+        borderThicknessLeftRight = config.background.capInsetRect.x;
+        borderThicknessTopBottom = config.background.capInsetRect.y;
+        break;
+      case 'graphics':
+        borderThicknessLeftRight = borderThicknessTopBottom = config.background.borderThickness;
+        break;
+      default:
+        break;
+    }
+
     panelSize = cc.size(
-      scaleX * session.printer.width,
-      scaleY * (session.printer.height + (session.indicator ? session.indicator.getContentSize().height / 2 : 0))
+      scaleX * session.printer.width + 2 * borderThicknessLeftRight,
+      scaleY * (session.printer.height + (session.indicator ? session.indicator.getContentSize().height : 0)) +
+        2 * borderThicknessTopBottom
     );
 
     switch (config.background.renderType) {
       case 'graphics':
         session.panel = dd.core.ui.panel.create({
           renderType: 'graphics',
+          size: panelSize,
+          openCloseDelta: config.background.openCloseDelta,
           startClosed: true,
           backgroundColor: config.background.backgroundColor,
           borderColor: config.background.borderColor,
-          borderThickness: config.background.borderThickness,
-          openCloseDelta: cc.p(config.background.openCloseDelta, config.background.openCloseDelta),
-          size: panelSize
+          borderThickness: config.background.borderThickness
         });
         break;
       case 'image':
-        // TODO
+        session.panel = dd.core.ui.panel.create({
+          renderType: 'image',
+          size: panelSize,
+          openCloseDelta: config.background.openCloseDelta,
+          startClosed: true,
+          texture: dd.core.util.resolveTexture(config.background.imageId),
+          textureFrame: config.background.imageFrame,
+          capInsetRect: config.background.capInsetRect
+        });
         break;
       default:
         break;
+    }
+
+    if (session.panel) {
+      session.panel.opacity = config.background.opacity;
     }
   }
 

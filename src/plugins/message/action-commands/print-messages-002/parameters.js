@@ -264,47 +264,52 @@ var _param = require('@dd/common').paramHelper,
     /**
      * @constant
      */
-    openCloseDelta: 32,
+    openCloseDeltaX: 32,
 
     /**
      * @constant
      */
-    backgroundColorChannelRed: 33,
+    openCloseDeltaY: 33,
 
     /**
      * @constant
      */
-    backgroundColorChannelGreen: 34,
+    backgroundColorChannelRed: 34,
 
     /**
      * @constant
      */
-    backgroundColorChannelBlue: 35,
+    backgroundColorChannelGreen: 35,
 
     /**
      * @constant
      */
-    backgroundOpacity: 36,
+    backgroundColorChannelBlue: 36,
 
     /**
      * @constant
      */
-    borderThickness: 37,
+    backgroundOpacity: 37,
 
     /**
      * @constant
      */
-    borderColorChannelRed: 38,
+    borderThickness: 38,
 
     /**
      * @constant
      */
-    borderColorChannelGreen: 39,
+    borderColorChannelRed: 39,
 
     /**
      * @constant
      */
-    borderColorChannelBlue: 40
+    borderColorChannelGreen: 40,
+
+    /**
+     * @constant
+     */
+    borderColorChannelBlue: 41
   };
 
 /**
@@ -443,7 +448,12 @@ module.exports = {
       _ids.expediteTrue
     ),
     _param.br,
-    _param.number(_ids.openCloseDelta, 'PARAM_OPEN_CLOSE_DELTA', 1, {
+    _param.number(_ids.openCloseDeltaX, 'PARAM_OPEN_CLOSE_DELTA_X', 1, {
+      decimals: 2,
+      minimumValue: 0.01,
+      maximumValue: 1
+    }),
+    _param.number(_ids.openCloseDeltaY, 'PARAM_OPEN_CLOSE_DELTA_Y', 1, {
       decimals: 2,
       minimumValue: 0.01,
       maximumValue: 1
@@ -473,7 +483,7 @@ module.exports = {
       maximumValue: 255
     }),
     _param.br,
-    _param.number(_ids.borderThickness, 'PARAM_BORDER_THICKNESS', 4, { decimals: 0, minimumValue: 0 }),
+    _param.number(_ids.borderThickness, 'PARAM_BORDER_THICKNESS', 1, { decimals: 0, minimumValue: 1 }),
     _param.br,
     _param.number(_ids.borderColorChannelRed, 'PARAM_BORDER_COLOR_CHANNEL_RED', 255, {
       decimals: 0,

@@ -61,7 +61,7 @@ _classProperties.ctor = function (
   self._config.renderType = 'graphics';
   self._config.backgroundColor = config.backgroundColor || cc.color('#000000');
   self._config.borderColor = config.borderColor || cc.color('#ffffff');
-  self._config.borderThickness = config.borderThickness !== undefined ? config.borderThickness : 4;
+  self._config.borderThickness = config.borderThickness && config.borderThickness >= 1 ? config.borderThickness : 1;
 
   self._super();
 

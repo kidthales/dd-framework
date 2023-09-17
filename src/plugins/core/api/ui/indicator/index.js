@@ -8,5 +8,7 @@
  *
  */
 module.exports = {
-  create: require('./create')
+  create: require('./create'),
+  createConstructor: require('./create-constructor'),
+  getConstructor: require('./get-constructor')
 };

@@ -52,7 +52,10 @@ module.exports = function (objectInstance, config) {
   session.printer.y -= config.offset && config.offset.y !== undefined ? config.offset.y : 0;
 
   if (session.panel) {
-    session.panel.setPosition(session.printer.x, session.printer.y);
+    session.panel.setPosition(
+      session.printer.x,
+      session.printer.y - scaleY * (session.indicator ? session.indicator.getContentSize().height / 2 : 0)
+    );
   }
 
   if (session.indicator) {

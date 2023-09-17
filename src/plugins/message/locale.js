@@ -158,8 +158,11 @@ module.exports = {
   PARAM_EXPEDITE: {
     en: 'Enable Expedite:'
   },
-  PARAM_OPEN_CLOSE_DELTA: {
-    en: 'Open/Close Delta:'
+  PARAM_OPEN_CLOSE_DELTA_X: {
+    en: 'Open/Close Delta X:'
+  },
+  PARAM_OPEN_CLOSE_DELTA_Y: {
+    en: 'Open/Close Delta Y:'
   },
   PARAM_BACKGROUND_COLOR_CHANNEL_RED: {
     en: 'Background Color\nChannel Red:'

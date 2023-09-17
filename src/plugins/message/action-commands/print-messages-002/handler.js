@@ -105,7 +105,7 @@ module.exports = function handler(payload) {
     offset: cc.p(payload.param[paramIds.offsetX], payload.param[paramIds.offsetY]),
     background: {
       renderType: 'graphics',
-      openCloseDelta: payload.param[paramIds.openCloseDelta],
+      openCloseDelta: cc.p(payload.param[paramIds.openCloseDeltaX], payload.param[paramIds.openCloseDeltaY]),
       backgroundColor: cc.color(
         payload.param[paramIds.backgroundColorChannelRed],
         payload.param[paramIds.backgroundColorChannelGreen],
