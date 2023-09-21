@@ -1,7 +1,7 @@
 /**
  * Font module.
  *
- * @module dd/core/font
+ * @module dd/core/ui/font
  */
 
 /**

@@ -1,7 +1,7 @@
 /**
  * Cache module.
  *
- * @module dd/core/font/cache
+ * @module dd/core/ui/font/cache
  * @internal
  */
 

@@ -1,7 +1,7 @@
 /**
  * Constants module.
  *
- * @module dd/core/font/constants
+ * @module dd/core/ui/font/constants
  */
 
 /**

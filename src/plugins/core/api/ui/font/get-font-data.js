@@ -1,7 +1,7 @@
 /**
  * Get font data module.
  *
- * @module dd/core/font/get-font-data
+ * @module dd/core/ui/font/get-font-data
  */
 
 /**
