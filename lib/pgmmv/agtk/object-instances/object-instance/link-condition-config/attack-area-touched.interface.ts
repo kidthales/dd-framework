@@ -12,7 +12,7 @@ import type { AgtkAttackAttributesValue as AgtkAttributePresetId } from '../../.
  *
  * @internal
  */
-type AgtkObjectType =
+export type AgtkAttackAreaTouchedObjectType =
   | AgtkAttackAreaTouchedConstant['SetByObjectGroup']
   | AgtkAttackAreaTouchedConstant['SetByObjectId'];
 
@@ -21,7 +21,7 @@ type AgtkObjectType =
  *
  * @internal
  */
-type AgtkAttributeType =
+export type AgtkAttackAreaTouchedAttributeType =
   | AgtkAttackAreaTouchedConstant['AttributeNone']
   | AgtkAttackAreaTouchedConstant['AttributePreset']
   | AgtkAttackAreaTouchedConstant['AttributeValue'];
@@ -56,7 +56,7 @@ export interface AgtkAttackAreaTouched {
    *  - 0 = Set by Object Group
    *  - 1 = Set by Object
    */
-  objectType: AgtkObjectType;
+  objectType: AgtkAttackAreaTouchedObjectType;
 
   /**
    * Value anything. This may be a discontinued property as I couldn't find
@@ -90,7 +90,7 @@ export interface AgtkAttackAreaTouched {
    *  - 1 = Preset Attributes
    *  - 2 = Set by Value
    */
-  attributeType: AgtkAttributeType;
+  attributeType: AgtkAttackAreaTouchedAttributeType;
 
   /**
    * Value 1-8.

@@ -1,5 +1,5 @@
 /**
- * @module @dd/common/plugin/events/dispatch-plugin-initialized-event
+ * @module dd/common/plugin/events/dispatch-plugin-initialized-event
  */
 
 /**

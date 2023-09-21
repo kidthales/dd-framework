@@ -12,7 +12,7 @@ import type { AgtkScrollMessageShow as AgtkScrollMessageShowConstant } from '../
  *
  * @internal
  */
-type AgtkBackgroundType =
+export type AgtkScrollMessageShowBackgroundType =
   | AgtkScrollMessageShowConstant['BackgroundNone']
   | AgtkScrollMessageShowConstant['BackgroundTemplate']
   | AgtkScrollMessageShowConstant['BackgroundImage'];
@@ -22,14 +22,16 @@ type AgtkBackgroundType =
  *
  * @internal
  */
-type AgtkTemplateId = AgtkScrollMessageShowConstant['TemplateBlack'] | AgtkScrollMessageShowConstant['TemplateWhite'];
+export type AgtkScrollMessageShowTemplateId =
+  | AgtkScrollMessageShowConstant['TemplateBlack']
+  | AgtkScrollMessageShowConstant['TemplateWhite'];
 
 /**
  * Agtk scroll message show position type type.
  *
  * @internal
  */
-type AgtkPositionType =
+export type AgtkScrollMessageShowPositionType =
   | AgtkScrollMessageShowConstant['PositionCenter']
   | AgtkScrollMessageShowConstant['PositionLockObjectCenter']
   | AgtkScrollMessageShowConstant['PositionScenePosition'];
@@ -39,7 +41,7 @@ type AgtkPositionType =
  *
  * @internal
  */
-type AgtkHorizontalAlignment =
+export type AgtkScrollMessageShowHorizontalAlignment =
   | AgtkScrollMessageShowConstant['HorzAlignLeft']
   | AgtkScrollMessageShowConstant['HorzAlignCenter']
   | AgtkScrollMessageShowConstant['HorzAlignRight'];
@@ -85,14 +87,14 @@ export interface AgtkScrollMessageShow {
    *  - 0 = Select from Templates
    *  - 1 = Select from Image Resource
    */
-  backgroundType: AgtkBackgroundType;
+  backgroundType: AgtkScrollMessageShowBackgroundType;
 
   /**
    * Value 1 - 2.
    *  - 1 = Black
    *  - 2 = White
    */
-  templateId: AgtkTemplateId;
+  templateId: AgtkScrollMessageShowTemplateId;
 
   /**
    * Value -1, 1+.
@@ -122,7 +124,7 @@ export interface AgtkScrollMessageShow {
    *  - 1 = Center of Object Locked by This Object
    *  - 2 = Use Scene as Base
    */
-  positionType: AgtkPositionType;
+  positionType: AgtkScrollMessageShowPositionType;
 
   /**
    * Value true/false.
@@ -154,7 +156,7 @@ export interface AgtkScrollMessageShow {
    *  - 1 = Center
    *  - 2 = Right
    */
-  horzAlign: AgtkHorizontalAlignment;
+  horzAlign: AgtkScrollMessageShowHorizontalAlignment;
 
   /**
    * Value any integer.

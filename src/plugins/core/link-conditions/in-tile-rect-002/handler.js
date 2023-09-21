@@ -14,6 +14,7 @@ module.exports = function handler(payload) {
       payload.param[paramIds.objectInstanceMode],
       payload.instanceId
     ),
+    resolveVariableFromSwitchVariableObject = require('../../api/util/resolve-variable-from-switch-variable-object'),
     /** @type {import('@pgmmv/agtk/variables/variable').AgtkVariable|import('@pgmmv/agtk/object-instances/object-instance/variables/variable').AgtkVariable|undefined} */
     tileRectXVariable,
     /** @type {import('@pgmmv/agtk/variables/variable').AgtkVariable|import('@pgmmv/agtk/object-instances/object-instance/variables/variable').AgtkVariable|undefined} */
@@ -24,46 +25,61 @@ module.exports = function handler(payload) {
     tileRectHeightVariable;
 
   if (!objectInstance) {
+    require('../../api/log')
+      .createLinkConditionLogger(payload, 'LC_IN_TILE_RECT_002_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_OBJECT_INSTANCE_MISSING'));
     return false;
   }
 
-  tileRectXVariable = dd.core.util.resolveVariableFromSwitchVariableObject(
+  tileRectXVariable = resolveVariableFromSwitchVariableObject(
     payload.param[paramIds.tileRectXVariableSource],
     payload.param[paramIds.tileRectXVariable],
     objectInstance.id
   );
 
   if (!tileRectXVariable) {
+    require('../../api/log')
+      .createLinkConditionLogger(payload, 'LC_IN_TILE_RECT_002_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_X_VARIABLE_MISSING'));
     return false;
   }
 
-  tileRectYVariable = dd.core.util.resolveVariableFromSwitchVariableObject(
+  tileRectYVariable = resolveVariableFromSwitchVariableObject(
     payload.param[paramIds.tileRectYVariableSource],
     payload.param[paramIds.tileRectYVariable],
     objectInstance.id
   );
 
   if (!tileRectYVariable) {
+    require('../../api/log')
+      .createLinkConditionLogger(payload, 'LC_IN_TILE_RECT_002_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_Y_VARIABLE_MISSING'));
     return false;
   }
 
-  tileRectWidthVariable = dd.core.util.resolveVariableFromSwitchVariableObject(
+  tileRectWidthVariable = resolveVariableFromSwitchVariableObject(
     payload.param[paramIds.tileRectWidthVariableSource],
     payload.param[paramIds.tileRectWidthVariable],
     objectInstance.id
   );
 
   if (!tileRectWidthVariable) {
+    require('../../api/log')
+      .createLinkConditionLogger(payload, 'LC_IN_TILE_RECT_002_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_WIDTH_VARIABLE_MISSING'));
     return false;
   }
 
-  tileRectHeightVariable = dd.core.util.resolveVariableFromSwitchVariableObject(
+  tileRectHeightVariable = resolveVariableFromSwitchVariableObject(
     payload.param[paramIds.tileRectHeightVariableSource],
     payload.param[paramIds.tileRectHeightVariable],
     objectInstance.id
   );
 
   if (!tileRectHeightVariable) {
+    require('../../api/log')
+      .createLinkConditionLogger(payload, 'LC_IN_TILE_RECT_002_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_HEIGHT_VARIABLE_MISSING'));
     return false;
   }
 

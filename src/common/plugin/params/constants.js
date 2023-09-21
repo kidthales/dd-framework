@@ -1,5 +1,5 @@
 /**
- * @module @dd/common/plugin/params/constants
+ * @module dd/common/plugin/params/constants
  */
 module.exports = {
   /**

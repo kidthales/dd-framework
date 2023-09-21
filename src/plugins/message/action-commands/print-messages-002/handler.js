@@ -25,7 +25,9 @@ module.exports = function handler(payload) {
     hudLayer;
 
   if (!objectInstance) {
-    dd.core.log.error(require('@dd/common').resolveLocaleKey('ERROR_AC_PRINT_MESSAGES_002_OBJECT_INSTANCE_MISSING'));
+    dd.core.log
+      .createActionCommandLogger(payload, 'AC_PRINT_MESSAGES_002_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_OBJECT_INSTANCE_MISSING'));
     return Agtk.constants.actionCommands.commandBehavior.CommandBehaviorNext;
   }
 
@@ -36,7 +38,9 @@ module.exports = function handler(payload) {
   );
 
   if (!okSwitch) {
-    dd.core.log.error(require('@dd/common').resolveLocaleKey('ERROR_AC_PRINT_MESSAGES_002_OK_SWITCH_MISSING'));
+    dd.core.log
+      .createActionCommandLogger(payload, 'AC_PRINT_MESSAGES_002_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_OK_SWITCH_MISSING'));
     return Agtk.constants.actionCommands.commandBehavior.CommandBehaviorNext;
   }
 
@@ -56,7 +60,9 @@ module.exports = function handler(payload) {
   messages = JSON.parse(payload.param[paramIds.messages]);
 
   if (!Array.isArray(messages) || !messages.length) {
-    dd.core.log.error(require('@dd/common').resolveLocaleKey('ERROR_AC_PRINT_MESSAGES_002_MESSAGES_INVALID'));
+    dd.core.log
+      .createActionCommandLogger(payload, 'AC_PRINT_MESSAGES_002_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_MESSAGES_INVALID'));
     return Agtk.constants.actionCommands.commandBehavior.CommandBehaviorNext;
   }
 
@@ -127,7 +133,9 @@ module.exports = function handler(payload) {
     hudLayer.addChild(session.panel);
   } else {
     // No valid background available to display; end session on next update.
-    dd.core.log.error(require('@dd/common').resolveLocaleKey('ERROR_AC_PRINT_MESSAGES_002_BACKGROUND_INVALID'));
+    dd.core.log
+      .createActionCommandLogger(payload, 'AC_PRINT_MESSAGES_002_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_BACKGROUND_INVALID'));
     session.done = true;
   }
 
@@ -142,7 +150,9 @@ module.exports = function handler(payload) {
     session.panel.open();
   } else {
     // No valid pages available to display; end session on next update.
-    dd.core.log.error(require('@dd/common').resolveLocaleKey('ERROR_AC_PRINT_MESSAGES_002_PAGES_INVALID'));
+    dd.core.log
+      .createActionCommandLogger(payload, 'AC_PRINT_MESSAGES_002_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_PAGES_INVALID'));
     session.done = true;
   }
 

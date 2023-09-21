@@ -11,7 +11,7 @@ import type { AgtkAssignments } from '../../../constants/assignments';
  *
  * @internal
  */
-type AgtkReflectVariableAssignmentOperator =
+export type AgtkDatabaseReflectVariableAssignmentOperator =
   | AgtkAssignments['VariableAssignOperatorSet']
   | AgtkAssignments['VariableAssignOperatorAdd']
   | AgtkAssignments['VariableAssignOperatorSub']
@@ -35,7 +35,7 @@ export interface AgtkDatabaseReflect {
   objectId: number;
   reflectObjectId: number;
   reflectQualifierId: number;
-  reflectVariableAssignOperator: AgtkReflectVariableAssignmentOperator;
+  reflectVariableAssignOperator: AgtkDatabaseReflectVariableAssignmentOperator;
   reflectVariableId: number;
   rowIndexFromName: boolean;
   rowNumberFromValue: boolean;

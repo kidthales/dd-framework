@@ -11,7 +11,7 @@ import type { AgtkObjectNear as AgtkObjectNearConstant } from '../../../constant
  *
  * @internal
  */
-type AgtkDistanceType =
+export type AgtkObjectNearDistanceType =
   | AgtkObjectNearConstant['DistanceNone']
   | AgtkObjectNearConstant['DistanceGreaterEqual']
   | AgtkObjectNearConstant['DistanceLessEqual'];
@@ -21,7 +21,9 @@ type AgtkDistanceType =
  *
  * @internal
  */
-type AgtkObjectType = AgtkObjectNearConstant['SetByObjectGroup'] | AgtkObjectNearConstant['SetByObjectId'];
+export type AgtkObjectNearObjectType =
+  | AgtkObjectNearConstant['SetByObjectGroup']
+  | AgtkObjectNearConstant['SetByObjectId'];
 
 /**
  * Agtk object instance object near link condition configuration interface.
@@ -55,7 +57,7 @@ export interface AgtkObjectNear {
    *  - 1 = Set Distance: More Than Specified Distance
    *  - 2 = Set Distance: Less Than Specified Distance
    */
-  distanceType: AgtkDistanceType;
+  distanceType: AgtkObjectNearDistanceType;
 
   /**
    * Value any whole number.
@@ -67,7 +69,7 @@ export interface AgtkObjectNear {
    *  - 0 = Set by Object Group
    *  - 1 = Set by Object
    */
-  objectType: AgtkObjectType;
+  objectType: AgtkObjectNearObjectType;
 
   /**
    * Value anything. This may be a discontinued property as I couldn't find

@@ -21,6 +21,10 @@ module.exports = function handler(payload) {
       payload.param[paramIds.tileOriginX],
       payload.param[paramIds.tileOriginY]
     );
+  } else {
+    require('../../api/log')
+      .createActionCommandLogger(payload, 'AC_SNAP_IN_TILE_001_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_OBJECT_INSTANCE_MISSING'));
   }
 
   return Agtk.constants.actionCommands.commandBehavior.CommandBehaviorNext;

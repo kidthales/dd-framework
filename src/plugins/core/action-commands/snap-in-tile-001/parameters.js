@@ -48,7 +48,6 @@ module.exports = {
   ids: _ids,
   entries: [
     _param.hr,
-    _param.embedded(-1, 'PARAM_INPUTS_GROUP'),
     _param.customId(
       _ids.objectInstanceMode,
       'PARAM_OBJECT_INSTANCE_MODE',

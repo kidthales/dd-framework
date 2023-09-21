@@ -8,4 +8,9 @@
 /**
  * @type {Record<string, import("./types").Session|undefined>}
  */
-module.exports = {};
+var _state = {};
+
+/**
+ *
+ */
+module.exports = _state;

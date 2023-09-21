@@ -12,7 +12,7 @@ import type { AgtkAttackAreaNear as AgtkAttackAreaNearConstant } from '../../../
  *
  * @internal
  */
-type AgtkDistanceType =
+export type AgtkAttackAreaNearDistanceType =
   | AgtkAttackAreaNearConstant['DistanceNone']
   | AgtkAttackAreaNearConstant['DistanceGreaterEqual']
   | AgtkAttackAreaNearConstant['DistanceLessEqual'];
@@ -22,14 +22,16 @@ type AgtkDistanceType =
  *
  * @internal
  */
-type AgtkObjectType = AgtkAttackAreaNearConstant['SetByObjectGroup'] | AgtkAttackAreaNearConstant['SetByObjectId'];
+export type AgtkAttackAreaNearObjectType =
+  | AgtkAttackAreaNearConstant['SetByObjectGroup']
+  | AgtkAttackAreaNearConstant['SetByObjectId'];
 
 /**
  * Attack area near attribute type type.
  *
  * @internal
  */
-type AgtkAttributeType =
+export type AgtkAttackAreaNearAttributeType =
   | AgtkAttackAreaNearConstant['AttributeNone']
   | AgtkAttackAreaNearConstant['AttributePreset']
   | AgtkAttackAreaNearConstant['AttributeValue'];
@@ -66,7 +68,7 @@ export interface AgtkAttackAreaNear {
    *  - 1 = Set Distance: More Than Specified Distance
    *  - 2 = Set Distance: Less Than Specified Distance
    */
-  distanceType: AgtkDistanceType;
+  distanceType: AgtkAttackAreaNearDistanceType;
 
   /**
    * Value any whole number.
@@ -78,7 +80,7 @@ export interface AgtkAttackAreaNear {
    *  - 0 = Set by Object Group
    *  - 1 = Set by Object
    */
-  objectType: AgtkObjectType;
+  objectType: AgtkAttackAreaNearObjectType;
 
   /**
    * Value anything. This may be a discontinued property as I couldn't find
@@ -114,7 +116,7 @@ export interface AgtkAttackAreaNear {
    *  - 1 = Preset Attributes
    *  - 2 = Set by Value
    */
-  attributeType: AgtkAttributeType;
+  attributeType: AgtkAttackAreaNearAttributeType;
 
   /**
    * Value 1-8.

@@ -12,7 +12,7 @@ import type { AgtkQualifierValue as AgtkQualifierId } from '../../../constants/q
  *
  * @internal
  */
-type AgtkSwitchCondition =
+export type AgtkSwitchVariableChangedSwitchCondition =
   | AgtkConditions['SwitchConditionOn']
   | AgtkConditions['SwitchConditionOff']
   | AgtkConditions['SwitchConditionOnFromOff']
@@ -23,7 +23,7 @@ type AgtkSwitchCondition =
  *
  * @internal
  */
-type AgtkCompareVariableOperator =
+export type AgtkSwitchVariableChangedCompareVariableOperator =
   | AgtkConditions['OperatorLess']
   | AgtkConditions['OperatorLessEqual']
   | AgtkConditions['OperatorEaual']
@@ -36,7 +36,7 @@ type AgtkCompareVariableOperator =
  *
  * @internal
  */
-type AgtkCompareValueType =
+export type AgtkSwitchVariableChangedCompareValueType =
   | AgtkConditions['CompareValue']
   | AgtkConditions['CompareVariable']
   | AgtkConditions['CompareNaN'];
@@ -84,7 +84,7 @@ export interface AgtkSwitchVariableChanged {
    *  - 2 = OFF to ON
    *  - 3 = ON to OFF
    */
-  switchCondition: AgtkSwitchCondition;
+  switchCondition: AgtkSwitchVariableChangedSwitchCondition;
 
   /**
    * Value -7, -5, -2, -1, 0, 1+.
@@ -119,7 +119,7 @@ export interface AgtkSwitchVariableChanged {
    *  - 4 = Greater than >
    *  - 5 = Not equal to !=
    */
-  compareVariableOperator: AgtkCompareVariableOperator;
+  compareVariableOperator: AgtkSwitchVariableChangedCompareVariableOperator;
 
   /**
    * Value 0 - 2.
@@ -127,7 +127,7 @@ export interface AgtkSwitchVariableChanged {
    *  - 1 = Set Variable as Condition
    *  - 2 = Non-numeric
    */
-  compareValueType: AgtkCompareValueType;
+  compareValueType: AgtkSwitchVariableChangedCompareValueType;
 
   /**
    * Value any float.

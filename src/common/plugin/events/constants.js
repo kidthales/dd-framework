@@ -1,5 +1,9 @@
 /**
- * @module @dd/common/plugin/events/constants
+ * @module dd/common/plugin/events/constants
+ */
+
+/**
+ *
  */
 module.exports = {
   /**

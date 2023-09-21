@@ -1,5 +1,5 @@
 /**
- * @module @dd/common/plugin/events/add-plugin-initialized-event-listener
+ * @module dd/common/plugin/events/add-plugin-initialized-event-listener
  */
 
 /**

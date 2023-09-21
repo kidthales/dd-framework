@@ -8,6 +8,7 @@
  *
  */
 module.exports = {
+  camera: require('./camera'),
   common: require('./common'),
   coord: require('./coord'),
   event: require('./event'),

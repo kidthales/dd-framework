@@ -16,6 +16,9 @@ module.exports = function handler(payload) {
     );
 
   if (!objectInstance) {
+    require('../../api/log')
+      .createLinkConditionLogger(payload, 'LC_IN_RECT_001_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_OBJECT_INSTANCE_MISSING'));
     return false;
   }
 

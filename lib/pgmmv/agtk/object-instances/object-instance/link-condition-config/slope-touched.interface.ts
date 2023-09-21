@@ -11,7 +11,7 @@ import type { AgtkSlopeTouched as AgtkSlopeTouchedConstant } from '../../../cons
  *
  * @internal
  */
-type AgtkDirectionType =
+export type AgtkSlopeTouchedDirectionType =
   | AgtkSlopeTouchedConstant['DirectionUpper']
   | AgtkSlopeTouchedConstant['DirectionLower']
   | AgtkSlopeTouchedConstant['DirectionAny'];
@@ -21,7 +21,7 @@ type AgtkDirectionType =
  *
  * @internal
  */
-type AgtkDownwardType =
+export type AgtkSlopeTouchedDownwardType =
   | AgtkSlopeTouchedConstant['DownwardLeft']
   | AgtkSlopeTouchedConstant['DownwardRight']
   | AgtkSlopeTouchedConstant['DownwardNone'];
@@ -36,7 +36,7 @@ export interface AgtkSlopeTouched {
    *  - 1 = From Bottom
    *  - 2 = Don't Set
    */
-  directionType: AgtkDirectionType;
+  directionType: AgtkSlopeTouchedDirectionType;
 
   /**
    * Value 0 - 2.
@@ -44,5 +44,5 @@ export interface AgtkSlopeTouched {
    *  - 1 = Sloping Right
    *  - 2 = Don't Set
    */
-  downwardType: AgtkDownwardType;
+  downwardType: AgtkSlopeTouchedDownwardType;
 }

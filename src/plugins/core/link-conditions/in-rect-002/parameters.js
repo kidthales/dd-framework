@@ -75,7 +75,6 @@ module.exports = {
   ids: _ids,
   entries: [
     _paramHelper.hr,
-    _paramHelper.embedded(-1, 'PARAM_INPUTS_GROUP'),
     _paramHelper.customId(
       _ids.objectInstanceMode,
       'PARAM_OBJECT_INSTANCE_MODE',

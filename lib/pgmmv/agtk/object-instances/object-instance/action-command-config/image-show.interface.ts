@@ -12,7 +12,7 @@ import type { AgtkPriorityTypeValue as AgtkPriorityType } from '../../../constan
  *
  * @internal
  */
-type AgtkPositionType =
+export type AgtkImageShowPositionType =
   | AgtkImageShowConstant['PositionCenter']
   | AgtkImageShowConstant['PositionLockObjectCenter']
   | AgtkImageShowConstant['PositionScenePosition'];
@@ -22,7 +22,7 @@ type AgtkPositionType =
  *
  * @internal
  */
-type AgtkVerticalAlignment =
+export type AgtkImageShowVerticalAlignment =
   | AgtkImageShowConstant['VertAlignCenter']
   | AgtkImageShowConstant['VertAlignTop']
   | AgtkImageShowConstant['VertAlignBottom'];
@@ -32,7 +32,7 @@ type AgtkVerticalAlignment =
  *
  * @internal
  */
-type AgtkHorizontalAlignment =
+export type AgtkImageShowHorizontalAlignment =
   | AgtkImageShowConstant['HorzAlignCenter']
   | AgtkImageShowConstant['HorzAlignLeft']
   | AgtkImageShowConstant['HorzAlignRight'];
@@ -71,7 +71,7 @@ export interface AgtkImageShow {
    *  - 1 = Center of Object Locked by This Object
    *  - 2 = Use Scene as Base
    */
-  positionType: AgtkPositionType;
+  positionType: AgtkImageShowPositionType;
 
   /**
    * Value true/false.
@@ -93,7 +93,7 @@ export interface AgtkImageShow {
    *  - 1 = Top
    *  - 2 = Bottom
    */
-  vertAlign: AgtkVerticalAlignment;
+  vertAlign: AgtkImageShowVerticalAlignment;
 
   /**
    * Value 0 - 2.
@@ -101,7 +101,7 @@ export interface AgtkImageShow {
    *  - 1 = Left
    *  - 2 = Right
    */
-  horzAlign: AgtkHorizontalAlignment;
+  horzAlign: AgtkImageShowHorizontalAlignment;
 
   /**
    * Value any integer.

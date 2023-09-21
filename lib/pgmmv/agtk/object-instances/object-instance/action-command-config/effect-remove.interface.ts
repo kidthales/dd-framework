@@ -11,7 +11,7 @@ import type { AgtkEffectRemove as AgtkEffectRemoveConstant } from '../../../cons
  *
  * @internal
  */
-type AgtkTargetingType =
+export type AgtkEffectRemoveTargetingType =
   | AgtkEffectRemoveConstant['TargettingByType']
   | AgtkEffectRemoveConstant['TargettingByGroup']
   | AgtkEffectRemoveConstant['TargettingById']
@@ -37,7 +37,7 @@ export interface AgtkEffectRemove {
    *
    * @note Developer typo.
    */
-  targettingType: AgtkTargetingType;
+  targettingType: AgtkEffectRemoveTargetingType;
 
   /**
    * Value anything. This may be a discontinued property as I couldn't find

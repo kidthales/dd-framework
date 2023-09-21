@@ -11,7 +11,7 @@ import type { AgtkFilterEffects } from '../../../constants/filter-effects';
  *
  * @internal
  */
-type AgtkEffectType =
+export type AgtkObjectFilterEffectEffectType =
   | AgtkFilterEffects['EffectNoise']
   | AgtkFilterEffects['EffectMosaic']
   | AgtkFilterEffects['EffectMonochrome']
@@ -44,7 +44,7 @@ export interface AgtkObjectFilterEffect {
    *  - 10 = Transparency
    *  - 11 = Blink
    */
-  effectType: AgtkEffectType;
+  effectType: AgtkObjectFilterEffectEffectType;
 
   /**
    * Value 0 - 100.

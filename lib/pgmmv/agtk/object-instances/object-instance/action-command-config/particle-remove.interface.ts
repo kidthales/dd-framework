@@ -11,7 +11,7 @@ import type { AgtkParticleRemove as AgtkParticleRemoveConstant } from '../../../
  *
  * @internal
  */
-type AgtkTargetingType =
+export type AgtkParticleRemoveTargetingType =
   | AgtkParticleRemoveConstant['TargettingByType']
   | AgtkParticleRemoveConstant['TargettingByGroup']
   | AgtkParticleRemoveConstant['TargettingById']
@@ -35,7 +35,7 @@ export interface AgtkParticleRemove {
    *  - 1 = Set by Object
    *  - 5 = Particles Being Shown in Scene
    */
-  targettingType: AgtkTargetingType;
+  targettingType: AgtkParticleRemoveTargetingType;
 
   /**
    * Value anything. This may be a discontinued property as I couldn't find

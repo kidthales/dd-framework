@@ -111,7 +111,7 @@ export type LinkConditionConfig = CommonActionCommandOrLinkConditionConfig<LinkC
 /**
  * Common action command or link condition configuration.
  */
-interface CommonActionCommandOrLinkConditionConfig<T extends CommonActionCommandOrLinkConditionPayload> {
+export interface CommonActionCommandOrLinkConditionConfig<T extends CommonActionCommandOrLinkConditionPayload> {
   /**
    * Name.
    */
@@ -181,7 +181,7 @@ export interface LinkConditionPayload extends CommonActionCommandOrLinkCondition
 /**
  * Common action command or link condition payload.
  */
-interface CommonActionCommandOrLinkConditionPayload {
+export interface CommonActionCommandOrLinkConditionPayload {
   /**
    * Index.
    */

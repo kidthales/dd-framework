@@ -22,7 +22,7 @@ module.exports = {
   output: {
     iife: true,
     filename: `dd-framework-[name]${isProd ? '.min' : ''}.js`,
-    path: distPath,
+    path: `${distPath}/plugins`,
     environment: {
       arrowFunction: false
     }

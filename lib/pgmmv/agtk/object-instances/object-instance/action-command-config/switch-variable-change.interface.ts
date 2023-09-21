@@ -12,7 +12,7 @@ import type { AgtkQualifierValue as AgtkQualifierId } from '../../../constants/q
  *
  * @internal
  */
-type AgtkSwitchValue =
+export type AgtkSwitchVariableChangeSwitchValue =
   | AgtkAssignments['SwitchAssignOn']
   | AgtkAssignments['SwitchAssignOff']
   | AgtkAssignments['SwitchAssignToggle'];
@@ -22,7 +22,7 @@ type AgtkSwitchValue =
  *
  * @internal
  */
-type AgtkVariableAssignmentOperator =
+export type AgtkSwitchVariableChangeVariableAssignmentOperator =
   | AgtkAssignments['VariableAssignOperatorSet']
   | AgtkAssignments['VariableAssignOperatorAdd']
   | AgtkAssignments['VariableAssignOperatorSub']
@@ -35,7 +35,7 @@ type AgtkVariableAssignmentOperator =
  *
  * @internal
  */
-type AgtkVariableAssignValueType =
+export type AgtkSwitchVariableChangeVariableAssignValueType =
   | AgtkAssignments['VariableAssignValue']
   | AgtkAssignments['VariableAssignVariable']
   | AgtkAssignments['VariableAssignRandom']
@@ -83,7 +83,7 @@ export interface AgtkSwitchVariableChange {
    *  - 1 = OFF
    *  - 2 = Toggle
    */
-  switchValue: AgtkSwitchValue;
+  switchValue: AgtkSwitchVariableChangeSwitchValue;
 
   /**
    * Value -7, -5, -2, -1, 0, 1+.
@@ -118,7 +118,7 @@ export interface AgtkSwitchVariableChange {
    *  - 4 = Divide & assign (/=)
    *  - 5 = Modulus & assign (%=)
    */
-  variableAssignOperator: AgtkVariableAssignmentOperator;
+  variableAssignOperator: AgtkSwitchVariableChangeVariableAssignmentOperator;
 
   /**
    * Value 0 - 3.
@@ -129,7 +129,7 @@ export interface AgtkSwitchVariableChange {
    *
    * @note Do NOT specify Agtk.constants.assignments.VariableAssignScript.
    */
-  variableAssignValueType: AgtkVariableAssignValueType;
+  variableAssignValueType: AgtkSwitchVariableChangeVariableAssignValueType;
 
   /**
    * Value any float.

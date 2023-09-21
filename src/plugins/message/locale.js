@@ -27,64 +27,36 @@ module.exports = {
   AC_PRINT_MESSAGES_001_DESCRIPTION: {
     en: 'Print a series of messages to implicit HUD layer. Uses relative positioning. Provides OK/CANCEL/EXPEDITE functionality.'
   },
-  ERROR_AC_PRINT_MESSAGES_001_OBJECT_INSTANCE_MISSING: {
-    en: '[print-messages-001] Object instance missing.'
-  },
-  ERROR_AC_PRINT_MESSAGES_001_OK_SWITCH_MISSING: {
-    en: '[print-messages-001] OK switch missing.'
-  },
-  ERROR_AC_PRINT_MESSAGES_001_MESSAGES_INVALID: {
-    en: '[print-messages-001] Input messages invalid.'
-  },
-  ERROR_AC_PRINT_MESSAGES_001_PAGES_INVALID: {
-    en: '[print-messages-001] Processed messages invalid.'
-  },
-
   AC_PRINT_MESSAGES_002_NAME: {
     en: '[DD] [Message] Print Messages Mk II'
   },
   AC_PRINT_MESSAGES_002_DESCRIPTION: {
     en: 'Print a series of messages to implicit HUD layer, with graphical panel background. Uses relative positioning. Provides OK/CANCEL/EXPEDITE functionality.'
   },
-  ERROR_AC_PRINT_MESSAGES_002_OBJECT_INSTANCE_MISSING: {
-    en: '[print-messages-002] Object instance missing.'
-  },
-  ERROR_AC_PRINT_MESSAGES_002_OK_SWITCH_MISSING: {
-    en: '[print-messages-002] OK switch missing.'
-  },
-  ERROR_AC_PRINT_MESSAGES_002_MESSAGES_INVALID: {
-    en: '[print-messages-002] Input messages invalid.'
-  },
-  ERROR_AC_PRINT_MESSAGES_002_PAGES_INVALID: {
-    en: '[print-messages-002] Processed messages invalid.'
-  },
-  ERROR_AC_PRINT_MESSAGES_002_BACKGROUND_INVALID: {
-    en: '[print-messages-002] Background invalid.'
-  },
-
   AC_PRINT_MESSAGES_003_NAME: {
     en: '[DD] [Message] Print Messages Mk III'
   },
   AC_PRINT_MESSAGES_003_DESCRIPTION: {
     en: 'Print a series of messages to implicit HUD layer, with 9-slice panel background. Uses relative positioning. Provides OK/CANCEL/EXPEDITE functionality.'
   },
-  ERROR_AC_PRINT_MESSAGES_003_OBJECT_INSTANCE_MISSING: {
-    en: '[print-messages-003] Object instance missing.'
+
+  ERROR_OBJECT_INSTANCE_MISSING: {
+    en: 'Object instance missing.'
   },
-  ERROR_AC_PRINT_MESSAGES_003_OK_SWITCH_MISSING: {
-    en: '[print-messages-003] OK switch missing.'
+  ERROR_OK_SWITCH_MISSING: {
+    en: 'OK switch missing.'
   },
-  ERROR_AC_PRINT_MESSAGES_003_MESSAGES_INVALID: {
-    en: '[print-messages-003] Input messages invalid.'
+  ERROR_MESSAGES_INVALID: {
+    en: 'Input messages invalid.'
   },
-  ERROR_AC_PRINT_MESSAGES_003_PAGES_INVALID: {
-    en: '[print-messages-003] Processed messages invalid.'
+  ERROR_PAGES_INVALID: {
+    en: 'Processed messages invalid.'
   },
-  ERROR_AC_PRINT_MESSAGES_003_BACKGROUND_INVALID: {
-    en: '[print-messages-003] Background invalid.'
+  ERROR_BACKGROUND_INVALID: {
+    en: 'Background invalid.'
   },
-  ERROR_AC_PRINT_MESSAGES_002_BACKGROUND_IMAGE: {
-    en: '[print-messages-003] Background image not provided.'
+  ERROR_BACKGROUND_IMAGE: {
+    en: 'Background image not provided.'
   },
 
   PARAM_OBJECT_INSTANCE_MODE: {

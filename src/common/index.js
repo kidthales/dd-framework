@@ -1,5 +1,5 @@
 /**
- * Common module.
+ * Common module. Each plugin will have its own copy of this module.
  *
  * @module dd/common
  */

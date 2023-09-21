@@ -12,7 +12,7 @@ import type { AgtkPriorityTypeValue as AgtkPriorityType } from '../../../constan
  *
  * @internal
  */
-type AgtkWindowType =
+export type AgtkMessageShowWindowType =
   | AgtkMessageShowConstant['WindowNone']
   | AgtkMessageShowConstant['WindowTemplate']
   | AgtkMessageShowConstant['WindowImage'];
@@ -22,7 +22,7 @@ type AgtkWindowType =
  *
  * @internal
  */
-type AgtkTemplateId =
+export type AgtkMessageShowTemplateId =
   | AgtkMessageShowConstant['TemplateWhiteFrame']
   | AgtkMessageShowConstant['TemplateBlack']
   | AgtkMessageShowConstant['TemplateWhite'];
@@ -32,7 +32,7 @@ type AgtkTemplateId =
  *
  * @internal
  */
-type AgtkPositionType =
+export type AgtkMessageShowPositionType =
   | AgtkMessageShowConstant['PositionCenter']
   | AgtkMessageShowConstant['PositionLockObjectCenter']
   | AgtkMessageShowConstant['PositionScenePosition'];
@@ -42,7 +42,7 @@ type AgtkPositionType =
  *
  * @internal
  */
-type AgtkHorizontalAlignment =
+export type AgtkMessageShowHorizontalAlignment =
   | AgtkMessageShowConstant['HorzAlignLeft']
   | AgtkMessageShowConstant['HorzAlignCenter']
   | AgtkMessageShowConstant['HorzAlignRight'];
@@ -52,7 +52,7 @@ type AgtkHorizontalAlignment =
  *
  * @internal
  */
-type AgtkVerticalAlignment =
+export type AgtkMessageShowVerticalAlignment =
   | AgtkMessageShowConstant['VertAlignTop']
   | AgtkMessageShowConstant['VertAlignCenter']
   | AgtkMessageShowConstant['VertAlignBottom'];
@@ -169,7 +169,7 @@ export interface AgtkMessageShow {
    *  - 0 = Select from Templates
    *  - 1 = Select from Image Resource
    */
-  windowType: AgtkWindowType;
+  windowType: AgtkMessageShowWindowType;
 
   /**
    * Value 0 - 2.
@@ -177,7 +177,7 @@ export interface AgtkMessageShow {
    *  - 1 = Black
    *  - 2 = White
    */
-  templateId: AgtkTemplateId;
+  templateId: AgtkMessageShowTemplateId;
 
   /**
    * Value -1, 1+.
@@ -207,7 +207,7 @@ export interface AgtkMessageShow {
    *  - 1 = Center of Object Locked by This Object
    *  - 2 = Use Scene as Base
    */
-  positionType: AgtkPositionType;
+  positionType: AgtkMessageShowPositionType;
 
   /**
    * Value true/false.
@@ -249,7 +249,7 @@ export interface AgtkMessageShow {
    *  - 1 = Center
    *  - 2 = Right
    */
-  horzAlign: AgtkHorizontalAlignment;
+  horzAlign: AgtkMessageShowHorizontalAlignment;
 
   /**
    * Value 0 - 2.
@@ -257,7 +257,7 @@ export interface AgtkMessageShow {
    *  - 1 = Center
    *  - 2 = Bottom
    */
-  vertAlign: AgtkVerticalAlignment;
+  vertAlign: AgtkMessageShowVerticalAlignment;
 
   /**
    * Value 0.00+. NOTE: 300 = 1sec.

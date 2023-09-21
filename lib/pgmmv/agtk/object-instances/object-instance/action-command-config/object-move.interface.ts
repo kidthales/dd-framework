@@ -11,7 +11,7 @@ import type { AgtkObjectMove as AgtkObjectMoveConstant } from '../../../constant
  *
  * @internal
  */
-type AgtkMoveType =
+export type AgtkObjectMoveType =
   | AgtkObjectMoveConstant['MoveWithDirection']
   | AgtkObjectMoveConstant['MoveToPosition']
   | AgtkObjectMoveConstant['MoveToObjectCenter']
@@ -21,7 +21,7 @@ type AgtkMoveType =
 /**
  * Agtk object move targeting type type.
  */
-type AgtkTargetingType =
+export type AgtkObjectMoveTargetingType =
   | AgtkObjectMoveConstant['TargettingByType']
   | AgtkObjectMoveConstant['TargettingByGroup']
   | AgtkObjectMoveConstant['TargettingById']
@@ -40,7 +40,7 @@ export interface AgtkObjectMove {
    *  - 3 = Move to Specified Object - Origin
    *  - 4 = Move to Specified Object - Connection Point
    */
-  moveType: AgtkMoveType;
+  moveType: AgtkObjectMoveType;
 
   /**
    * Value 0 - 359. Common use references, but not limited too:
@@ -144,7 +144,7 @@ export interface AgtkObjectMove {
    *
    * @note Developer typo.
    */
-  targettingType: AgtkTargetingType;
+  targettingType: AgtkObjectMoveTargetingType;
 
   /**
    * Value anything. This may be a discontinued property as I couldn't find

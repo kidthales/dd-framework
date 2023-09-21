@@ -1,5 +1,5 @@
 /**
- * @module @dd/common/plugin/params
+ * @module dd/common/plugin/params
  */
 
 /**

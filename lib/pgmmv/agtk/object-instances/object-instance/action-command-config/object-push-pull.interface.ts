@@ -12,7 +12,7 @@ import type { AgtkQualifierValue as AgtkTargetQualifierId } from '../../../const
  *
  * @internal
  */
-type AgtkDirectionType =
+export type AgtkObjectPushPullDirectionType =
   | AgtkObjectPushPullConstant['DirectionAngle']
   | AgtkObjectPushPullConstant['DirectionObjectDisp'];
 
@@ -21,7 +21,7 @@ type AgtkDirectionType =
  *
  * @internal
  */
-type AgtkEffectDirectionType =
+export type AgtkObjectPushPullEffectDirectionType =
   | AgtkObjectPushPullConstant['EffectDirectionAngle']
   | AgtkObjectPushPullConstant['EffectDirectionObjectDisp']
   | AgtkObjectPushPullConstant['EffectDirectionObjectConnect'];
@@ -29,7 +29,7 @@ type AgtkEffectDirectionType =
 /**
  * Agtk object push/pull targeting type type.
  */
-type AgtkTargetingType =
+export type AgtkObjectPushPullTargetingType =
   | AgtkObjectPushPullConstant['TargettingByType']
   | AgtkObjectPushPullConstant['TargettingByGroup']
   | AgtkObjectPushPullConstant['TargettingById']
@@ -59,7 +59,7 @@ export interface AgtkObjectPushPull {
    *  - 0 = Range Direction: Set Angle
    *  - 1 = Range Direction: This Object's Display Direction
    */
-  directionType: AgtkDirectionType;
+  directionType: AgtkObjectPushPullDirectionType;
 
   /**
    * Value 0 - 359. Common use references, but not limited too:
@@ -110,7 +110,7 @@ export interface AgtkObjectPushPull {
    *  - 1 = Effect Direction: This Object's Display Direction
    *  - 2 = Effect Direction: This Object's Connection Point
    */
-  effectDirectionType: AgtkEffectDirectionType;
+  effectDirectionType: AgtkObjectPushPullEffectDirectionType;
 
   /**
    * Value 0 - 359. Common use references, but not limited too:
@@ -158,7 +158,7 @@ export interface AgtkObjectPushPull {
    *    for this option)
    *  - 3 = Objects Locked by This Object
    */
-  targettingType: AgtkTargetingType;
+  targettingType: AgtkObjectPushPullTargetingType;
 
   /**
    * Value anything. This may be a discontinued property as I couldn't find

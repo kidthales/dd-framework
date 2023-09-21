@@ -25,7 +25,9 @@ module.exports = function handler(payload) {
     hudLayer;
 
   if (!objectInstance) {
-    dd.core.log.error(require('@dd/common').resolveLocaleKey('ERROR_AC_PRINT_MESSAGES_001_OBJECT_INSTANCE_MISSING'));
+    dd.core.log
+      .createActionCommandLogger(payload, 'AC_PRINT_MESSAGES_001_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_OBJECT_INSTANCE_MISSING'));
     return Agtk.constants.actionCommands.commandBehavior.CommandBehaviorNext;
   }
 
@@ -36,7 +38,9 @@ module.exports = function handler(payload) {
   );
 
   if (!okSwitch) {
-    dd.core.log.error(require('@dd/common').resolveLocaleKey('ERROR_AC_PRINT_MESSAGES_001_OK_SWITCH_MISSING'));
+    dd.core.log
+      .createActionCommandLogger(payload, 'AC_PRINT_MESSAGES_001_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_OK_SWITCH_MISSING'));
     return Agtk.constants.actionCommands.commandBehavior.CommandBehaviorNext;
   }
 
@@ -56,7 +60,9 @@ module.exports = function handler(payload) {
   messages = JSON.parse(payload.param[paramIds.messages]);
 
   if (!Array.isArray(messages) || !messages.length) {
-    dd.core.log.error(require('@dd/common').resolveLocaleKey('ERROR_AC_PRINT_MESSAGES_001_MESSAGES_INVALID'));
+    dd.core.log
+      .createActionCommandLogger(payload, 'AC_PRINT_MESSAGES_001_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_MESSAGES_INVALID'));
     return Agtk.constants.actionCommands.commandBehavior.CommandBehaviorNext;
   }
 
@@ -118,7 +124,9 @@ module.exports = function handler(payload) {
     session.printer.print(0);
   } else {
     // No valid pages available to display; end session on next update.
-    dd.core.log.error(require('@dd/common').resolveLocaleKey('ERROR_AC_PRINT_MESSAGES_001_PAGES_INVALID'));
+    dd.core.log
+      .createActionCommandLogger(payload, 'AC_PRINT_MESSAGES_001_NAME')
+      .error(require('@dd/common').resolveLocaleKey('ERROR_PAGES_INVALID'));
     session.done = true;
   }
 

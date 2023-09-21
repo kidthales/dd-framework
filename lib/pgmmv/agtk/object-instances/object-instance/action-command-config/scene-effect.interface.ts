@@ -11,7 +11,7 @@ import type { AgtkObjectFilterEffect } from './object-filter-effect.interface';
 /**
  * Agtk scene effect filter effect image placement.
  */
-type AgtkImagePlacement =
+export type AgtkSceneEffectImagePlacement =
   | AgtkFilterEffects['PlacementCenter']
   | AgtkFilterEffects['PlacementMagnify']
   | AgtkFilterEffects['PlacementTiling']
@@ -43,6 +43,6 @@ export interface AgtkSceneEffect {
      *  - 3 = Keep Aspect Ratio and Enlarge
      *  - 4 = Center of This Object
      */
-    imagePlacement: AgtkImagePlacement;
+    imagePlacement: AgtkSceneEffectImagePlacement;
   };
 }

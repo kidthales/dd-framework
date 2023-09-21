@@ -187,6 +187,20 @@ module.exports = {
     en: 'Snap object instance position vertically within current tile. Tile top is 0, bottom is 1.'
   },
 
+  AC_CAMERA_TO_WORLD_001_NAME: {
+    en: '[DD] [Core] Camera To World Mk I'
+  },
+  AC_CAMERA_TO_WORLD_001_DESCRIPTION: {
+    en: 'Convert variable values from camera space to world space.'
+  },
+
+  AC_WORLD_TO_CAMERA_001_NAME: {
+    en: '[DD] [Core] World To Camera Mk I'
+  },
+  AC_WORLD_TO_CAMERA_001_DESCRIPTION: {
+    en: 'Convert variable values from world space to camera space.'
+  },
+
   LC_IN_RECT_001_NAME: {
     en: '[DD] [Core] In Rect Mk I'
   },
@@ -229,8 +243,32 @@ module.exports = {
     en: "Test if object instance position is within rectangle specified in tiles. Rectangle x & y coordinates correspond to top left & tile coordinates (0,0) correspond to top left of current scene's tilemap. Rectangle position & dimensions are read from variables."
   },
 
-  PARAM_INPUTS_GROUP: {
-    en: 'Inputs\n‾‾‾‾‾‾'
+  ERROR_OBJECT_INSTANCE_MISSING: {
+    en: 'Object instance missing.'
+  },
+  ERROR_X_VARIABLE_MISSING: {
+    en: 'X variable missing.'
+  },
+  ERROR_Y_VARIABLE_MISSING: {
+    en: 'Y variable missing.'
+  },
+  ERROR_INPUT_X_VARIABLE_MISSING: {
+    en: 'Input x variable missing.'
+  },
+  ERROR_INPUT_Y_VARIABLE_MISSING: {
+    en: 'Input y variable missing.'
+  },
+  ERROR_OUTPUT_X_VARIABLE_MISSING: {
+    en: 'Output x variable missing.'
+  },
+  ERROR_OUTPUT_Y_VARIABLE_MISSING: {
+    en: 'Output y variable missing.'
+  },
+  ERROR_WIDTH_VARIABLE_MISSING: {
+    en: 'Width variable missing.'
+  },
+  ERROR_HEIGHT_VARIABLE_MISSING: {
+    en: 'Height variable missing.'
   },
 
   PARAM_LOG_LEVEL: {

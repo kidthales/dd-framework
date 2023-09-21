@@ -15,10 +15,17 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "prebuild": "shx rm -rf dist",
-    "build": "cross-env NODE_ENV=development webpack --progress --color && cross-env NODE_ENV=production webpack --progress --color",
+    "build": "npm run build:plugins && npm run build:docs",
+    "prebuild:plugins": "shx rm -rf dist/plugins",
+    "build:plugins": "cross-env NODE_ENV=development webpack --progress --color && cross-env NODE_ENV=production webpack --progress --color",
+    "build:docs": "npm run build:docs:api",
+    "prebuild:docs:api": "shx rm -rf dist/docs/api",
+    "build:docs:api": "typedoc",
     "lint": "eslint . && prettier --check .",
-    "lint-fix": "eslint --fix . && prettier --write ."
+    "lint:fix": "eslint --cache --fix . && prettier --write .",
+    "clean": "npm run clean:dist && npm run clean:lint",
+    "clean:dist": "shx rm -rf dist",
+    "clean:lint": "shx rm -f .eslintcache"
   },
   "devDependencies": {
     "@babel/core": "~7.22.10",
@@ -34,6 +41,7 @@
     "prettier": "~3.0.2",
     "shx": "~0.3.4",
     "type-fest": "~4.2.0",
+    "typedoc": "~0.25.1",
     "webpack": "~5.88.2",
     "webpack-cli": "~5.1.4"
   },

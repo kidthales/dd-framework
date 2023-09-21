@@ -12,7 +12,7 @@ import type { AgtkConditions } from '../../../constants/conditions';
  *
  * @internal
  */
-type AgtkCompareVariableOperator =
+export type AgtkObjectLockCompareVariableOperator =
   | AgtkConditions['OperatorLess']
   | AgtkConditions['OperatorLessEqual']
   | AgtkConditions['OperatorEaual']
@@ -25,7 +25,7 @@ type AgtkCompareVariableOperator =
  *
  * @internal
  */
-type AgtkCompareValueType =
+export type AgtkObjectLockCompareValueType =
   | AgtkConditions['CompareValue']
   | AgtkConditions['CompareVariable']
   | AgtkConditions['CompareNaN'];
@@ -35,7 +35,7 @@ type AgtkCompareValueType =
  *
  * @internal
  */
-type AgtkSwitchCondition =
+export type AgtkObjectLockSwitchCondition =
   | AgtkConditions['SwitchConditionOn']
   | AgtkConditions['SwitchConditionOff']
   | AgtkConditions['SwitchConditionOnFromOff']
@@ -46,7 +46,7 @@ type AgtkSwitchCondition =
  *
  * @internal
  */
-type AgtkUseType =
+export type AgtkObjectLockUseType =
   | AgtkObjectLockConstant['UseSwitch']
   | AgtkObjectLockConstant['UseVariable']
   | AgtkObjectLockConstant['UseNone'];
@@ -128,7 +128,7 @@ export interface AgtkObjectLock {
    *  - 1 = Set Variable as Condition
    *  - 2 = Not Set (default)
    */
-  useType: AgtkUseType;
+  useType: AgtkObjectLockUseType;
 
   /**
    * Only useable if useType = 0.
@@ -149,7 +149,7 @@ export interface AgtkObjectLock {
    *  - 2 = Off to On
    *  - 3 = On to Off
    */
-  switchCondition: AgtkSwitchCondition;
+  switchCondition: AgtkObjectLockSwitchCondition;
 
   /**
    * Only useable if useType = 1.
@@ -173,7 +173,7 @@ export interface AgtkObjectLock {
    *  - 4 = Greater than >
    *  - 5 = Not equal to !=
    */
-  compareVariableOperator: AgtkCompareVariableOperator;
+  compareVariableOperator: AgtkObjectLockCompareVariableOperator;
 
   /**
    * Value 0-2. Only useable if useType = 1.
@@ -181,7 +181,7 @@ export interface AgtkObjectLock {
    *  - 1 = Other Variables
    *  - 2 = Non-numeric
    */
-  compareValueType: AgtkCompareValueType;
+  compareValueType: AgtkObjectLockCompareValueType;
 
   /**
    *  Value any float. Only useable if compareValueType = 0.

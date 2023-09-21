@@ -12,7 +12,7 @@ import type { AgtkPriorityTypeValue as AgtkPriorityType } from '../../../constan
  *
  * @internal
  */
-type AgtkPositionType =
+export type AgtkMovieShowPositionType =
   | AgtkMovieShowConstant['PositionCenter']
   | AgtkMovieShowConstant['PositionLockObjectCenter']
   | AgtkMovieShowConstant['PositionScenePosition'];
@@ -22,7 +22,7 @@ type AgtkPositionType =
  *
  * @internal
  */
-type AgtkVerticalAlignment =
+export type AgtkMovieShowVerticalAlignment =
   | AgtkMovieShowConstant['VertAlignCenter']
   | AgtkMovieShowConstant['VertAlignTop']
   | AgtkMovieShowConstant['VertAlignBottom'];
@@ -32,7 +32,7 @@ type AgtkVerticalAlignment =
  *
  * @internal
  */
-type AgtkHorizontalAlignment =
+export type AgtkMovieShowHorizontalAlignment =
   | AgtkMovieShowConstant['HorzAlignCenter']
   | AgtkMovieShowConstant['HorzAlignLeft']
   | AgtkMovieShowConstant['HorzAlignRight'];
@@ -83,7 +83,7 @@ export interface AgtkMovieShow {
    *  - 1 = Center of Object Locked by This Object
    *  - 2 = Use Scene as Base
    */
-  positionType: AgtkPositionType;
+  positionType: AgtkMovieShowPositionType;
 
   /**
    * Value true/false.
@@ -105,7 +105,7 @@ export interface AgtkMovieShow {
    *  - 1 = Top
    *  - 2 = Bottom
    */
-  vertAlign: AgtkVerticalAlignment;
+  vertAlign: AgtkMovieShowVerticalAlignment;
 
   /**
    * Value 0 - 2.
@@ -113,7 +113,7 @@ export interface AgtkMovieShow {
    *  - 1 = Left
    *  - 2 = Right
    */
-  horzAlign: AgtkHorizontalAlignment;
+  horzAlign: AgtkMovieShowHorizontalAlignment;
 
   /**
    * Value any integer.

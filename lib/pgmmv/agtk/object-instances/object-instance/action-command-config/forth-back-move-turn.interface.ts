@@ -11,7 +11,7 @@ import type { AgtkForthBackMoveTurn as AgtkForthBackMoveTurnConstant } from '../
  *
  * @internal
  */
-type AgtkMoveType =
+export type AgtkForthBackMoveTurnMoveType =
   | AgtkForthBackMoveTurnConstant['MoveNone']
   | AgtkForthBackMoveTurnConstant['MoveForth']
   | AgtkForthBackMoveTurnConstant['MoveBack'];
@@ -21,7 +21,7 @@ type AgtkMoveType =
  *
  * @internal
  */
-type AgtkTurnType =
+export type AgtkForthBackMoveTurnTurnType =
   | AgtkForthBackMoveTurnConstant['TurnNone']
   | AgtkForthBackMoveTurnConstant['TurnRight']
   | AgtkForthBackMoveTurnConstant['TurnLeft'];
@@ -38,7 +38,7 @@ export interface AgtkForthBackMoveTurn {
    *  - 1 = Move Forward
    *  - 2 = Move Backward
    */
-  moveType: AgtkMoveType;
+  moveType: AgtkForthBackMoveTurnMoveType;
 
   /**
    * Value 0-2. NOTE: Any values outside 0-2 won't crash game but will null the
@@ -47,7 +47,7 @@ export interface AgtkForthBackMoveTurn {
    *  - 1 = Turn Right
    *  - 2 = Turn Left
    */
-  turnType: AgtkTurnType;
+  turnType: AgtkForthBackMoveTurnTurnType;
 
   /**
    * This is the direction the object will face while moving.

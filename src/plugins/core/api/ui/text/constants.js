@@ -1,7 +1,7 @@
 /**
  * Constants module.
  *
- * @module dd/core/ui/textextext/constants
+ * @module dd/core/ui/text/constants
  * @internal
  */
 
