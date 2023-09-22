@@ -67,17 +67,19 @@ module.exports = {
       ],
       _ids.objectInstanceModeUseSelf
     ),
-    _paramHelper.br,
+    _paramHelper.hr,
     _paramHelper.switchVariableObjectId(_ids.tileXVariableSource, 'PARAM_TILE_X_VARIABLE_SOURCE', [
       'SelfObject',
       'ParentObject'
     ]),
+    _paramHelper.br,
     _paramHelper.variableId(_ids.tileXVariable, 'PARAM_TILE_X_VARIABLE', _ids.tileXVariableSource, true),
     _paramHelper.br,
     _paramHelper.switchVariableObjectId(_ids.tileYVariableSource, 'PARAM_TILE_Y_VARIABLE_SOURCE', [
       'SelfObject',
       'ParentObject'
     ]),
+    _paramHelper.br,
     _paramHelper.variableId(_ids.tileYVariable, 'PARAM_TILE_Y_VARIABLE', _ids.tileYVariableSource, true),
     _paramHelper.hr
   ]

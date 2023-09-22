@@ -62,18 +62,31 @@ module.exports = {
   PARAM_OBJECT_INSTANCE_MODE: {
     en: 'Object Instance Mode:'
   },
+
+  PARAM_MESSAGES: {
+    en: 'Messages:'
+  },
+  PARAM_MESSAGES_DESCRIPTION: {
+    en: 'Required. JSON array of text IDs and/or message config objects (see "Help"\nfor more details).'
+  },
+
   PARAM_PRINT_SPEED: {
     en: 'Print Speed:'
   },
   PARAM_CLEAR_SPEED: {
     en: 'Clear Speed:'
   },
-  PARAM_MESSAGES_REQ: {
-    en: 'Messages*:'
+  PARAM_LETTER_SPEED_DESCRIPTION: {
+    en: 'Letters per second. A value of 0 will print or clear all letters immediately.'
   },
+
   PARAM_OVERRIDE_FONT: {
     en: 'Override Font:'
   },
+  PARAM_OVERRIDE_FONT_DESCRIPTION: {
+    en: 'Optional. When set, will be used instead of the font associated with a\ngiven text ID.'
+  },
+
   PARAM_HORIZONTAL_TEXT_ALIGN: {
     en: 'Horizontal Text\nAlignment:'
   },
@@ -92,6 +105,7 @@ module.exports = {
   PARAM_MARGIN_BOTTOM: {
     en: 'Margin Bottom:'
   },
+
   PARAM_COLOR_CHANNEL_RED: {
     en: 'Color Channel Red:'
   },
@@ -110,9 +124,14 @@ module.exports = {
   'PARAM_SCALE_Y_%': {
     en: 'Scale Y (%):'
   },
+
   PARAM_PRINTING_SFX: {
     en: 'Printing SFX:'
   },
+  PARAM_SFX_DESCRIPTION: {
+    en: 'Optional. When set, sound effect will play for each print event emitted;\ncool down time is applied.'
+  },
+
   PARAM_HORIZONTAL_POSITION: {
     en: 'Horizontal\nPosition:'
   },
@@ -125,6 +144,7 @@ module.exports = {
   PARAM_OFFSET_Y: {
     en: 'Offset Y:'
   },
+
   PARAM_INDICATOR_IMAGE: {
     en: 'Indicator Image:'
   },
@@ -140,27 +160,47 @@ module.exports = {
   PARAM_INDICATOR_IMAGE_FRAME_HEIGHT: {
     en: 'Indicator Image\nFrame Height:'
   },
-  PARAM_OK_SWITCH_SOURCE_REQ: {
-    en: 'OK Switch\nSource*:'
+  PARAM_INDICATOR_DESCRIPTION: {
+    en: 'Optional. When set, image of specified size will be used; otherwise,\ndefaults to a graphical indicator. Effected by color, opacity, & scale.'
   },
-  PARAM_OK_SWITCH_REQ: {
-    en: 'OK Switch*:'
+
+  PARAM_OK_SWITCH_SOURCE: {
+    en: 'OK Switch\nSource:'
   },
+  PARAM_OK_SWITCH: {
+    en: 'OK Switch:'
+  },
+  PARAM_OK_DESCRIPTION: {
+    en: 'Required. When switch is ON, and the printer is accepting input, will\nadvance to next message or end (and sets switch to OFF).'
+  },
+
   PARAM_CANCEL_SWITCH_SOURCE: {
     en: 'CANCEL Switch\nSource:'
   },
   PARAM_CANCEL_SWITCH: {
     en: 'CANCEL Switch:'
   },
+  PARAM_CANCEL_DESCRIPTION: {
+    en: 'Optional. When switch is ON, cancels all operations immediately (and sets\nswitch to OFF).'
+  },
+
   PARAM_EXPEDITE: {
     en: 'Enable Expedite:'
   },
+  PARAM_EXPEDITE_DESCRIPTION: {
+    en: 'When TRUE and the OK switch is set to ON, currently printing message\nwill finish immediately.'
+  },
+
   PARAM_OPEN_CLOSE_DELTA_X: {
     en: 'Open/Close Delta X:'
   },
   PARAM_OPEN_CLOSE_DELTA_Y: {
     en: 'Open/Close Delta Y:'
   },
+  PARAM_OPEN_CLOSE_DESCRIPTION: {
+    en: 'Interpolation delta applied each frame. A value of 1 will open or close the\naxis immediately.'
+  },
+
   PARAM_BACKGROUND_COLOR_CHANNEL_RED: {
     en: 'Background Color\nChannel Red:'
   },
@@ -173,8 +213,8 @@ module.exports = {
   PARAM_BACKGROUND_OPACITY: {
     en: 'Background Opacity:'
   },
-  PARAM_BORDER_THICKNESS: {
-    en: 'Border Thickness:'
+  PARAM_BORDER_THICKNESS_PX: {
+    en: 'Border Thickness (px):'
   },
   PARAM_BORDER_COLOR_CHANNEL_RED: {
     en: 'Border Color\nChannel Red:'
@@ -185,8 +225,9 @@ module.exports = {
   PARAM_BORDER_COLOR_CHANNEL_BLUE: {
     en: 'Border Color\nChannel Blue:'
   },
-  PARAM_BACKGROUND_IMAGE_REQ: {
-    en: 'Background Image*:'
+
+  PARAM_BACKGROUND_IMAGE: {
+    en: 'Background Image:'
   },
   PARAM_BACKGROUND_IMAGE_FRAME_X: {
     en: 'Background Image\nFrame X:'
@@ -211,6 +252,9 @@ module.exports = {
   },
   PARAM_BACKGROUND_CAP_INSET_HEIGHT: {
     en: 'Background Cap\nInset Height:'
+  },
+  PARAM_IMAGE_PANEL_DESCRIPTION: {
+    en: 'Required. 9-slice specified image using cap-inset. The cap-inset is the\ninner rectangle (non-border) area of the image.'
   },
 
   LEFT: {

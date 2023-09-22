@@ -57,10 +57,9 @@ module.exports = {
       ],
       _ids.objectInstanceModeUseSelf
     ),
-    _paramHelper.br,
-    _paramHelper.number(_ids.rectX, 'PARAM_TILE_X', 0, { decimals: 0, minimumValue: 0 }),
-    _paramHelper.br,
-    _paramHelper.number(_ids.rectY, 'PARAM_TILE_Y', 0, { decimals: 0, minimumValue: 0 }),
+    _paramHelper.hr,
+    _paramHelper.number(_ids.tileX, 'PARAM_TILE_X', 0, { decimals: 0, minimumValue: 0 }),
+    _paramHelper.number(_ids.tileY, 'PARAM_TILE_Y', 0, { decimals: 0, minimumValue: 0 }),
     _paramHelper.hr
   ]
 };

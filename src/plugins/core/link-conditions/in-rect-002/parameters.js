@@ -84,29 +84,33 @@ module.exports = {
       ],
       _ids.objectInstanceModeUseSelf
     ),
-    _paramHelper.br,
+    _paramHelper.hr,
     _paramHelper.switchVariableObjectId(_ids.rectXVariableSource, 'PARAM_RECT_X_VARIABLE_SOURCE', [
       'SelfObject',
       'ParentObject'
     ]),
+    _paramHelper.br,
     _paramHelper.variableId(_ids.rectXVariable, 'PARAM_RECT_X_VARIABLE', _ids.rectXVariableSource, true),
     _paramHelper.br,
     _paramHelper.switchVariableObjectId(_ids.rectYVariableSource, 'PARAM_RECT_Y_VARIABLE_SOURCE', [
       'SelfObject',
       'ParentObject'
     ]),
+    _paramHelper.br,
     _paramHelper.variableId(_ids.rectYVariable, 'PARAM_RECT_Y_VARIABLE', _ids.rectYVariableSource, true),
     _paramHelper.br,
     _paramHelper.switchVariableObjectId(_ids.rectWidthVariableSource, 'PARAM_RECT_WIDTH_VARIABLE_SOURCE', [
       'SelfObject',
       'ParentObject'
     ]),
+    _paramHelper.br,
     _paramHelper.variableId(_ids.rectWidthVariable, 'PARAM_RECT_WIDTH_VARIABLE', _ids.rectWidthVariableSource, true),
     _paramHelper.br,
     _paramHelper.switchVariableObjectId(_ids.rectHeightVariableSource, 'PARAM_RECT_HEIGHT_VARIABLE_SOURCE', [
       'SelfObject',
       'ParentObject'
     ]),
+    _paramHelper.br,
     _paramHelper.variableId(_ids.rectHeightVariable, 'PARAM_RECT_HEIGHT_VARIABLE', _ids.rectHeightVariableSource, true),
     _paramHelper.hr
   ]

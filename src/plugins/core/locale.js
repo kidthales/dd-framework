@@ -352,6 +352,54 @@ module.exports = {
   PARAM_TILE_RECT_HEIGHT: {
     en: 'Tile Rectangle Height:'
   },
+  PARAM_TILE_RECT_X_VARIABLE_SOURCE: {
+    en: 'Tile Rectangle X\nVariable Source:'
+  },
+  PARAM_TILE_RECT_X_VARIABLE: {
+    en: 'Tile Rectangle X\nVariable:'
+  },
+  PARAM_TILE_RECT_Y_VARIABLE_SOURCE: {
+    en: 'Tile Rectangle Y\nVariable Source:'
+  },
+  PARAM_TILE_RECT_Y_VARIABLE: {
+    en: 'Tile Rectangle Y\nVariable:'
+  },
+  PARAM_TILE_RECT_WIDTH_VARIABLE_SOURCE: {
+    en: 'Tile Rectangle Width\nVariable Source:'
+  },
+  PARAM_TILE_RECT_WIDTH_VARIABLE: {
+    en: 'Tile Rectangle Width\nVariable:'
+  },
+  PARAM_TILE_RECT_HEIGHT_VARIABLE_SOURCE: {
+    en: 'Tile Rectangle Height\nVariable Source:'
+  },
+  PARAM_TILE_RECT_HEIGHT_VARIABLE: {
+    en: 'Tile Rectangle Height\nVariable:'
+  },
+  PARAM_INPUT_X_VARIABLE_SOURCE: {
+    en: 'Input X\nVariable Source:'
+  },
+  PARAM_INPUT_X_VARIABLE: {
+    en: 'Input X\nVariable:'
+  },
+  PARAM_INPUT_Y_VARIABLE_SOURCE: {
+    en: 'Input Y\nVariable Source:'
+  },
+  PARAM_INPUT_Y_VARIABLE: {
+    en: 'Input Y\nVariable:'
+  },
+  PARAM_OUTPUT_X_VARIABLE_SOURCE: {
+    en: 'Output X\nVariable Source:'
+  },
+  PARAM_OUTPUT_X_VARIABLE: {
+    en: 'Output X\nVariable:'
+  },
+  PARAM_OUTPUT_Y_VARIABLE_SOURCE: {
+    en: 'Output Y\nVariable Source:'
+  },
+  PARAM_OUTPUT_Y_VARIABLE: {
+    en: 'Output Y\nVariable:'
+  },
 
   OFF: {
     en: 'OFF'

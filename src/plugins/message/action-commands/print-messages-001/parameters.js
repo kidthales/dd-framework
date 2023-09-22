@@ -278,15 +278,24 @@ module.exports = {
       ],
       _ids.objectInstanceModeUseSelf
     ),
+    _param.hr,
+    ///
+    _param.json(_ids.messages, 'PARAM_MESSAGES', []),
     _param.br,
+    _param.embedded(-1, 'PARAM_MESSAGES_DESCRIPTION'),
+    _param.hr,
+    ///
     _param.number(_ids.printSpeed, 'PARAM_PRINT_SPEED', 0, { decimals: 3, minimumValue: 0 }),
-    _param.br,
     _param.number(_ids.clearSpeed, 'PARAM_CLEAR_SPEED', 0, { decimals: 3, minimumValue: 0 }),
     _param.br,
-    _param.json(_ids.messages, 'PARAM_MESSAGES_REQ', []),
-    _param.br,
+    _param.embedded(-1, 'PARAM_LETTER_SPEED_DESCRIPTION'),
+    _param.hr,
+    ///
     _param.fontId(_ids.overrideFont, 'PARAM_OVERRIDE_FONT'),
     _param.br,
+    _param.embedded(-1, 'PARAM_OVERRIDE_FONT_DESCRIPTION'),
+    _param.hr,
+    ///
     _param.customId(
       _ids.horizontalTextAlign,
       'PARAM_HORIZONTAL_TEXT_ALIGN',
@@ -313,7 +322,8 @@ module.exports = {
     _param.number(_ids.marginRight, 'PARAM_MARGIN_RIGHT', 0, { decimals: 0, minimumValue: 0 }),
     _param.number(_ids.marginTop, 'PARAM_MARGIN_TOP', 0, { decimals: 0, minimumValue: 0 }),
     _param.number(_ids.marginBottom, 'PARAM_MARGIN_BOTTOM', 0, { decimals: 0, minimumValue: 0 }),
-    _param.br,
+    _param.hr,
+    ///
     _param.number(_ids.colorChannelRed, 'PARAM_COLOR_CHANNEL_RED', 255, {
       decimals: 0,
       minimumValue: 0,
@@ -333,9 +343,13 @@ module.exports = {
     _param.br,
     _param.number(_ids.scaleX, 'PARAM_SCALE_X_%', 100, { decimals: 0, minimumValue: 0 }),
     _param.number(_ids.scaleY, 'PARAM_SCALE_Y_%', 100, { decimals: 0, minimumValue: 0 }),
-    _param.br,
+    _param.hr,
+    ///
     _param.seId(_ids.printingSfx, 'PARAM_PRINTING_SFX'),
     _param.br,
+    _param.embedded(-1, 'PARAM_SFX_DESCRIPTION'),
+    _param.hr,
+    ///
     _param.customId(
       _ids.horizontalPosition,
       'PARAM_HORIZONTAL_POSITION',
@@ -360,7 +374,8 @@ module.exports = {
     _param.br,
     _param.number(_ids.offsetX, 'PARAM_OFFSET_X', 0, { decimals: 0 }),
     _param.number(_ids.offsetY, 'PARAM_OFFSET_Y', 0, { decimals: 0 }),
-    _param.br,
+    _param.hr,
+    ///
     _param.imageId(_ids.indicatorImage, 'PARAM_INDICATOR_IMAGE'),
     _param.br,
     _param.number(_ids.indicatorImageFrameX, 'PARAM_INDICATOR_IMAGE_FRAME_X', 0, { decimals: 0, minimumValue: 0 }),
@@ -377,10 +392,16 @@ module.exports = {
       minimumValue: 0
     }),
     _param.br,
-    _param.switchVariableObjectId(_ids.okSwitchSource, 'PARAM_OK_SWITCH_SOURCE_REQ', ['SelfObject', 'ParentObject']),
+    _param.embedded(-1, 'PARAM_INDICATOR_DESCRIPTION'),
+    _param.hr,
+    ///
+    _param.switchVariableObjectId(_ids.okSwitchSource, 'PARAM_OK_SWITCH_SOURCE', ['SelfObject', 'ParentObject']),
     _param.br,
-    _param.switchId(_ids.okSwitch, 'PARAM_OK_SWITCH_REQ', _ids.okSwitchSource, true),
+    _param.switchId(_ids.okSwitch, 'PARAM_OK_SWITCH', _ids.okSwitchSource, true),
     _param.br,
+    _param.embedded(-1, 'PARAM_OK_DESCRIPTION'),
+    _param.hr,
+    ///
     _param.switchVariableObjectId(_ids.cancelSwitchSource, 'PARAM_CANCEL_SWITCH_SOURCE', [
       'SelfObject',
       'ParentObject'
@@ -388,6 +409,9 @@ module.exports = {
     _param.br,
     _param.switchId(_ids.cancelSwitch, 'PARAM_CANCEL_SWITCH', _ids.CancelSwitchSource, true),
     _param.br,
+    _param.embedded(-1, 'PARAM_CANCEL_DESCRIPTION'),
+    _param.hr,
+    ///
     _param.customId(
       _ids.expedite,
       'PARAM_EXPEDITE',
@@ -397,6 +421,8 @@ module.exports = {
       ],
       _ids.expediteTrue
     ),
+    _param.br,
+    _param.embedded(-1, 'PARAM_EXPEDITE_DESCRIPTION'),
     _param.hr
   ]
 };

@@ -87,23 +87,26 @@ module.exports = {
       ],
       _ids.objectInstanceModeUseSelf
     ),
-    _paramHelper.br,
+    _paramHelper.hr,
     _paramHelper.switchVariableObjectId(_ids.tileRectXVariableSource, 'PARAM_TILE_RECT_X_VARIABLE_SOURCE', [
       'SelfObject',
       'ParentObject'
     ]),
+    _paramHelper.br,
     _paramHelper.variableId(_ids.tileRectXVariable, 'PARAM_TILE_RECT_X_VARIABLE', _ids.tileRectXVariableSource, true),
     _paramHelper.br,
     _paramHelper.switchVariableObjectId(_ids.tileRectYVariableSource, 'PARAM_TILE_RECT_Y_VARIABLE_SOURCE', [
       'SelfObject',
       'ParentObject'
     ]),
+    _paramHelper.br,
     _paramHelper.variableId(_ids.tileRectYVariable, 'PARAM_TILE_RECT_Y_VARIABLE', _ids.tileRectYVariableSource, true),
     _paramHelper.br,
     _paramHelper.switchVariableObjectId(_ids.tileRectWidthVariableSource, 'PARAM_TILE_RECT_WIDTH_VARIABLE_SOURCE', [
       'SelfObject',
       'ParentObject'
     ]),
+    _paramHelper.br,
     _paramHelper.variableId(
       _ids.tileRectWidthVariable,
       'PARAM_TILE_RECT_WIDTH_VARIABLE',
@@ -115,6 +118,7 @@ module.exports = {
       'SelfObject',
       'ParentObject'
     ]),
+    _paramHelper.br,
     _paramHelper.variableId(
       _ids.tileRectHeightVariable,
       'PARAM_TILE_RECT_HEIGHT_VARIABLE',

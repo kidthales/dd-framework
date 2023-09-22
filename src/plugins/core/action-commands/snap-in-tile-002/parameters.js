@@ -52,7 +52,7 @@ module.exports = {
       ],
       _ids.objectInstanceModeUseSelf
     ),
-    _param.br,
+    _param.hr,
     _param.number(_ids.tileOriginX, 'PARAM_TILE_ORIGIN_X', 0.5, {
       decimals: 2,
       minimumValue: 0,

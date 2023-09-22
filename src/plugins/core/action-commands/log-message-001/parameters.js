@@ -68,7 +68,6 @@ module.exports = {
       ],
       _ids.logLevelInfo
     ),
-    _param.br,
     _param.stringMultiLine(_ids.message, 'PARAM_MESSAGE', ''),
     _param.hr
   ]

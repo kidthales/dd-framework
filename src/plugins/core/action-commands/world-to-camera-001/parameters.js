@@ -87,7 +87,7 @@ module.exports = {
       ],
       _ids.objectInstanceModeUseSelf
     ),
-    _param.br,
+    _param.hr,
     _param.switchVariableObjectId(_ids.inputXVariableSource, 'PARAM_INPUT_X_VARIABLE_SOURCE', [
       'ParentObject',
       'SelfObject'
@@ -101,6 +101,20 @@ module.exports = {
     ]),
     _param.br,
     _param.variableId(_ids.inputYVariable, 'PARAM_INPUT_Y_VARIABLE', _ids.inputYVariableSource, true),
+    _param.hr,
+    _param.switchVariableObjectId(_ids.outputXVariableSource, 'PARAM_OUTPUT_X_VARIABLE_SOURCE', [
+      'ParentObject',
+      'SelfObject'
+    ]),
+    _param.br,
+    _param.variableId(_ids.outputXVariable, 'PARAM_OUTPUT_X_VARIABLE', _ids.outputXVariableSource, true),
+    _param.br,
+    _param.switchVariableObjectId(_ids.outputYVariableSource, 'PARAM_OUTPUT_Y_VARIABLE_SOURCE', [
+      'ParentObject',
+      'SelfObject'
+    ]),
+    _param.br,
+    _param.variableId(_ids.outputYVariable, 'PARAM_OUTPUT_Y_VARIABLE', _ids.outputYVariableSource, true),
     _param.hr
   ]
 };
