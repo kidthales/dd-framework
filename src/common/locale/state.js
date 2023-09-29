@@ -1,12 +1,17 @@
 /**
- * State module.
+ * Common locale state module.
  *
- * @module dd/common/locale/state
  * @internal
+ * @module    @dd/common/locale/state
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * Exposes basic locale management state.
  *
+ * @internal
  */
 module.exports = {
   /**

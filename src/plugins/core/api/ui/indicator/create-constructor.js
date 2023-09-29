@@ -1,9 +1,18 @@
 /**
- * Create constructor module.
+ * Core plugin API user interface indicator create constructor module.
  *
- * @module dd/core/ui/indicator/create-constructor
+ * @module    dd.core.ui.indicator.createConstructor
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
+/**
+ * @param {import("@pgmmv/cc/draw-node").CCDrawNode} drawNode
+ * @param {import("@pgmmv/cc/color").CCColor} color
+ * @returns {void}
+ * @private
+ */
 var _draw = function (
   /** @type {import("@pgmmv/cc/draw-node").CCDrawNode} */
   drawNode,

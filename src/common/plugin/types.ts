@@ -1,3 +1,11 @@
+/**
+ * Common plugin types module.
+ *
+ * @module    @dd/common/plugin/types
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
+ */
 import type { JsonObject, JsonValue } from 'type-fest';
 import type { AgtkCommandBehaviorValue } from '@pgmmv/agtk/constants/action-commands/command-behavior';
 import type { AgtkParameter } from '@pgmmv/agtk/plugins/plugin/parameter';
@@ -130,7 +138,7 @@ export interface CommonActionCommandOrLinkConditionConfig<T extends CommonAction
   /**
    * Handler.
    *
-   * @param payload
+   * @param payload Action command or link condition payload.
    * @returns Command behavior result when action command; boolean result when link condition.
    */
   handler?: (

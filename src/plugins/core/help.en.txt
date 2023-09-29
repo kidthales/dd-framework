@@ -1,0 +1,45 @@
+This plugin provides the core functionality for the framework and is required by most other framework plugins. Please
+ensure this plugin remains enabled in your project.
+
+Logging
+=======
+Log Level:                One of DEBUG < INFO < WARN < ERROR < FATAL.
+JSON Indent Size:         Clamps with range [0,8]. Value of 0 will print on a single line.
+JSON Stringify Functions: Specify when to log function bodies. One of NEVER, DEBUG ONLY, or ALWAYS.
+Write Log Files:          Activate or deactivate copying logs to the local filesystem. Runs only when in player. Writes
+                          messages to '<project path>/log/current.txt' & rotates these contents to a
+                          '<yyyy>-<mm>-<dd>-<hh>-<ii>-<ss>-<uuu>.txt' file in the same directory (rotated filename
+                          corresponds to log batch start time).
+
+These plugin parameters apply to the following:
+- 'Log Message Mk I' action command.
+- 'dd.core.log' script API.
+
+Developer Notes:
+- Improved handling of large strings vs 'Agtk.log'.
+- Automatically converts non-string arguments to a JSON string, with circular reference detection.
+- The jsb.fileUtils API provides limited filesystem access with unreliable performance when tasked with multiple write
+  requests to the same file within a short period of time. To help mitigate this issue, a simple shared/exclusive lock
+  system is utilized to queue file reads & writes. Additional in memory buffering is performed to reduce write queues
+  from building up too quickly. Also, file append operations are not supported in the jsb.fileUtils; we can either read
+  from an entire file or create/overwrite a file. Thus, appending logs to a file is an expensive operation that
+  increases with file size. Frequent 'rotation' of log files is utilized to keep the 'current.txt' file to a reasonable
+  size.
+
+Scriptable Edge Inputs
+======================
+Operation Key *:        Setting to 'ON' will enable edge input checks, for each frame, for corresponding operation key.
+Reserved Key Code PC *: Setting to 'ON' will enable edge input checks, for each frame, for corresponding reserved PC key
+                        code.
+
+These plugin parameters apply to the following:
+- 'dd.core.input' script API:
+  - 'dd.core.input.isOperationKeyJustPressed'
+  - 'dd.core.input.isOperationKeyJustReleased'
+  - 'dd.core.input.isPcKeyJustPressed'
+  - 'dd.core.input.isPcKeyJustReleased'
+
+Developer Notes: PGMMV's script API does not support the ability to detect 'On Pressed' or 'On Released' inputs. To
+                 provide this support, the plugin will update each frame & iterate through the activated input keys (set
+                 to 'ON' via their plugin parameter), tracking their pressed/release state & on which frame a change
+                 occurs. This state is then accessible via the 'dd.core.input' script API.

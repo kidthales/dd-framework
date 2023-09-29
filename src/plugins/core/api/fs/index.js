@@ -1,7 +1,10 @@
 /**
- * Filesystem module.
+ * Core plugin API filesystem module.
  *
- * @module dd/core/fs
+ * @module    dd.core.fs
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
@@ -605,7 +608,7 @@ var _lockApi = require('../lock'),
   };
 
 /**
- *
+ * Exposes methods & properties for working with the filesystem.
  */
 var fsApi = (module.exports = {
   /**

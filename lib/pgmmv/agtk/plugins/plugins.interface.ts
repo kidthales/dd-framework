@@ -8,13 +8,13 @@ import type { JsonValue } from 'type-fest';
 import type { AgtkPlugin } from './plugin';
 
 /**
- * Calls in the format of Agtk.plugins[<Index>] and returns
- * the plug-in object of the specified <Index>.
+ * Calls in the format of `Agtk.plugins[<Index>]` and returns
+ * the plug-in object of the specified `<Index>`.
  *
  * Refer to "Script Plug-in IF" sheet
  * for details about plug-in objects.
  *
- * see <player-directory>/Resources/plugins/prepare.js
+ * see `<player-directory>/Resources/plugins/prepare.js`
  */
 export interface AgtkPlugins extends Exclude<Array<AgtkPlugin>, keyof Array<AgtkPlugin>> {
   /**
@@ -36,7 +36,7 @@ export interface AgtkPlugins extends Exclude<Array<AgtkPlugin>, keyof Array<Agtk
 
   /**
    * Destroys loaded plug-in and resets it. Plug-in status will
-   * be restored using <Internal data>.
+   * be restored using `<Internal data>`.
    *
    * Presumably only used by the system.
    *

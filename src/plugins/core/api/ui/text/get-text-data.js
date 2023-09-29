@@ -1,7 +1,10 @@
 /**
- * Get text data module.
+ * Core plugin API user interface text get text data module.
  *
- * @module dd/core/ui/text/get-text-data
+ * @module    dd.core.ui.text.getTextData
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

@@ -1,8 +1,11 @@
 /**
- * Create text sprite module.
+ * Core plugin API user interface text create text sprite module.
  *
- * @module dd/core/ui/text/create-text-sprite
  * @internal
+ * @module    @dd/core/ui/text/create-text-sprite
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
@@ -11,6 +14,7 @@
 var _defaultColor = [255, 255, 255];
 
 /**
+ * @internal
  * @param {string} letter
  * @param {import('../font/types').FontData} fontData
  * @param {[number, number, number]|undefined} color

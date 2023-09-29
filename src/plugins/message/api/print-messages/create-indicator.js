@@ -1,11 +1,15 @@
 /**
- * Create indicator module.
+ * Message plugin API print messages create indicator module.
  *
- * @module dd/message/print-messages/create-indicator
  * @internal
+ * @module    @dd/message/print-messages/create-indicator
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * @internal
  * @param {import("./types").CustomIndicator} config
  * @returns {import("@pgmmv/cc/node").CCNode}
  */

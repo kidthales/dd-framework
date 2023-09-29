@@ -1,7 +1,10 @@
 /**
- * Resolve bullets module.
+ * Core plugin API object resolve bullets module.
  *
- * @module dd/core/object/resolve-bullets
+ * @module    dd.core.object.resolveBullets
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

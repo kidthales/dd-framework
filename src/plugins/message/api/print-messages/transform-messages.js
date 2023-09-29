@@ -1,11 +1,15 @@
 /**
- * Transform messages module.
+ * Message plugin API print messages transform messages module.
  *
- * @module dd/message/print-messages/transform-messages
  * @internal
+ * @module @dd/message/print-messages/transform-messages
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * @internal
  * @param {import("./types").MessageUnion[]} messages
  * @returns {import("@dd/core/ui/text/printer/types").PageConfig[]}
  */

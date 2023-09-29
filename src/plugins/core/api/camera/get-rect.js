@@ -1,10 +1,16 @@
 /**
- * Get rectangle module.
+ * Core plugin API camera get rectangle module.
  *
- * @module dd/core/camera/get-rect
+ * @module    dd.core.camera.getRect
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * Get camera viewport rectangle in world space coordinates; X & Y values
+ * correspond to top left corner.
+ *
  * @returns {import("@pgmmv/cc/rect").CCRect}
  */
 module.exports = function () {

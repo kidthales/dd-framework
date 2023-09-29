@@ -1,7 +1,10 @@
 /**
- * Begin module.
+ * Message plugin API session begin module.
  *
- * @module dd/message/session/begin
+ * @module    dd.message.session.begin
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

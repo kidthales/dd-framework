@@ -1,7 +1,10 @@
 /**
- * Resolve integer string module.
+ * Core plugin API string resolve integer string module.
  *
- * @module dd/core/string/resolve-int-string
+ * @module    dd.core.string.resolveIntString
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

@@ -1,5 +1,10 @@
 /**
- * @module dd/common/plugin/events/add-plugin-initialized-event-listener
+ * Common plugin events add plugin initialized event listener module.
+ *
+ * @module    @dd/common/plugin/events/add-plugin-initialized-event-listener
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

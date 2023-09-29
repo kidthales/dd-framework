@@ -1,11 +1,15 @@
 /**
- * Update session module.
+ * Message plugin API print messages update session module.
  *
- * @module dd/message/print-messages/update-session
  * @internal
+ * @module    @dd/message/print-messages/update-session
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * @internal
  * @param {import("@pgmmv/agtk/object-instances/object-instance").AgtkObjectInstance} objectInstance
  * @returns {import('@pgmmv/agtk/constants/action-commands/command-behavior').AgtkCommandBehavior['CommandBehaviorNext']|import('@pgmmv/agtk/constants/action-commands/command-behavior').AgtkCommandBehavior['CommandBehaviorBlock']}
  */

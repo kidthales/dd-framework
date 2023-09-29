@@ -1,7 +1,10 @@
 /**
- * Get image constructor module.
+ * Core plugin API user interface panel get image constructor module.
  *
- * @module dd/core/ui/panel/get-image-constructor
+ * @module dd.core.ui.panel.getImageConstructor
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

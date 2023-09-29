@@ -48,6 +48,10 @@ module.exports = {
         },
         include: srcPath,
         exclude: /node_modules/
+      },
+      {
+        test: /\.txt$/,
+        type: 'asset/source'
       }
     ]
   },

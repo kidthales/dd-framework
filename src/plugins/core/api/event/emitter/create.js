@@ -1,11 +1,14 @@
 /**
- * Create module.
+ * Core plugin API event emitter create module.
  *
- * @module dd/core/event/emitter/create
+ * @module    dd.core.event.emitter.create
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
- *
+ * Create an event emitter.
  */
 module.exports = function () {
   /**

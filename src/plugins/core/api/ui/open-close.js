@@ -1,7 +1,10 @@
 /**
- * Open/close module.
+ * Core plugin API user interface open/close module.
  *
- * @module dd/core/ui/open-close
+ * @module    dd.core.ui.openClose
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
@@ -72,7 +75,7 @@ var _logApi = require('../log'),
   };
 
 /**
- *
+ * Exposes methods & properties for managing a UI 'widget' that can open or close.
  */
 module.exports = {
   /**

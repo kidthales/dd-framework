@@ -1,7 +1,10 @@
 /**
- * Pad start module.
+ * Core plugin API string pad start module.
  *
- * @module dd/core/string/pad-start
+ * @module    dd.core.string.padStart
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

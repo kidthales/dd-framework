@@ -1,10 +1,15 @@
 /**
- * Constants module.
+ * Core plugin API event constants module.
  *
- * @module dd/core/event/constants
+ * @internal
+ * @module    @dd/core/event/constants
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * @internal
  * @constant
  */
 module.exports = {

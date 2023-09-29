@@ -1,8 +1,11 @@
 /**
- * Cache module.
+ * Core plugin API user interface font cache module.
  *
- * @module dd/core/ui/font/cache
  * @internal
+ * @module    @dd/core/ui/font/cache
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
@@ -12,7 +15,9 @@
 var _cache = {};
 
 /**
+ * Exposes methods for managing font data cache.
  *
+ * @internal
  */
 module.exports = {
   /**

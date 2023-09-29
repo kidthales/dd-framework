@@ -1,7 +1,10 @@
 /**
- * Resolve module.
+ * Core plugin API object instance resolve module.
  *
- * @module dd/core/object-instance/resolve
+ * @module    dd.core.objectInstance.resolve
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

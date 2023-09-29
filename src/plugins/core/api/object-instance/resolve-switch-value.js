@@ -1,7 +1,10 @@
 /**
- * Resolve switch value module.
+ * Core plugin API object instance resolve switch value module.
  *
- * @module dd/core/object-instance/resolve-switch-value
+ * @module    dd.core.objectInstance.resolveSwitchValue
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

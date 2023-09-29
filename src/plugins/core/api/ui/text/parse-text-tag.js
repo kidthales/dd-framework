@@ -1,8 +1,11 @@
 /**
- * Parse text tag module.
+ * Core plugin API user interface text parse text tag module.
  *
- * @module dd/core/ui/text/parse-text-tag
  * @internal
+ * @module    @dd/core/ui/text/parse-text-tag
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
@@ -26,6 +29,7 @@ var _kTextTagStartIndexOffset = 3,
   };
 
 /**
+ * @internal
  * @param {string} text
  * @param {number} startIndex
  * @param {import('./types').TextTagParserContext} context

@@ -1,7 +1,10 @@
 /**
- * Lock module.
+ * Core plugin API lock module.
  *
- * @module dd/core/lock
+ * @module    dd.core.lock
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
@@ -11,7 +14,7 @@
 var _vault = {};
 
 /**
- *
+ * Exposes methods for working with the resource locks.
  */
 var lockApi = (module.exports = {
   /**

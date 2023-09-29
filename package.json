@@ -15,16 +15,17 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "build": "npm run build:plugins && npm run build:docs",
-    "prebuild:plugins": "shx rm -rf dist/plugins",
-    "build:plugins": "cross-env NODE_ENV=development webpack --progress --color && cross-env NODE_ENV=production webpack --progress --color",
-    "build:docs": "npm run build:docs:api",
-    "prebuild:docs:api": "shx rm -rf dist/docs/api",
-    "build:docs:api": "typedoc",
+    "preplugins:build": "npm run clean:dist:plugins",
+    "plugins:build": "cross-env NODE_ENV=development webpack --progress --color && cross-env NODE_ENV=production webpack --progress --color",
+    "docs:dev": "vuepress dev docs",
+    "predocs:build": "npm run clean:dist:docs",
+    "docs:build": "vuepress build docs",
     "lint": "eslint . && prettier --check .",
     "lint:fix": "eslint --cache --fix . && prettier --write .",
     "clean": "npm run clean:dist && npm run clean:lint",
     "clean:dist": "shx rm -rf dist",
+    "clean:dist:docs": "shx rm -rf dist/docs",
+    "clean:dist:plugins": "shx rm -rf dist/plugins",
     "clean:lint": "shx rm -f .eslintcache"
   },
   "devDependencies": {
@@ -42,6 +43,9 @@
     "shx": "~0.3.4",
     "type-fest": "~4.2.0",
     "typedoc": "~0.25.1",
+    "typedoc-plugin-markdown": "~3.16.0",
+    "vuepress": "^2.0.0-beta.67",
+    "vuepress-plugin-typedoc": "~0.13.0",
     "webpack": "~5.88.2",
     "webpack-cli": "~5.1.4"
   },

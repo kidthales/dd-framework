@@ -1,7 +1,10 @@
 /**
- * Resolve variable module.
+ * Core plugin API object resolve variable module.
  *
- * @module dd/core/object/resolve-variable
+ * @module    dd.core.object.resolveVariable
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

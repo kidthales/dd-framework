@@ -1,7 +1,10 @@
 /**
- * Resolve single unit module.
+ * Core plugin API object instance resolve single unit module.
  *
- * @module dd/core/object-instance/resolve-single-unit
+ * @module    dd.core.objectInstance.resolveSingleUnit
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

@@ -1,3 +1,11 @@
+/**
+ * Core plugin API user interface panel types module.
+ *
+ * @module    @dd/core/ui/panel/types
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
+ */
 import type { OpenClose } from '@dd/core/ui/types';
 import type { CCColor } from '@pgmmv/cc/color';
 import type { CCDrawNode, CCDrawNodeConstructor } from '@pgmmv/cc/draw-node';

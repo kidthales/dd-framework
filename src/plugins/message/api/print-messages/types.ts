@@ -1,3 +1,11 @@
+/**
+ * Message plugin API print messages types module.
+ *
+ * @module    @dd/message/print-messages/types
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
+ */
 import type { FontData } from 'src/plugins/core/api/ui/font/types';
 import type { JobConfig, TextAlignmentConfig } from '@dd/core/ui/text/printer/types';
 import type { BasePanelConfig, GraphicsPanelConfig, ImagePanelConfig } from '@dd/core/ui/panel/types';

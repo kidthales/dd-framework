@@ -1,10 +1,16 @@
 /**
- * On dependency initialized module.
+ * Common plugin dependencies on dependency initialized module.
  *
- * @module dd/common/plugin/deps/on-dependency-initialized
+ * @module    @dd/common/plugin/deps/on-dependency-initialized
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * Handles plugin initialized events; tracks if a plugin dependency has been
+ * initialized.
+ *
  * @param {string} identifier
  * @returns {void}
  */

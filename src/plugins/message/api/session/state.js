@@ -1,8 +1,11 @@
 /**
- * State module.
+ * Message plugin API session state module.
  *
- * @module dd/message/session/state
  * @internal
+ * @module    @dd/message/session/state
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
@@ -11,6 +14,6 @@
 var _state = {};
 
 /**
- *
+ * @internal
  */
 module.exports = _state;

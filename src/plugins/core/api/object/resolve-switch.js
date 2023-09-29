@@ -1,7 +1,10 @@
 /**
- * Resolve switch module.
+ * Core plugin API object resolve switch module.
  *
- * @module dd/core/object/resolve-switch
+ * @module    dd.core.object.resolveSwitch
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

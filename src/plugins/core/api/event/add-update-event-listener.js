@@ -1,7 +1,10 @@
 /**
- * Add update event listener module.
+ * Core plugin API event add update event listener module.
  *
- * @module dd/core/event/add-update-event-listener
+ * @module    dd.core.event.addUpdateEventListener
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

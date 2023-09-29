@@ -1,10 +1,15 @@
 /**
- * Camera position to world module.
+ * Core plugin API coordinate camera position to world module.
  *
- * @module dd/core/coord/camera-position-to-world
+ * @module    dd.core.coord.cameraPositionToWorld
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * Convert position from camera-space to world-space.
+ *
  * @param {number|import("@pgmmv/cc/point").CCPoint} cameraPositionOrX
  * @param {number|undefined} cameraY
  * @returns {import("@pgmmv/cc/point").CCPoint}

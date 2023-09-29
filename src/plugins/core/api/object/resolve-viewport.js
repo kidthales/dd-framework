@@ -1,7 +1,10 @@
 /**
- * Resolve viewport module.
+ * Core plugin API object resolve viewport module.
  *
- * @module dd/core/object/resolve-viewport
+ * @module    dd.core.object.resolveViewport
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

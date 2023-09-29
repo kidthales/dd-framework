@@ -1,7 +1,10 @@
 /**
- * Create text sprites module.
+ * Core plugin API user interface text create text sprites module.
  *
- * @module dd/core/ui/text/create-text-sprites
+ * @module    dd.core.ui.text.createTextSprites
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

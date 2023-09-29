@@ -1,3 +1,11 @@
+/**
+ * Core plugin API user interface types module.
+ *
+ * @module    @dd/core/ui/types
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
+ */
 import type { EventEmitter } from '@dd/core/event/emitter/types';
 
 export enum OpenCloseState {

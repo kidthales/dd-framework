@@ -1,7 +1,10 @@
 /**
- * Class properties module.
+ * Core plugin API user interface panel class properties module.
  *
- * @module dd/core/ui/panel/class-properties
+ * @module    dd.core.ui.panel.classProperties
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
@@ -165,6 +168,6 @@ classProperties.ctor = function (config) {
 };
 
 /**
- *
+ * Exposes methods & properties common to all UI panel types.
  */
 module.exports = classProperties;

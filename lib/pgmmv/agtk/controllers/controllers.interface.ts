@@ -20,7 +20,7 @@ export interface AgtkControllers {
    *
    * Control key ID: 1~
    *
-   * <Control key ID>: Agtk.constants.controllers.OperationKeyA, ..., Agtk.constants.controllers.OperationKeyCancel
+   * `<Control key ID>`: Agtk.constants.controllers.OperationKeyA, ..., Agtk.constants.controllers.OperationKeyCancel
    *
    * @param arg1 Controller ID
    * @param arg2 Control key ID
@@ -35,7 +35,7 @@ export interface AgtkControllers {
    *
    * Return value is within range of -1~1
    *
-   * <Operation key ID>: Agtk.constants.controllers.OperationKeyA, ..., Agtk.constants.controllers.OperationKeyCancel
+   * `<Operation key ID>`: Agtk.constants.controllers.OperationKeyA, ..., Agtk.constants.controllers.OperationKeyCancel
    *
    * @param arg1 Controller ID
    * @param arg2 Operation key ID

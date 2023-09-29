@@ -1,7 +1,10 @@
 /**
- * Create module.
+ * Core plugin API user interface panel create module.
  *
- * @module dd/core/ui/panel/create
+ * @module    dd.core.ui.panel.create
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

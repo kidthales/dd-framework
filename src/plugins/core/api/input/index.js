@@ -1,7 +1,10 @@
 /**
- * Input module.
+ * Core plugin API input module.
  *
- * @module dd/core/input
+ * @module    dd.core.input
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
@@ -113,7 +116,7 @@ var _opControllerStates,
   };
 
 /**
- *
+ * Exposes methods for working with input.
  */
 var inputApi = (module.exports = {
   /**
@@ -124,11 +127,25 @@ var inputApi = (module.exports = {
   },
 
   /**
+   * @returns {number[]}
+   */
+  getEdgeOperationKeys: function () {
+    return _edgeOperationKeys;
+  },
+
+  /**
    * @param {number[]} keys
    * @returns {void}
    */
   setEdgeOperationKeys: function (keys) {
     _edgeOperationKeys = keys;
+  },
+
+  /**
+   * @returns {number[]}
+   */
+  getEdgePcKeys: function () {
+    return _edgePcKeys;
   },
 
   /**

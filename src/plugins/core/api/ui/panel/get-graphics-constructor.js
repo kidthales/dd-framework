@@ -1,7 +1,10 @@
 /**
- * Get graphics constructor module.
+ * Core plugin API user interface panel get graphics constructor module.
  *
- * @module dd/core/ui/panel/get-graphics-constructor
+ * @module dd.core.ui.panel.getGraphicsConstructor
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

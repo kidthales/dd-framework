@@ -1,7 +1,10 @@
 /**
- * Update interactive session module.
+ * Message plugin API print messages update interactive session module.
  *
- * @module dd/message/print-messages/update-interactive-session
+ * @module    dd.message.printMessages.updateInteractiveSession
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

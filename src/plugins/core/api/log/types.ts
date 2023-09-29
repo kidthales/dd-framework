@@ -1,3 +1,11 @@
+/**
+ * Core plugin API log types module.
+ *
+ * @module    @dd/core/log/types
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
+ */
 import type { ActionCommandPayload, LinkConditionPayload } from '@dd/common/plugin/types';
 
 /**

@@ -1,7 +1,10 @@
 /**
- * Resolve switch/variable object module.
+ * Core plugin API utility resolve switch/variable object module.
  *
- * @module dd/core/util/resolve-switch-variable-object
+ * @module    dd.core.util.resolveSwitchVariableObject
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

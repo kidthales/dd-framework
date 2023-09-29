@@ -93,7 +93,7 @@ export interface AgtkPlugin<I extends JsonValue = JsonValue> {
    *
    * @param delta
    * @note Called from the system. Called with each frame. The time elapsed from
-   * the previous frame is contained in <delta time>.
+   * the previous frame is contained in `<delta time>`.
    */
   update?: (delta: number) => void;
 
@@ -153,8 +153,8 @@ export interface AgtkPlugin<I extends JsonValue = JsonValue> {
    * @returns Boolean indicating whether link was established.
    * @notes Called from the system. Called during evaluation of link conditions.
    * If multiple link conditions are defined by a plug-in, they are
-   * differentiated by <Link index>. Parameters set by link conditions are
-   * passed as objects using <Settings parameter>.
+   * differentiated by `<Link index>`. Parameters set by link conditions are
+   * passed as objects using `<Settings parameter>`.
    */
   execLinkCondition?: (
     linkConditionIndex: number,

@@ -1,7 +1,10 @@
 /**
- * To JSON module.
+ * Core plugin API string to JSON module.
  *
- * @module dd/core/string/to-json
+ * @module    dd.core.string.toJson
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

@@ -1,7 +1,10 @@
 /**
- * Constants module.
+ * Message plugin API print messages constants module.
  *
- * @module dd/message/print-messages/constants
+ * @module    dd.message.printMessages.constants
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

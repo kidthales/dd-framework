@@ -1,11 +1,15 @@
 /**
- * Begin session module.
+ * Message plugin API print messages begin session module.
  *
- * @module dd/message/print-messages/begin-session
  * @internal
+ * @module    @dd/message/print-messages/begin-session
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * @internal
  * @param {import("@pgmmv/agtk/object-instances/object-instance").AgtkObjectInstance} objectInstance
  * @param {import("./types").PrintMessagesConfig} config
  * @returns {import("@dd/message/session/types").Session}

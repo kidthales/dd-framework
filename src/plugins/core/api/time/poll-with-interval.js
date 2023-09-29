@@ -1,7 +1,10 @@
 /**
- * Poll with interval module.
+ * Core plugin API time poll with interval module.
  *
- * @module dd/core/time/poll-with-interval
+ * @module    dd.core.time.pollWithInterval
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

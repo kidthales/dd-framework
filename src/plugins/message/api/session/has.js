@@ -1,7 +1,10 @@
 /**
- * Has module.
+ * Message plugin API session has module.
  *
- * @module dd/message/session/has
+ * @module    dd.message.session.has
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

@@ -1,7 +1,10 @@
 /**
- * Pad end module.
+ * Core plugin API string pad end module.
  *
- * @module dd/core/string/pad-end
+ * @module    dd.core.string.padEnd
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

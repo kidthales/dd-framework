@@ -1,5 +1,10 @@
 /**
- * @module dd/common/plugin/params
+ * Common plugin parameters module.
+ *
+ * @module    @dd/common/plugin/params
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
@@ -34,6 +39,9 @@ var _pc = require('./constants'),
     };
   };
 
+/**
+ * Exposes methods & properties that assist with plugin parameter creation.
+ */
 module.exports = {
   /**
    * Alias for a line break.

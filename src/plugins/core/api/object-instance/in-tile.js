@@ -1,11 +1,13 @@
 /**
- * In tile module.
+ * Core plugin API object instance in tile module.
  *
- * @module dd/core/object-instance/in-tile
+ * @module    dd.core.objectInstance.inTile
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
- *
  * @param {import("./types").ObjectInstanceLike} objectInstanceLike
  * @param {number} tileX
  * @param {number} tileY

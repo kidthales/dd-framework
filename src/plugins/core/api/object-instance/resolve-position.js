@@ -1,7 +1,10 @@
 /**
- * Resolve position module.
+ * Core plugin API object instance resolve position module.
  *
- * @module dd/core/object-instance/resolve-position
+ * @module    dd.core.objectInstance.resolvePosition
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

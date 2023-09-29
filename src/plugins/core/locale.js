@@ -18,11 +18,11 @@ module.exports = {
     en: 'kidthales <kidthales@agogpixel.com>'
   },
   PLUGIN_HELP: {
-    en: 'TODO'
+    en: require('./help.en.txt')
   },
 
   PLUGIN_PARAM_LOG_GROUP: {
-    en: 'Logging\n‾‾‾‾‾‾‾'
+    en: 'Logging\n‾‾‾‾‾‾'
   },
   PLUGIN_PARAM_JSON_INDENT_SIZE: {
     en: 'JSON Indent Size:'
@@ -35,7 +35,7 @@ module.exports = {
   },
 
   PLUGIN_PARAM_INPUT_GROUP: {
-    en: 'Script-able Edge Inputs\n‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾'
+    en: 'Scriptable Edge Inputs\n‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾'
   },
   PLUGIN_PARAM_OPERATION_KEY_A: {
     en: 'Operation Key A:'

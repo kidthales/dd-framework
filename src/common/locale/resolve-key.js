@@ -1,10 +1,15 @@
 /**
- * Resolve key module.
+ * Common locale resolve key module.
  *
- * @module dd/common/locale/resolve-key
+ * @module    @dd/common/locale/resolve-key
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * Resolve specified locale key to localized value.
+ *
  * @param {string} key
  * @returns {string}
  */

@@ -1,7 +1,10 @@
 /**
- * Resolve actions module.
+ * Core plugin API object resolve actions module.
  *
- * @module dd/core/object/resolve-actions
+ * @module    dd.core.object.resolveActions
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

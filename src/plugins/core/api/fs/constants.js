@@ -1,10 +1,12 @@
 /**
- * Constants module.
+ * Core plugin API filesystem constants module.
  *
- * @module dd/core/fs/constants
+ * @internal
+ * @module @dd/core/fs/constants
  */
 
 /**
+ * @internal
  * @constant
  */
 module.exports = {

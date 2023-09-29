@@ -1,10 +1,15 @@
 /**
- * Is missing dependencies module.
+ * Common plugin dependencies is missing dependencies module.
  *
- * @module dd/common/plugin/deps/is-missing-dependencies
+ * @module    @dd/common/plugin/deps/is-missing-dependencies
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * Test if any plugin dependencies are missing.
+ *
  * @returns {boolean}
  */
 module.exports = function () {

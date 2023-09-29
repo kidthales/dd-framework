@@ -1,7 +1,10 @@
 /**
- * Resolve velocity module.
+ * Core plugin API object instance resolve velocity module.
  *
- * @module dd/core/object-instance/resolve-velocity
+ * @module    dd.core.objectInstance.resolveVelocity
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

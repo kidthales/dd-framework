@@ -1,10 +1,15 @@
 /**
- * World position to tile module.
+ * Core plugin API coordinate world position to tile module.
  *
- * @module dd/core/coord/world-position-to-tile
+ * @module    dd.core.coord.worldPositionToTile
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * Convert world position (specified in pixel coordinates) to tiles.
+ *
  * @param {number|import("@pgmmv/cc/point").CCPoint} worldPositionOrX
  * @param {number|undefined} worldY
  * @returns {import("@pgmmv/cc/point").CCPoint}

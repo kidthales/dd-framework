@@ -38,9 +38,9 @@ export interface Agtk {
    *
    * ```
    * Notes:
-   * PGMMV <Version Number>
-   * player <Version Number>
-   * runtime <Version Number>
+   * PGMMV `<Version Number>`
+   * player `<Version Number>`
+   * runtime `<Version Number>`
    * ```
    */
   readonly version: string;

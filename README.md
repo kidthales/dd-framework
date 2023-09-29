@@ -8,7 +8,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/kidthales/dd-framework">
-    <img src="assets/img/logo.png" alt="Logo" width="80" height="80">
+    <img src="docs/.vuepress/public/img/hero-image.png" alt="Hero Image" height="280">
   </a>
 
   <h3 align="center">Dank Developer Framework</h3>

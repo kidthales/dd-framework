@@ -1,7 +1,10 @@
 /**
- * In tile rectangle module.
+ * Core plugin API object instance in tile rectangle module.
  *
- * @module dd/core/object-instance/in-tile-rect
+ * @module    dd.core.objectInstance.inTileRect
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**

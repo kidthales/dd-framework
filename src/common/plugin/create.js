@@ -1,13 +1,18 @@
 /**
- * Create module.
+ * Common plugin create module.
  *
- * @module dd/common/plugin/create
+ * @module    @dd/common/plugin/create
+ * @author    kidthales <kidthales@agogpixel.com>
+ * @copyright 2023 kidthales
+ * @license   {@link https://github.com/kidthales/dd-framework/blob/main/LICENSE.txt | MIT License}
  */
 
 /**
+ * Creates a plugin for use with PGMMV.
+ *
  * @param {string} identifier Must be unique within the framework namespace.
- * @param {import('./types').Config} config
- * @param {import('./types').Internal|undefined} internal
+ * @param {import('./types').Config} config Plugin configuration.
+ * @param {import('./types').Internal|undefined} internal Internal API for the plugin.
  * @returns {import("@pgmmv/agtk/plugins/plugin").AgtkPlugin<import("type-fest").JsonObject>}
  */
 module.exports = function (identifier, config, internal) {
