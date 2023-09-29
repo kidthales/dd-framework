@@ -8,7 +8,7 @@
  *
  */
 module.exports = require('@dd/common').createPlugin(
-  'staticStorage',
+  'storage',
   {
     dependencies: ['core'],
     actionCommands: require('./action-commands'),

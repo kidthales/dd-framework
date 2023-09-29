@@ -39,7 +39,8 @@ These plugin parameters apply to the following:
   - 'dd.core.input.isPcKeyJustPressed'
   - 'dd.core.input.isPcKeyJustReleased'
 
-Developer Notes: PGMMV's script API does not support the ability to detect 'On Pressed' or 'On Released' inputs. To
-                 provide this support, the plugin will update each frame & iterate through the activated input keys (set
-                 to 'ON' via their plugin parameter), tracking their pressed/release state & on which frame a change
-                 occurs. This state is then accessible via the 'dd.core.input' script API.
+Developer Notes:
+- PGMMV's script API does not support the ability to detect 'On Pressed' or 'On Released' inputs. To provide this
+  support, the plugin will update each frame & iterate through the activated input keys (set to 'ON' via their plugin
+  parameter), tracking their pressed/release state & on which frame a change occurs. This state is then accessible via
+  the 'dd.core.input' script API.

@@ -1,0 +1,10 @@
+Define custom data that can be accessed in your scripts.
+
+Data: Any JSON compliant value.
+
+These plugin parameters apply to the following:
+- 'dd.data' script API.
+
+Developer Notes:
+- The plugin parameter value is parsed JSON and stays in memory under the 'dd.data' script API.
+- You can also write/assign values to 'dd.data' but these changes WILL NOT be saved/persisted.

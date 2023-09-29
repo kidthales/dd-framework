@@ -1,0 +1,28 @@
+Provides an alternative set of 'Show Text' style action commands.
+
+Message Config
+==============
+{
+  "id": <textId>,
+  "align": {
+    "horizontal": <0|1|2>,
+    "vertical:    <0|1|2>
+  },
+  "printSpeed": <0+>,
+  "clearSpeed": <0+>,
+  "color": [<0-255>, <0-255>, <0-255>],
+  "opacity": <0-255>
+}
+
+- Required properties: "id".
+
+|  "align"  | "horizontal" | "vertical" |
+| --------- | ------------ | ---------- |
+|     0     |   'LEFT'     |  'TOP'     |
+|     1     |   'CENTER'   |  'CENTER'  |
+|     2     |   'RIGHT'    |  'BOTTOM'  |
+
+Developer Notes:
+- Values set in a message config will take priority over corresponding action command parameters.
+- Exposes 'dd.message.session' & 'dd.message.printMessages' script APIs; you can use these to further extend messaging
+  behavior.

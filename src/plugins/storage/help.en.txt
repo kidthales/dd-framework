@@ -1,0 +1,4 @@
+Provides support for reading & writing variable/switch values to & from persistent file storage.
+
+Developer notes:
+- TODO

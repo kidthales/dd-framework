@@ -18,7 +18,7 @@ module.exports = {
     en: 'kidthales <kidthales@agogpixel.com>'
   },
   PLUGIN_HELP: {
-    en: 'TODO'
+    en: require('./help.en.txt')
   },
 
   AC_PRINT_MESSAGES_001_NAME: {
