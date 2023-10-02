@@ -1,80 +1,62 @@
-const { DefinePlugin } = require('webpack');
-const { resolve } = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
+const { mergeWithRules, CustomizeRule } = require('webpack-merge');
 
-const { iifeReturnMinify, IIFEReturnPlugin } = require('./lib/webpack');
-const version = require('./package.json').version;
-
-const nodeEnv = process.env.NODE_ENV;
-const isProd = nodeEnv === 'production';
-
-const srcPath = resolve(__dirname, 'src');
-const distPath = resolve(__dirname, 'dist');
-
-module.exports = {
-  mode: isProd ? 'production' : 'development',
-  devtool: false,
-  entry: {
-    [`core-${version}`]: `${srcPath}/plugins/core/entry.js`,
-    [`data-${version}`]: `${srcPath}/plugins/data/entry.js`,
-    [`message-${version}`]: `${srcPath}/plugins/message/entry.js`
-  },
-  output: {
-    iife: true,
-    filename: `dd-framework-[name]${isProd ? '.min' : ''}.js`,
-    path: `${distPath}/plugins`,
-    environment: {
-      arrowFunction: false
-    }
-  },
-  resolve: {
-    extensions: ['.js'],
-    alias: {
-      '@dd/common': `${srcPath}/common`
-    }
-  },
+const rules = {
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            parserOpts: {
-              allowReturnOutsideFunction: true
-            }
-          }
-        },
-        include: srcPath,
-        exclude: /node_modules/
-      },
-      {
-        test: /\.txt$/,
-        type: 'asset/source'
+    rules: {
+      test: CustomizeRule.Match,
+      use: {
+        loader: CustomizeRule.Match,
+        options: CustomizeRule.Merge
       }
-    ]
-  },
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          format: {
-            comments: function comments(node, comment) {
-              // leave for minifier
-              return /IIFEReturnPlugin/.test(comment.value);
-            },
-            max_line_len: 255
-          }
-        },
-        minify: iifeReturnMinify
-      })
-    ]
-  },
-  plugins: [
-    new DefinePlugin({
-      VERSION: JSON.stringify(version)
-    }),
-    new IIFEReturnPlugin()
-  ]
+    }
+  }
+};
+
+const merge = (...args) => {
+  const c = mergeWithRules(rules)(...args);
+  RegExp.prototype.toJSON = RegExp.prototype.toString;
+  console.log('***Resolved Webpack Configuration***', JSON.stringify(c, undefined, 2));
+  return c;
+};
+
+module.exports = (env, args) => {
+  switch (process.env.DD_TARGET) {
+    case 'pgmmv':
+      switch (args.mode) {
+        case 'development':
+          return merge(
+            require('./webpack/plugins.common'),
+            require('./webpack/plugins.pgmmv-common'),
+            require('./webpack/plugins.pgmmv-development')
+          );
+        case 'production':
+          return merge(
+            require('./webpack/plugins.common'),
+            require('./webpack/plugins.pgmmv-common'),
+            require('./webpack/plugins.pgmmv-production')
+          );
+        default:
+          break;
+      }
+      break;
+    case 'package':
+      switch (args.mode) {
+        case 'development':
+          return merge(
+            require('./webpack/plugins.common'),
+            require('./webpack/plugins.package-common'),
+            require('./webpack/plugins.package-development')
+          );
+        case 'production':
+          return merge(
+            require('./webpack/plugins.common'),
+            require('./webpack/plugins.package-common'),
+            require('./webpack/plugins.package-production')
+          );
+        default:
+          break;
+      }
+  }
+
+  throw new Error('No matching configuration was found!');
 };

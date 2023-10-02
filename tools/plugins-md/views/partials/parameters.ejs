@@ -1,0 +1,22 @@
+<%_ parameters.forEach(function (parameter) { _%>
+  <%_ if (Array.isArray(parameter.parameters)) { _%>
+<%- include('parameter-section', { section: parameter }); _%>
+  <%_ } else { _%>
+###### `<%- parameter.name %>`
+
+-   <%= locale.type %>: `<%- parameter.type %>`
+    <%_ if (parameter.attributes) { _%>
+      <%_ Object.keys(parameter.attributes).forEach(function (key) { _%>
+        <%_ if (parameter.attributes[key] === null) { _%>
+    -   `<%- key %>`
+        <%_ } else { _%>
+    -   <%= key %>: `<%- parameter.attributes[key] %>`
+        <%_ } _%>
+      <%_ }) _%>
+    <%_ } _%>
+    <%_ if (parameter.defaultValue !== undefined) { _%>
+-   <%= locale.default %>: `<%- parameter.defaultValue %>`
+    <%_ } _%>
+
+  <%_ } _%>
+<%_ }); _%>

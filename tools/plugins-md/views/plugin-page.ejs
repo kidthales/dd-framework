@@ -1,0 +1,49 @@
+# <%= plugin.name %>
+
+<%= plugin.description %>
+
+**`<%- locale.author %>`**
+
+<%= plugin.author %>
+
+## <%= locale.help %>
+
+```text
+<%- plugin.help %>
+```
+
+<%_ if (plugin.parameters.length) { _%>
+## <%= locale.parameters %>
+
+<%- include('partials/parameters', { locale: locale, parameters: plugin.parameters }); _%>
+<%_ } _%>
+<%_ if (plugin.actionCommands.length) { _%>
+## <%= locale.actionCommands %>
+
+  <%_ plugin.actionCommands.forEach(function (actionCommand) { _%>
+### <%= actionCommand.name %>
+
+<%= actionCommand.description %>
+
+    <%_ if (actionCommand.parameters.length) { _%>
+#### <%= locale.parameters %>
+
+<%- include('partials/parameters', { locale: locale, parameters: actionCommand.parameters }); _%>
+    <%_ } _%>
+  <%_ }); _%>
+<%_ } _%>
+<%_ if (plugin.linkConditions.length) { _%>
+## <%= locale.linkConditions %>
+
+  <%_ plugin.linkConditions.forEach(function (linkCondition) { _%>
+### <%= linkCondition.name %>
+
+<%= linkCondition.description %>
+
+    <%_ if (linkCondition.parameters.length) { _%>
+#### <%= locale.parameters %>
+
+<%- include('partials/parameters', { locale: locale, parameters: linkCondition.parameters }); _%>
+    <%_ } _%>
+  <%_ }); _%>
+<%_ } _%>

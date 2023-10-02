@@ -49,4 +49,5 @@ Thumbs.db
 # vuepress
 docs/.vuepress/.temp
 docs/.vuepress/.cache
-docs/api
+docs/**/api
+docs/**/plugins

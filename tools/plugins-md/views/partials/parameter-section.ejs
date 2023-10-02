@@ -1,0 +1,11 @@
+---
+
+<%_ if (section.name) { _%>
+##### <%= section.name %>
+
+<%_ } _%>
+<%_ section.description.forEach(function (description) { _%>
+<%= description %>
+
+<%_ }); _%>
+<%- include('parameters', { parameters: section.parameters }); _%>

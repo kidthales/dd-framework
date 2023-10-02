@@ -458,7 +458,7 @@ module.exports = {
       'ParentObject'
     ]),
     _param.br,
-    _param.switchId(_ids.cancelSwitch, 'PARAM_CANCEL_SWITCH', _ids.CancelSwitchSource, true),
+    _param.switchId(_ids.cancelSwitch, 'PARAM_CANCEL_SWITCH', _ids.cancelSwitchSource, true),
     _param.br,
     _param.embedded(-1, 'PARAM_CANCEL_DESCRIPTION'),
     _param.hr,

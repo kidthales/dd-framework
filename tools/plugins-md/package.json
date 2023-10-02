@@ -1,0 +1,42 @@
+{
+  "name": "plugins-md",
+  "private": true,
+  "main": "./index.js",
+  "plugins-md": {
+    "argv": {
+      "string": ["locale", "out"],
+      "boolean": ["clean"],
+      "alias": {
+        "locale": ["l", "loca"],
+        "clean": ["c"],
+        "out": ["o", "output"]
+      }
+    },
+    "locale": {
+      "default": "en",
+      "configs": {
+        "en": {
+          "outSuffix": "",
+          "data": {
+            "readmeTitle": "Plugins",
+            "author": "Author",
+            "help": "Help",
+            "parameters": "Parameters",
+            "actionCommands": "Action Commands",
+            "linkConditions": "Link Conditions",
+            "type": "Type",
+            "default": "Default",
+            "decimals": "Decimals",
+            "minimum": "Minimum",
+            "maximum": "Maximum",
+            "references": "References",
+            "withNewButton": "With New Button",
+            "true": "True",
+            "false": "False",
+            "na": "N/A"
+          }
+        }
+      }
+    }
+  }
+}
