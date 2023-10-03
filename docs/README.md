@@ -5,12 +5,12 @@ heroAlt: Hero Image
 heroText: Dank Developer Framework
 tagline: Enhance your next Pixel Game Maker MV project with extendable plugin & scripting support.
 actions:
-    - text: Get Started
-      link: /guide/getting-started.md
-      type: primary
     - text: Download
       link: https://github.com/kidthales/dd-framework/releases
       type: secondary
+    - text: Get Started
+      link: /guide/getting-started.md
+      type: primary
 features:
     - title: Plugins
       details: A suite of plugins that provide a rich set of capabilities, action commands, & link conditions.

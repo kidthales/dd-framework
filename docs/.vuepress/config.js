@@ -16,6 +16,10 @@ module.exports = {
       '/': {
         navbar: [
           {
+            text: 'Download',
+            link: 'https://github.com/kidthales/dd-framework/releases'
+          },
+          {
             text: 'Guide',
             link: '/guide/'
           },
