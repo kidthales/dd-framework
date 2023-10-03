@@ -35,7 +35,7 @@ function main() {
     throw new Error(`Invalid locale: '${locale}`);
   }
 
-  const out = argv.out ? require('path').resolve(argv.out + localeConfig.outSuffix) : undefined;
+  const out = argv.out ? require('path').resolve(argv.out) : undefined;
 
   if (out && argv.clean) {
     require('shelljs').rm('-rf', out);

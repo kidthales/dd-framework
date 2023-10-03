@@ -16,7 +16,6 @@
       "default": "en",
       "configs": {
         "en": {
-          "outSuffix": "",
           "data": {
             "readmeTitle": "Plugins",
             "author": "Author",

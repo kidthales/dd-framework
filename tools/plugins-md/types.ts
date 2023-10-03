@@ -8,7 +8,6 @@ export interface Config {
     configs: Record<
       string,
       {
-        outSuffix: string;
         data: {
           readmeTitle: string;
           author: string;

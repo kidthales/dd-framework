@@ -1,4 +1,6 @@
-import { defaultTheme } from 'vuepress';
+import { normalize } from 'path';
+import shell from 'shelljs';
+import { defaultTheme } from 'vuepress-webpack';
 import { typedocPlugin } from 'vuepress-plugin-typedoc/next';
 
 module.exports = {
@@ -18,6 +20,10 @@ module.exports = {
             link: '/guide/'
           },
           {
+            text: 'Plugins',
+            link: '/plugins/'
+          },
+          {
             text: 'API',
             link: '/api/'
           }
@@ -31,13 +37,22 @@ module.exports = {
   }),
   dest: './dist/docs',
   plugins: [
+    (ctx) => {
+      return {
+        name: 'dd-plugins-md',
+        onInitialized: () =>
+          shell
+            .cd(normalize(`${__dirname}/../..`))
+            .exec(`npm run tools:plugins-md -- --locale en --out ${normalize(ctx.dir.source() + '/plugins')} --clean`)
+      };
+    },
     typedocPlugin({
       entryPoints: [
         './lib/pgmmv',
         './src/common',
         './src/plugins/core/api',
         './src/plugins/message/api',
-        './src/plugins/static-storage/api'
+        './src/plugins/storage/api'
       ],
       tsconfig: '../tsconfig.json',
       cleanOutputDir: true,
