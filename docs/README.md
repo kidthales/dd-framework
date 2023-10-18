@@ -9,7 +9,7 @@ actions:
       link: https://github.com/kidthales/dd-framework/releases
       type: secondary
     - text: Get Started
-      link: /guide/getting-started.md
+      link: /guide/getting-started/
       type: primary
 features:
     - title: Plugins

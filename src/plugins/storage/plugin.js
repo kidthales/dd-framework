@@ -15,5 +15,12 @@ module.exports = require('@dd/common').createPlugin(
     api: require('./api'),
     locale: require('./locale')
   },
-  {}
+  {
+    onInitialize: function () {
+      dd.core.event.addUpdateEventListener(function () {
+        require('./api/update')();
+      });
+      // TODO: Check error...
+    }
+  }
 );

@@ -56,7 +56,8 @@
       "@dd/core/ui/text/printer/types": ["./src/plugins/core/api/ui/text/printer/types"],
       "@dd/core/util/types": ["./src/plugins/core/api/util/types"],
       "@dd/message/print-messages/types": ["./src/plugins/message/api/print-messages/types"],
-      "@dd/message/session/types": ["./src/plugins/message/api/session/types"]
+      "@dd/message/session/types": ["./src/plugins/message/api/session/types"],
+      "@dd/storage/types": ["./src/plugins/storage/api/types"]
     } /* Specify a set of entries that re-map imports to additional lookup locations. */,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */

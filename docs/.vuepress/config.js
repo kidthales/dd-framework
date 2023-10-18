@@ -64,6 +64,8 @@ module.exports = {
       includeVersion: true,
       excludeNotDocumented: true,
       excludeNotDocumentedKinds: ['Namespace'],
+      excludeInternal: true,
+      excludePrivate: true,
       name: 'API',
       readme: 'none'
     })
